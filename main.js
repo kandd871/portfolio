@@ -1,4 +1,4 @@
-window.onload = function() {
+
             // Existing JavaScript code
             const carousel = document.getElementById('one');
             const imageCount = 17;
@@ -55,4 +55,4 @@ window.onload = function() {
             }
 
             
-        };
+     
