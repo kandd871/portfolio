@@ -11,7 +11,6 @@
   
   html{
     cursor: url('cursor.svg') 5 5,auto;
-    height: 100%;
   }
 
   ::-webkit-scrollbar {
@@ -47,13 +46,13 @@ body{
     margin: .9vw .15vw .9vw .15vw;
 }
 
-canvas{
+/* canvas{
     position: absolute;
     top:0;
     left: 0;
     height: 100%;
     z-index: -100;
-}
+} */
 
 .body{
     margin-top: 0vw;
@@ -94,6 +93,8 @@ canvas{
     margin-bottom: -2vh;
 }
 
+.foot{
+}
 
 .one{
     border-left: 2px solid var(--color);
@@ -236,7 +237,7 @@ a{
     margin-top: 4vh;
     margin-left: 3.5vw;
     margin-right: 3.5vw;
-    margin-bottom: 0vh;
+    margin-bottom:0px;
 }
 
 .information{
@@ -255,16 +256,22 @@ a{
 
 .column2{
     width: 91vw;
-    position: relative;
+    display: flex;
+    height: 7vh;
+    justify-content: right;
+    /* margin-bottom: -100vh; */
 }
 
 .photo{
-    position: absolute;
-    top:-135vh;
-    right:0;
+    position: relative;
+    top:-143vh;
+
 }
 
 .photo img{
     width: 43vw;
 }
 
+.foot{
+
+}

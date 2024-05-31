@@ -1,7 +1,7 @@
 var points = [];
 
 function setup() { 
-  createCanvas(window.innerWidth, 7000);
+  createCanvas(window.innerWidth, window.innerHeight);
 } 
 
 function draw() { 
