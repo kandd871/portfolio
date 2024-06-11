@@ -309,7 +309,7 @@ text-transform: uppercase;
 #projects-section{
 z-index: 50;
 width: 100vw;
-min-height: 100vh;
+/* min-height: 100vh; */
 display: block;
 background-color: var(--background);
 margin-bottom: 2vw;
@@ -420,6 +420,14 @@ margin-bottom: 2vw;
 
 .subcaption{
   font-size: 1.3vw;
+}
+
+.copyright{
+  margin-top: 10vw;
+  margin-bottom: 0vw;
+  font-size: 1vw;
+  margin-left: 1.5vw; 
+  text-transform: uppercase;
 }
 
 .info{

@@ -257,6 +257,7 @@ document.querySelectorAll('.box').forEach(box => {
             setTimeout(function() {
                 info.style.opacity = "1";
                 info.style.filter = "blur(0px)";
+                adjustProjectsSectionHeight();
             }, 500);
 
             expandButton.textContent = '[CLOSE]';
@@ -267,10 +268,11 @@ document.querySelectorAll('.box').forEach(box => {
                 info.style.display = "none";
             }, 500);
             expandButton.textContent = '[DETAILS]';
+            resetProjectsSectionHeight();
         }
-        setTimeout(() => {
-            adjustProjectsSectionHeight();
-        }, 500);
+        // setTimeout(() => {
+        //     adjustProjectsSectionHeight();
+        // }, 500);
     });
 
     closeButton.addEventListener('click', () => {
@@ -280,6 +282,7 @@ document.querySelectorAll('.box').forEach(box => {
             setTimeout(function() {
                 info.style.opacity = "1";
                 info.style.filter = "blur(0px)";
+                adjustProjectsSectionHeight();
             }, 500);
 
             expandButton.textContent = '[CLOSE]';
@@ -288,13 +291,14 @@ document.querySelectorAll('.box').forEach(box => {
             info.style.filter = "blur(7px)";
             setTimeout(function() {
                 info.style.display = "none";
+                resetProjectsSectionHeight();
             }, 500);
             expandButton.textContent = '[DETAILS]';
             box.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        setTimeout(() => {
-            adjustProjectsSectionHeight();
-        }, 500);
+        // setTimeout(() => {
+        //     adjustProjectsSectionHeight();
+        // }, 500);
     });
 });
 
@@ -316,10 +320,35 @@ window.addEventListener('scroll', function() {
     }
 });
 
-function adjustProjectsSectionHeight() {
+// function adjustProjectsSectionHeight() {
+//     const projectsSection = document.getElementById('projects-section');
+//     projectsSection.style.height = projectsSection.scrollHeight * 1 + 'px';
+// }
+
+// window.addEventListener('load', adjustProjectsSectionHeight);
+// window.addEventListener('resize', adjustProjectsSectionHeight);
+
+let initialProjectsSectionHeight;
+
+function saveInitialProjectsSectionHeight() {
     const projectsSection = document.getElementById('projects-section');
-    projectsSection.style.height = projectsSection.scrollHeight * 1.1 + 'px';
+    initialProjectsSectionHeight = projectsSection.scrollHeight;
 }
 
-window.addEventListener('load', adjustProjectsSectionHeight);
+function adjustProjectsSectionHeight() {
+    const projectsSection = document.getElementById('projects-section');
+    projectsSection.style.height = projectsSection.scrollHeight * 1 + 'px';
+}
+
+function resetProjectsSectionHeight() {
+    const projectsSection = document.getElementById('projects-section');
+    projectsSection.style.height = initialProjectsSectionHeight + 'px';
+}
+
+window.addEventListener('load', () => {
+    saveInitialProjectsSectionHeight();
+    adjustProjectsSectionHeight();
+});
+
 window.addEventListener('resize', adjustProjectsSectionHeight);
+
