@@ -102,6 +102,7 @@ function drawPoint(row, col, container, text, id, url) {
     const point = document.createElement('div');
     point.className = 'point';
     point.id = `${id}-point`;
+    point.style.zIndex = '2';
     anchor.appendChild(point);
 
     // Create the text below the point
@@ -110,6 +111,7 @@ function drawPoint(row, col, container, text, id, url) {
     pointText.id = `${id}-text`;
     pointText.innerText = text;
     pointText.style.top = '1.0vw'; // Slightly adjusted to ensure the text appears below the point
+    pointText.style.zIndex = '1';
     anchor.appendChild(pointText);
 
     container.appendChild(anchor);
@@ -118,7 +120,7 @@ function drawPoint(row, col, container, text, id, url) {
     point.addEventListener('mouseover', () => {
         pointText.style.visibility = 'visible';
         pointText.style.opacity = '1';
-        point.style.filter = 'blur(1px)';
+        point.style.filter = 'blur(2px)';
     });
 }
 
