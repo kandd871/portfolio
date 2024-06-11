@@ -257,7 +257,7 @@ document.querySelectorAll('.box').forEach(box => {
             setTimeout(function() {
                 info.style.opacity = "1";
                 info.style.filter = "blur(0px)";
-                adjustProjectsSectionHeight();
+                // adjustProjectsSectionHeight();
             }, 500);
 
             expandButton.textContent = '[CLOSE]';
@@ -268,11 +268,11 @@ document.querySelectorAll('.box').forEach(box => {
                 info.style.display = "none";
             }, 500);
             expandButton.textContent = '[DETAILS]';
-            resetProjectsSectionHeight();
+            // adjustProjectsSectionHeight();
         }
-        // setTimeout(() => {
-        //     adjustProjectsSectionHeight();
-        // }, 500);
+        setTimeout(() => {
+            adjustProjectsSectionHeight();
+        }, 500);
     });
 
     closeButton.addEventListener('click', () => {
@@ -282,7 +282,7 @@ document.querySelectorAll('.box').forEach(box => {
             setTimeout(function() {
                 info.style.opacity = "1";
                 info.style.filter = "blur(0px)";
-                adjustProjectsSectionHeight();
+                // adjustProjectsSectionHeight();
             }, 500);
 
             expandButton.textContent = '[CLOSE]';
@@ -291,14 +291,14 @@ document.querySelectorAll('.box').forEach(box => {
             info.style.filter = "blur(7px)";
             setTimeout(function() {
                 info.style.display = "none";
-                resetProjectsSectionHeight();
+                // adjustProjectsSectionHeight();
             }, 500);
             expandButton.textContent = '[DETAILS]';
             box.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        // setTimeout(() => {
-        //     adjustProjectsSectionHeight();
-        // }, 500);
+        setTimeout(() => {
+            adjustProjectsSectionHeight();
+        }, 500);
     });
 });
 
@@ -328,6 +328,30 @@ window.addEventListener('scroll', function() {
 // window.addEventListener('load', adjustProjectsSectionHeight);
 // window.addEventListener('resize', adjustProjectsSectionHeight);
 
+// let initialProjectsSectionHeight;
+
+// function saveInitialProjectsSectionHeight() {
+//     const projectsSection = document.getElementById('projects-section');
+//     initialProjectsSectionHeight = projectsSection.scrollHeight;
+// }
+
+// function adjustProjectsSectionHeight() {
+//     const projectsSection = document.getElementById('projects-section');
+//     projectsSection.style.height = projectsSection.scrollHeight * 1 + 'px';
+// }
+
+// function resetProjectsSectionHeight() {
+//     const projectsSection = document.getElementById('projects-section');
+//     projectsSection.style.height = initialProjectsSectionHeight + 'px';
+// }
+
+// window.addEventListener('load', () => {
+//     saveInitialProjectsSectionHeight();
+//     adjustProjectsSectionHeight();
+// });
+
+// window.addEventListener('resize', adjustProjectsSectionHeight);
+
 let initialProjectsSectionHeight;
 
 function saveInitialProjectsSectionHeight() {
@@ -337,7 +361,15 @@ function saveInitialProjectsSectionHeight() {
 
 function adjustProjectsSectionHeight() {
     const projectsSection = document.getElementById('projects-section');
-    projectsSection.style.height = projectsSection.scrollHeight * 1 + 'px';
+    let additionalHeight = 0;
+
+    document.querySelectorAll('.info').forEach(info => {
+        if (info.style.display !== 'none') {
+            additionalHeight += info.scrollHeight;
+        }
+    });
+
+    projectsSection.style.height = initialProjectsSectionHeight + additionalHeight + 'px';
 }
 
 function resetProjectsSectionHeight() {
@@ -351,4 +383,3 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', adjustProjectsSectionHeight);
-
