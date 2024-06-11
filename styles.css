@@ -624,6 +624,14 @@ video{
   cursor: pointer;
   margin-top: 1vw;
   margin-bottom: 1vw;
+  transition: .5s;
+}
+
+.close:hover{
+  filter: blur(5px);
+}
+.expand:hover{
+  filter: blur(5px);
 }
 
 #homeweb{
