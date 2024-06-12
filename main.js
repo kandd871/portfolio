@@ -130,10 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         projpoint.style.width = '1.1vw';
                         projpoint.style.height = '1.1vw';
                         projpoint.style.marginTop = '.9vw';
+                         projpoint.style.filter = 'blur(0px)';
                     } else {
-                        projpoint.style.width = '0.8vw';
-                        projpoint.style.height = '0.8vw';
+                        projpoint.style.width = '0.85vw';
+                        projpoint.style.height = '0.85vw';
                         projpoint.style.marginTop = '1.1vw';
+                        projpoint.style.filter = 'blur(2.6px)';
                     }
                 });
             }

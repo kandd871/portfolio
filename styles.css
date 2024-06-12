@@ -411,7 +411,16 @@ margin-bottom: 2vw;
 }
 
 .projpoint:hover{
-  filter: blur(2px);
+
+}
+
+.projpointblur {
+  filter: blur(3.5px);
+}
+
+
+.projpointremove {
+  filter: blur(0px);
 }
 
 .box{
