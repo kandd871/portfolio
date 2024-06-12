@@ -6,7 +6,7 @@
   }
 
   :root {
-    --color: #00AADF;
+    --color: rgb(0, 170, 223);
     --background: rgb(197, 197, 197);
     --black: #1f1f1f;
   }
@@ -117,13 +117,15 @@ text-transform: uppercase;
   .header{
     font-size: 3.75vw;
     display: flex;
+    line-height:1;
     justify-content: space-between;
-    padding: 0 1% 0.4% 1%;
-    margin-bottom: 1vw;
+    padding: 0.4% 1% 1% 1%;
+    margin-bottom: 2.2vw;
+    border-bottom: 1px dotted var(--color);
   }
 
   #headerone{
-    background-color: var(--black);
+    background-color: var(--black); 
   }
 
   a{
@@ -161,7 +163,7 @@ text-transform: uppercase;
     justify-content: center;
     text-align: center;
     background-color: black;
-    height: 48.25vw;
+    height: 48.5vw;
   }
 
   #branding{
@@ -174,6 +176,13 @@ text-transform: uppercase;
     position:absolute;
     bottom: 1vw;
     width: 100vw;
+  }
+
+.label{
+    background-color: var(--color);
+    color: var(--black);
+    padding-left: .1vw;
+    padding-right: .1vw;
   }
 
   #graph{
@@ -353,7 +362,30 @@ margin-bottom: 2vw;
 
 #headertwo{
   margin-bottom:0;
+  display: flex;
 }
+
+#projnav{
+  display: inline-flex;
+  margin: 0 auto;
+  margin-top: -.5vw;
+}
+
+.projpoint {
+  width: 1.1vw;
+  height: 1.1vw;
+  background-color: var(--color);
+  cursor: pointer;
+  display: inline-flex;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  transition: .5s;
+}
+
+.projpoint:hover{
+  filter: blur(2px);
+}
+
 .box{
   padding:0;
   padding-top: 5vw;
@@ -415,6 +447,7 @@ margin-bottom: 2vw;
   cursor: pointer;
   padding: 0;
   margin: 0;
+  text-decoration: underline;
 }
 
 .caption{
@@ -531,6 +564,7 @@ margin-bottom: 2vw;
   z-index: 1000; 
   font-size: 1.9vw;
   margin-bottom: 0;
+  padding-bottom: .5vw;
   transition: .5s;
 }
 
@@ -638,6 +672,7 @@ video{
   margin-top: 1vw;
   margin-bottom: 1vw;
   transition: .5s;
+  text-decoration: underline;
 }
 
 .close:hover{

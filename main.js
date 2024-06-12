@@ -78,6 +78,71 @@ document.addEventListener("DOMContentLoaded", () => {
                 showImage(currentIndex);
             });
 
+    const projpoints = document.querySelectorAll('.projpoint');
+    const boxes = document.querySelectorAll('.box');
+
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger callback when 50% of the section is visible
+    };
+
+    // Create the intersection observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetId = entry.target.id;
+                projpoints.forEach(projpoint => {
+                    if (projpoint.dataset.target === targetId) {
+                        projpoint.style.width = '1.1vw';
+                        projpoint.style.height = '1.1vw';
+                        projpoint.style.marginTop = '.9vw';
+                    } else {
+                        projpoint.style.width = '0.8vw';
+                        projpoint.style.height = '0.8vw';
+                        projpoint.style.marginTop = '1.1vw';
+                    }
+                });
+            }
+        });
+    }, options);
+
+    // Observe each project section
+    boxes.forEach(box => {
+        observer.observe(box);
+    });
+
+    // Add click event to each .projpoint to scroll to the corresponding section
+    projpoints.forEach(projpoint => {
+        projpoint.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            const targetId = projpoint.dataset.target;
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    window.addEventListener('scroll', function() {
+        const headerOffset = document.querySelector('#projects').offsetTop;
+        const header = document.querySelector('#headertwo');
+        const allprojects = document.querySelector('#allprojects');
+
+        if (window.scrollY > headerOffset) {
+            header.classList.add('fixed');
+            allprojects.style.paddingTop = "8vw";
+        } else {
+            header.classList.remove('fixed');
+            allprojects.style.padding = "1% 1.5% 1% 1.5%";
+        }
+
+        // Prevent scrolling above the header
+        if (window.scrollY < headerOffset) {
+            window.scrollTo(0, headerOffset);
+        }
+    });
+
 });
 
 function drawPoint(row, col, container, text, id, url) {
@@ -85,7 +150,7 @@ function drawPoint(row, col, container, text, id, url) {
     const anchor = document.createElement('a');
     anchor.href = url;
     anchor.style.position = 'absolute';
-    anchor.style.left = `${col * 0.8 + 0.2}vw`; // Adjusting based on the provided code
+    anchor.style.left = `${col * 0.8 + 0.22}vw`; // Adjusting based on the provided code
     anchor.style.top = `${row * 0.8 + 0.2}vw`; // Adjusting based on the provided code
 
     anchor.addEventListener('click', (event) => {
@@ -135,6 +200,7 @@ const allnav = document.getElementById('allnav');
 const graph = document.getElementById('graph');
 const header = document.getElementById('headertwo');
 var allprojects = document.getElementById('allprojects');
+const projpoints = document.querySelectorAll('.projpoint')
 
 const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'problem solver'];
 const skillSpans = document.querySelectorAll('.skills');
@@ -260,14 +326,14 @@ document.querySelectorAll('.box').forEach(box => {
                 // adjustProjectsSectionHeight();
             }, 500);
 
-            expandButton.textContent = '[CLOSE]';
+            expandButton.textContent = '[HIDE DETAILS]';
         } else {
             info.style.opacity = "0";
             info.style.filter = "blur(7px)";
             setTimeout(function() {
                 info.style.display = "none";
             }, 500);
-            expandButton.textContent = '[DETAILS]';
+            expandButton.textContent = '[SHOW DETAILS]';
             // adjustProjectsSectionHeight();
         }
         setTimeout(() => {
@@ -293,7 +359,7 @@ document.querySelectorAll('.box').forEach(box => {
                 info.style.display = "none";
                 // adjustProjectsSectionHeight();
             }, 500);
-            expandButton.textContent = '[DETAILS]';
+            expandButton.textContent = '[SHOW DETAILS]';
             box.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         setTimeout(() => {
@@ -303,22 +369,32 @@ document.querySelectorAll('.box').forEach(box => {
 });
 
 
-window.addEventListener('scroll', function() {
-    var headerOffset = projects.offsetTop;
+// window.addEventListener('scroll', function() {
+//     var headerOffset = projects.offsetTop;
 
-    if (window.scrollY > headerOffset) {
-        header.classList.add('fixed');
-        allprojects.style.paddingTop = "8vw";
-    } else {
-        header.classList.remove('fixed');
-        allprojects.style.padding = "1% 1.5% 1% 1.5%";
-    }
+//     if (window.scrollY > headerOffset) {
+//         header.classList.add('fixed');
+//         allprojects.style.paddingTop = "8vw";
+//         projpoints.forEach(projpoint => {
+//         projpoint.style.width = ".95vw";  
+//         projpoint.style.height = ".95vw"; 
+//         projpoint.style.marginTop = "1.2vw"; 
+//         });
+//     } else {
+//         header.classList.remove('fixed');
+//         allprojects.style.padding = "1% 1.5% 1% 1.5%";
+//          projpoints.forEach(projpoint => {
+//         projpoint.style.width = "1.1vw";  
+//         projpoint.style.height = "1.1vw";
+//         projpoint.style.marginTop = "0vw";
+//         });
+//     }
 
-    // Prevent scrolling above the header
-    if (window.scrollY < headerOffset) {
-        window.scrollTo(0, headerOffset);
-    }
-});
+//     // Prevent scrolling above the header
+//     if (window.scrollY < headerOffset) {
+//         window.scrollTo(0, headerOffset);
+//     }
+// });
 
 // function adjustProjectsSectionHeight() {
 //     const projectsSection = document.getElementById('projects-section');
