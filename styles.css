@@ -6,7 +6,7 @@
   }
 
   :root {
-    --color: rgb(0, 170, 223);
+    --color: #00aadf;
     --background: rgb(197, 197, 197);
     --black: #1f1f1f;
   }
@@ -209,7 +209,6 @@ text-transform: uppercase;
     border: .1px dashed #1F80A6;
     box-sizing: border-box;
 }
-
 .point {
     position: absolute;
     width: 1.1vw;
@@ -235,56 +234,56 @@ text-transform: uppercase;
 
 #pointA-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 3s;
 }
 
 #pointB-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 7s;
 }
 
 
 #pointC-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 5.5s;
 }
 
 #pointD-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 4.5s;
 }
 
 #pointE-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 4s;
 }
 
 #pointF-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 3.5s;
 }
 
 #pointG-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 6.5s;
 }
 
 #pointH-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 5s;
 }
 
 #pointI-point{
   opacity:0;
-  animation: opacity forwards 1s ease-in;
+  animation: opacityblur forwards 1s ease-in;
   animation-delay: 6s;
 }
 
@@ -737,6 +736,10 @@ video{
   filter:blur(7px);
 }
 
+/* .count{
+  background-color: var(--color)!important;
+  color: var(--black)!important;
+} */
 
 @keyframes opacity {
   from {
@@ -746,6 +749,18 @@ video{
     opacity: 1;
   }
 }
+
+@keyframes opacityblur {
+  from {
+    filter: blur(4px);
+    opacity: 0;
+  }
+  to {
+    filter: default;
+    opacity: 1;
+  }
+}
+
 
 @media only screen and (max-height: 800px){
   #home-content{
