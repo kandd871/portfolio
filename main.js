@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gridContainer = document.getElementById('graph');
+    const countElement = document.getElementById('count');
+    let count = 0;
+    const maxCount = 9;
+    const interval = 500; // 0.5 seconds
+
+    function incrementCount() {
+      if (count < maxCount) {
+        count++;
+        countElement.textContent = count;
+        setTimeout(incrementCount, interval);
+      }
+    }
+    setTimeout(() => {
+        incrementCount();
+    }, 3500);
 
     // Create the 52x96 grid
     for (let row = 0; row < 52; row++) {
