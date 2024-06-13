@@ -354,7 +354,7 @@ width: 100vw;
 /* min-height: 100vh; */
 display: block;
 background-color: var(--background);
-margin-bottom: 2vw;
+margin-bottom: 3vw;
 }
 
 #projects{
@@ -499,7 +499,7 @@ margin-bottom: 2vw;
 
 .copyright{
   margin-top: 10vw;
-  margin-bottom: 1vw;
+  margin-bottom:0vw;
   font-size: .8vw;
   margin-left: 1.5vw; 
   text-transform: uppercase;
