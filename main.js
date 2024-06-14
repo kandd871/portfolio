@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createGrid();
     setTimeout(() => {
         incrementCount();
-    }, 3500);
+    }, 4000);
 
     window.addEventListener('resize', handleResize);
 

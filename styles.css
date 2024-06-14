@@ -236,56 +236,56 @@ margin-top: 3vw;
 #pointA-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 3s;
+  animation-delay: 3.5s;
 }
 
 #pointB-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 7s;
+  animation-delay: 7.5s;
 }
 
 
 #pointC-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 5.5s;
+  animation-delay: 6s;
 }
 
 #pointD-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 4.5s;
+  animation-delay: 5s;
 }
 
 #pointE-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 4s;
+  animation-delay: 4.5s;
 }
 
 #pointF-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 3.5s;
+  animation-delay: 4s;
 }
 
 #pointG-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 6.5s;
+  animation-delay: 7s;
 }
 
 #pointH-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 5s;
+  animation-delay: 5.5s;
 }
 
 #pointI-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 6s;
+  animation-delay: 6.5s;
 }
 
 .arrows{
