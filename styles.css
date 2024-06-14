@@ -13,7 +13,7 @@
   
   html{
     box-sizing: border-box;
-    /* overflow-x: hidden;  */
+    overflow-x: hidden; 
     height: auto;
     /* cursor: url('cursor.svg') 5 5,auto; */
   }
@@ -914,7 +914,7 @@ video{
     }
   
     #personal{
-      bottom: 0vw;
+      bottom: -2vw;
       width: 100vw;
     }
   
@@ -954,7 +954,7 @@ video{
     }
   
     #personal{
-      bottom: 7.5vw;
+      bottom: 10vw;
     }
 
     .key {
@@ -1133,9 +1133,5 @@ video{
 
 .linkcontainer{
   margin-top: 2vw;
-}
-
-body{
-  overflow-y:auto;
 }
 }
