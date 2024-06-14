@@ -969,7 +969,7 @@ video{
 
   .point-text{
     font-size: 2vw;
-    margin-top: 2.7vw;
+    margin-top: 3vw;
     width: 100%;
     justify-content: center;
     text-align: center;
@@ -1010,13 +1010,14 @@ video{
   }
 
   .titlepoint{
-    width: 3vw;
-    height: 3vw;
+    width: 3.5vw;
+    height: 3.5vw;
     margin-right: 1vw;
     display: block;
   }
 
   .title{
+    margin-top: 1vw;
     font-size: 6.75vw;
     display: block;
     text-align: left;
