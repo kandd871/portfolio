@@ -40,7 +40,7 @@
     font-family: 'PP Rader', sans-serif;
     height: 100vh;
     background-color: var(--background);
-    overflow-y: hidden!important;
+    /* overflow-y: hidden!important; */
   }
   #home{
     transition: 1s;
@@ -380,9 +380,10 @@ margin-top: 3vw;
 z-index: 50;
 width: 100vw;
 /* min-height: 100vh; */
-display: block;
+display:none;
 background-color: var(--background);
 margin-bottom: 3vw;
+padding-bottom: 1vw;
 }
 
 #projects{

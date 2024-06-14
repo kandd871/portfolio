@@ -401,16 +401,18 @@ document.body.addEventListener('click', function(event) {
 
 nav.addEventListener('click', function(){
     home.style.height = '0';
-    document.body.style.overflow = "scroll";
+    // document.body.style.overflow = "scroll";
     document.body.style.height = "auto";
     home.style.filter = "blur(7px)";
+    projectsSection.style.display = 'block';
     projectsSection.style.animation = 'opacity 1s forwards ease-in'
 })
 
 allnav.addEventListener('click', function(){
     home.style.height = '100vh';
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
+    projectsSection.style.display = 'none';
     home.style.filter = "blur(7px)";
         setTimeout(function() {
             home.style.filter = "blur(0px)";
