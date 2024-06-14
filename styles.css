@@ -524,6 +524,7 @@ margin-bottom: 3vw;
   font-size: .8vw;
   margin-left: 1.5vw; 
   text-transform: uppercase;
+  text-align: center;
 }
 
 .info{
@@ -833,7 +834,7 @@ video{
     border-bottom: 1px dotted var(--color);
     top: 1vw;
     width: 100vw;
-    padding-top:3.5vw;
+    padding-top: 5vw;
     padding-bottom: 4.5vw;
   }
 
@@ -843,13 +844,13 @@ video{
    position: absolute;
    bottom:3.5vw;
    width: 100vw;
-   padding-top:3.5vw;
-    padding-bottom: 3vw; 
+   padding-top:2.5vw;
+    padding-bottom: 15vw; 
   }
 
   #home-content{
     position: absolute;
-    top: 50vh;
+    top: 46vh;
     left: 50vw;
     transform: translate(-50%, -50%);
   }
@@ -966,7 +967,7 @@ video{
   }
 
   #headertwo{
-    padding-top: 3vw;
+    padding-top: 6vw;
     padding-left:.75vw;
     padding-right:.75vw;
     font-size: 7vw;
@@ -980,8 +981,9 @@ video{
   
   #allprojects{
     padding-top: 10vw;
-    padding-bottom: 10vw;
+    padding-bottom: 8vw;
   }
+
 
   .box{
     margin-top: 10vw;
@@ -1120,5 +1122,11 @@ video{
 
 .linkcontainer{
   margin-top: 2.5vw;
+}
+
+.grid-line {
+  width: 1.35vw;
+  height: 1.35vw;
+  border: .5px dashed #1F80A6;
 }
 }
