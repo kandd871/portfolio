@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     
         function createGrid() {
+            gridContainer.innerHTML = ''; // Clear previous grid
             for (let row = 0; row < rows; row++) {
             for (let col = 0; col < cols; col++) {
                 const cell = document.createElement('div');
