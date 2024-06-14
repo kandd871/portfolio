@@ -116,8 +116,14 @@ document.addEventListener("DOMContentLoaded", () => {
         createGrid();
     }
 
+    // Initialize the grid on page load
+    setPointValues();
+    createGrid();
+    setTimeout(() => {
+        incrementCount();
+    }, 3500);
+
     window.addEventListener('resize', handleResize);
-    window.addEventListener('load', handleResize);
 
     function incrementCount() {
       if (count < maxCount) {
@@ -126,9 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(incrementCount, interval);
       }
     }
-    setTimeout(() => {
-        incrementCount();
-    }, 3800);
+
 
     
     function drawPoint(row, col, container, text, id, url) {
