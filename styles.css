@@ -855,7 +855,7 @@ video{
 
   #home-content{
     position: absolute;
-    top: 44.5vh;
+    top: 45vh;
     left: 50vw;
     transform: translate(-50%, -50%);
   }
@@ -914,7 +914,7 @@ video{
     }
   
     #personal{
-      bottom: -1vw;
+      bottom: -2vw;
       width: 100vw;
     }
   
@@ -962,7 +962,7 @@ video{
       top: 17vw;
       left: 50%;
       transform: translateX(-50%);
-      width: 94vw;
+      width: 95vw;
       font-size: 2vw;
       margin: 0.5% auto;
   }
