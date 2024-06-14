@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let count = 0;
     const maxCount = 9;
     const interval = 500; // 0.5 seconds
-    let rows, cols;
+    let rows = 52;
+    let cols = 96;
     let col1 = 89; let row1 = 1;
     let col2 = 84; let row2 = 4;
     let col3 = 80; let row3 = 8;
