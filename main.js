@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setTimeout(() => {
         incrementCount();
-    }, 3500);
+    }, 3800);
 
     
     function drawPoint(row, col, container, text, id, url) {

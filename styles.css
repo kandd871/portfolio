@@ -193,8 +193,8 @@ margin-top: 3vw;
     display: grid;
     position: relative;
     margin: 0 auto;
-    /* grid-template-columns: repeat(96, .8vw); 
-    grid-template-rows: repeat(52, .8vw); */
+    grid-template-columns: repeat(96, .8vw); 
+    grid-template-rows: repeat(52, .8vw);
     gap: 0px; /* Space between grid items */
     margin-top: .5vw;
     opacity: 0;
@@ -860,8 +860,8 @@ video{
     display: grid;
     position: relative;
     margin: 0 auto;
-    /* grid-template-rows: repeat(96, 1.35vw);
-    grid-template-columns: repeat(52, 1.35vw); */
+    grid-template-rows: repeat(96, 1.35vw);
+    grid-template-columns: repeat(52, 1.35vw);
     gap: 0px; /* Space between grid items */
     margin-top: 0vw;
     opacity: 0;
