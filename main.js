@@ -39,23 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
             col9 = 92; row9 = 47;
             const width = window.innerWidth;
             if (width < 700) {
-            rows= 96;
-            cols = 52;
+            rows= 68;
+            cols = 42;
 
-            gridSize = 1.35;
+            gridSize = 1.65;
 
-            col1 = 47; row1 = 1;
-            col2 = 44; row2 = 6;
-            col3 = 43; row3 = 11;
+            col1 = 37; row1 = 1;
+            col2 = 34; row2 = 6;
+            col3 = 29; row3 = 11;
 
-            col4 = 9; row4 = 34;
-            col5 = 1; row5 = 41;
+            col4 = 7; row4 = 27;
+            col5 = 1; row5 = 30;
 
-            col6 = 13; row6 = 72;
-            col7 = 39; row7 = 72;
+            col6 = 11; row6 = 50;
+            col7 = 30; row7 = 50;
 
-            col8 = 4; row8 = 92;
-            col9 = 49; row9 = 86;
+            col8 = 3; row8 = 65;
+            col9 = 38; row9 = 60;
             }
         }
     

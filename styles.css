@@ -231,6 +231,10 @@ margin-top: 3vw;
   transition: 1s;
   white-space: nowrap; /* Prevent text from wrapping */
   background-color: rgba(31, 31, 31, 0.7);
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin-left: 0.3vw;
 }
 
 #pointA-point{
@@ -335,7 +339,7 @@ margin-top: 3vw;
       height: 0;
   }
   to {
-      height: 136.35vw;
+      height: 118.6vw;
   }
 }
 
@@ -834,8 +838,8 @@ video{
     border-bottom: 1px dotted var(--color);
     top: 1vw;
     width: 100vw;
-    padding-top: 5vw;
-    padding-bottom: 4.5vw;
+    padding-top: 1.5vw;
+    padding-bottom: 3.5vw;
   }
 
   #nav{
@@ -844,8 +848,8 @@ video{
    position: absolute;
    bottom:3.5vw;
    width: 100vw;
-   padding-top:2.5vw;
-    padding-bottom: 15vw; 
+   padding-top:3vw;
+  padding-bottom: 18vw; 
   }
 
   #home-content{
@@ -856,13 +860,13 @@ video{
   }
 
   #graph{
-    width: 70.2vw;
-    height:  129.6vw;
+    width: 69.3vw;
+    height:  112.2vw;
     display: grid;
     position: relative;
     margin: 0 auto;
-    grid-template-rows: repeat(96, 1.35vw);
-    grid-template-columns: repeat(52, 1.35vw);
+    grid-template-rows: repeat(68, 1.65vw);
+    grid-template-columns: repeat(42, 1.65vw);
     gap: 0px; /* Space between grid items */
     margin-top: 0vw;
     opacity: 0;
@@ -870,18 +874,19 @@ video{
 }
 
     .grid-line {
-      width: 1.35vw;
-      height: 1.35vw;
+      width: 1.65vw;
+      height: 1.65vw;
+      border: .5px solid #1F80A6;
     }
     .point {
-      width: 3vw;
-      height: 3vw;
+      width: 3.75vw;
+      height: 3.75vw;
     }
 
     .xaxis{
       font-size: 3vw;
       width: 100vw;
-      top:64.8vw;
+      top:58.75vw;
     }
     
     #print{
@@ -936,7 +941,7 @@ video{
     }
 
     #arrow2{
-      transform: translateY(58vw);
+      transform: translateY(52.2vw);
     }
 
     #arrow1{
@@ -948,12 +953,12 @@ video{
     }
   
     #personal{
-      bottom: -8vw;
+      bottom: 10vw;
     }
 
     .key {
       position: absolute;
-      top: 20vw;
+      top: 17vw;
       left: 50%;
       transform: translateX(-50%);
       width: 94vw;
@@ -963,7 +968,11 @@ video{
 
   .point-text{
     font-size: 2vw;
-    margin-top: 1.5vw;
+    margin-top: 2vw;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-left: 1.55vw;
   }
 
   #headertwo{
@@ -1032,7 +1041,7 @@ video{
   .subcaption{
     margin-top: 0vw;
     margin-bottom: 2vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 
   .twocol, .threecol, .threecol2, .threecol3, .twocol2, .twocol3, .twocol4, .sixcol, video{
@@ -1121,12 +1130,6 @@ video{
 }
 
 .linkcontainer{
-  margin-top: 2.5vw;
-}
-
-.grid-line {
-  width: 1.35vw;
-  height: 1.35vw;
-  border: .5px dashed #1F80A6;
+  margin-top: 2vw;
 }
 }
