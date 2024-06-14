@@ -108,15 +108,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
              // Update grid template rows and columns based on current rows and cols
-            gridContainer.style.gridTemplateRows = `repeat(${rows}, ${gridSize}vw)`;
-            gridContainer.style.gridTemplateColumns = `repeat(${cols}, ${gridSize}vw)`;
+            // gridContainer.style.gridTemplateRows = `repeat(${rows}, ${gridSize}vw)`;
+            // gridContainer.style.gridTemplateColumns = `repeat(${cols}, ${gridSize}vw)`;
     }
 
     function handleResize() {
-        setPointValues();
-        createGrid();
+        const width = window.innerWidth;
+        if (width < 700) {
+            setPointValues();
+            createGrid();
+        }
     }
-
     // Initialize the grid on page load
     setPointValues();
     createGrid();
