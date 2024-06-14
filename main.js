@@ -5,8 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const maxCount = 9;
     const interval = 500; // 0.5 seconds
     let rows, cols;
-    let col1, row1, col2, row2, col3, row3, col4, row4, col5, row5, col6, row6, col7, row7, col8, row8, col9, row9;
-    let gridSize;
+    let col1 = 89; let row1 = 1;
+    let col2 = 84; let row2 = 4;
+    let col3 = 80; let row3 = 8;
+    let col4 = 9; let row4 = 18;
+    let col5 = 2; let row5 = 22;
+
+    let col6 = 24; let row6 = 36;
+    let col7 = 72; let row7 = 36;
+    
+    let col8 = 6; let row8 = 49;
+    let col9 = 92; let row9 = 47;   
+
+    let gridSize = .8;
 
         function setPointValues() {
             rows= 52;
