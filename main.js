@@ -4,6 +4,109 @@ document.addEventListener("DOMContentLoaded", () => {
     let count = 0;
     const maxCount = 9;
     const interval = 500; // 0.5 seconds
+    let rows, cols;
+    let col1, row1, col2, row2, col3, row3, col4, row4, col5, row5, col6, row6, col7, row7, col8, row8, col9, row9;
+    let gridSize;
+
+        function setPointValues() {
+            rows= 52;
+            cols = 96;
+
+            gridSize = .8;
+
+            col1 = 89; row1 = 1;
+            col2 = 84; row2 = 4;
+            col3 = 80; row3 = 8;
+            col4 = 9; row4 = 18;
+            col5 = 2; row5 = 22;
+
+            col6 = 24; row6 = 36;
+            col7 = 72; row7 = 36;
+            
+            col8 = 6; row8 = 49;
+            col9 = 92; row9 = 47;
+            const width = window.innerWidth;
+            if (width < 700) {
+            rows= 96;
+            cols = 52;
+
+            gridSize = 1.35;
+
+            col1 = 47; row1 = 1;
+            col2 = 44; row2 = 6;
+            col3 = 43; row3 = 11;
+
+            col4 = 9; row4 = 34;
+            col5 = 1; row5 = 41;
+
+            col6 = 13; row6 = 72;
+            col7 = 39; row7 = 72;
+
+            col8 = 4; row8 = 92;
+            col9 = 49; row9 = 86;
+            }
+        }
+    
+        function createGrid() {
+            gridContainer.innerHTML = ''; // Clear previous grid
+            for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+                const cell = document.createElement('div');
+                cell.className = 'grid-line';
+                cell.dataset.row = row;
+                cell.dataset.col = col;
+                gridContainer.appendChild(cell);
+    
+                // Draw points at specific positions with custom text and unique IDs
+                if (col === col1 && row === row1) {
+                    drawPoint(row, col, gridContainer, '(BLUMENHAUS LOGO (RE)DESIGN)', 'pointA', '#blumenhaus');
+                }
+    
+                if (col === col2 && row === row2) {
+                    drawPoint(row, col, gridContainer, '(CHAMBERLAIN COFFEE DATA-DRIVEN PACKAGING)', 'pointB', '#chamberlain');
+                }
+    
+                if (col === col3 && row === row3) {
+                    drawPoint(row, col, gridContainer, '(THE MET COMMUNITY DRIVEN DESIGN)', 'pointC', '#weaving');
+                }
+    
+                if (col === col4 && row === row4) {
+                    drawPoint(row, col, gridContainer, '(MUTATED ODYSSEY)', 'pointD', '#mutated-odyssey');
+                }
+    
+                if (col === col5 && row === row5) {
+                    drawPoint(row, col, gridContainer, '(AIGA’S FIRST THINGS FIRST MANIFESTO)', 'pointE', '#first-things-first');
+                }
+    
+                if (col === col6 && row === row6) {
+                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 1)', 'pointF', '#macbook');
+                }
+    
+                if (col === col7 && row === row7) {
+                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 2)', 'pointG', '#touch-some-grass');
+                }
+    
+                if (col === col8 && row === row8) {
+                    drawPoint(row, col, gridContainer, '(HOME BOOK)', 'pointH', '#home-book');
+                }
+    
+                if (col === col9 && row === row9) {
+                    drawPoint(row, col, gridContainer, '(STARDEW TYPEFACE)', 'pointI', '#stardew');
+                }
+            }
+        }
+             // Update grid template rows and columns based on current rows and cols
+            gridContainer.style.gridTemplateRows = `repeat(${rows}, ${gridSize}vw)`;
+            gridContainer.style.gridTemplateColumns = `repeat(${cols}, ${gridSize}vw)`;
+    }
+
+    function handleResize() {
+        setPointValues();
+        createGrid();
+    }
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
 
     function incrementCount() {
       if (count < maxCount) {
@@ -16,54 +119,50 @@ document.addEventListener("DOMContentLoaded", () => {
         incrementCount();
     }, 3500);
 
-    // Create the 52x96 grid
-    for (let row = 0; row < 52; row++) {
-        for (let col = 0; col < 96; col++) {
-            const cell = document.createElement('div');
-            cell.className = 'grid-line';
-            cell.dataset.row = row;
-            cell.dataset.col = col;
-            gridContainer.appendChild(cell);
-
-            // Draw points at specific positions with custom text and unique IDs
-            if (col === 89 && row === 1) {
-                drawPoint(row, col, gridContainer, '(BLUMENHAUS LOGO (RE)DESIGN)', 'pointA', '#blumenhaus');
-            }
-
-            if (col === 84 && row === 4) {
-                drawPoint(row, col, gridContainer, '(CHAMBERLAIN COFFEE DATA-DRIVEN PACKAGING)', 'pointB', '#chamberlain');
-            }
-
-            if (col === 80 && row === 8) {
-                drawPoint(row, col, gridContainer, '(THE MET COMMUNITY DRIVEN DESIGN)', 'pointC', '#weaving');
-            }
-
-            if (col === 9 && row === 18) {
-                drawPoint(row, col, gridContainer, '(MUTATED ODYSSEY)', 'pointD', '#mutated-odyssey');
-            }
-
-            if (col === 2 && row === 22) {
-                drawPoint(row, col, gridContainer, '(AIGA’S FIRST THINGS FIRST MANIFESTO)', 'pointE', '#first-things-first');
-            }
-
-            if (col === 24 && row === 36) {
-                drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 1)', 'pointF', '#macbook');
-            }
-
-            if (col === 72 && row === 36) {
-                drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 2)', 'pointG', '#touch-some-grass');
-            }
-
-            if (col === 6 && row === 49) {
-                drawPoint(row, col, gridContainer, '(HOME BOOK)', 'pointH', '#home-book');
-            }
-
-            if (col === 92 && row === 47) {
-                drawPoint(row, col, gridContainer, '(STARDEW TYPEFACE)', 'pointI', '#stardew');
-            }
-        }
+    
+    function drawPoint(row, col, container, text, id, url) {
+        // Create the anchor tag
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.style.position = 'absolute';
+        anchor.style.left = `${col * gridSize + gridSize/4 + gridSize/39}vw`; // Adjusting based on the provided code
+        anchor.style.top = `${row * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
+    
+        anchor.addEventListener('click', (event) => {
+            document.body.style.overflow = "scroll";
+            document.body.style.height = "auto";
+            allprojects.style.filter = "blur(7px)";
+            home.style.filter = "blur(7px)";
+            setTimeout(function() {
+                allprojects.style.filter = "blur(0px)";
+            }, 500);
+            // home.style.display = "none";
+        });
+        // Create the point
+        const point = document.createElement('div');
+        point.className = 'point';
+        point.id = `${id}-point`;
+        point.style.zIndex = '2';
+        anchor.appendChild(point);
+    
+        // Create the text below the point
+        const pointText = document.createElement('div');
+        pointText.className = 'point-text';
+        pointText.id = `${id}-text`;
+        pointText.innerText = text;
+        pointText.style.top = '1.0vw'; // Slightly adjusted to ensure the text appears below the point
+        pointText.style.zIndex = '1';
+        anchor.appendChild(pointText);
+    
+        container.appendChild(anchor);
+    
+        // Add hover event to make text visible permanently
+        point.addEventListener('mouseover', () => {
+            pointText.style.visibility = 'visible';
+            pointText.style.opacity = '1';
+            point.style.filter = 'blur(2px)';
+        });
     }
-
 
     const carousel = document.querySelector('.carousel');
     const images = carousel.querySelectorAll('img');
@@ -179,50 +278,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-function drawPoint(row, col, container, text, id, url) {
-    // Create the anchor tag
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.style.position = 'absolute';
-    anchor.style.left = `${col * 0.8 + 0.22}vw`; // Adjusting based on the provided code
-    anchor.style.top = `${row * 0.8 + 0.2}vw`; // Adjusting based on the provided code
-
-    anchor.addEventListener('click', (event) => {
-        document.body.style.overflow = "scroll";
-        document.body.style.height = "auto";
-        allprojects.style.filter = "blur(7px)";
-        home.style.filter = "blur(7px)";
-        setTimeout(function() {
-            allprojects.style.filter = "blur(0px)";
-        }, 500);
-        // home.style.display = "none";
-    });
-    // Create the point
-    const point = document.createElement('div');
-    point.className = 'point';
-    point.id = `${id}-point`;
-    point.style.zIndex = '2';
-    anchor.appendChild(point);
-
-    // Create the text below the point
-    const pointText = document.createElement('div');
-    pointText.className = 'point-text';
-    pointText.id = `${id}-text`;
-    pointText.innerText = text;
-    pointText.style.top = '1.0vw'; // Slightly adjusted to ensure the text appears below the point
-    pointText.style.zIndex = '1';
-    anchor.appendChild(pointText);
-
-    container.appendChild(anchor);
-
-    // Add hover event to make text visible permanently
-    point.addEventListener('mouseover', () => {
-        pointText.style.visibility = 'visible';
-        pointText.style.opacity = '1';
-        point.style.filter = 'blur(2px)';
-    });
-}
 
 const about = document.getElementById('about');
 const about2 = document.getElementById('about2');
@@ -494,3 +549,4 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', adjustProjectsSectionHeight);
+

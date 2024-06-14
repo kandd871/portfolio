@@ -98,6 +98,7 @@
 display: flex;
 justify-content: space-between;
 text-transform: uppercase;
+margin-top: 3vw;
 }
 
 #linkcontainer a{
@@ -164,7 +165,6 @@ text-transform: uppercase;
     position: absolute;
     justify-content: center;
     text-align: center;
-    background-color: black;
     height: 48.2vw;
   }
 
@@ -193,8 +193,8 @@ text-transform: uppercase;
     display: grid;
     position: relative;
     margin: 0 auto;
-    grid-template-columns: repeat(96, .8vw); /* 92 columns, each 20px wide */
-    grid-template-rows: repeat(52, .8vw); /* 50 rows, each 20px high */
+    /* grid-template-columns: repeat(96, .8vw); 
+    grid-template-rows: repeat(52, .8vw); */
     gap: 0px; /* Space between grid items */
     margin-top: .5vw;
     opacity: 0;
@@ -296,7 +296,7 @@ text-transform: uppercase;
 #arrow1{
     position: absolute;
     z-index: 15;
-    transform: translateY(-.9vw);
+    transform: translateY(-1vw);
 }
 
 #arrow2{
@@ -310,6 +310,17 @@ text-transform: uppercase;
     animation: growHeight 2s forwards;
     animation-delay: 1s;
 }
+
+#two{
+  width: 0vw;
+  animation: growWidth 2s forwards;
+  animation-delay: 1s;
+}
+
+#one2, #two2{
+  display: none;
+}
+
 @keyframes growHeight {
   from {
       height: 0;
@@ -319,11 +330,15 @@ text-transform: uppercase;
   }
 }
 
-#two{
-  width: 0vw;
-  animation: growWidth 2s forwards;
-  animation-delay: 1s;
+@keyframes growHeight2 {
+  from {
+      height: 0;
+  }
+  to {
+      height: 136.35vw;
+  }
 }
+
 
 @keyframes growWidth {
   from {
@@ -331,6 +346,15 @@ text-transform: uppercase;
   }
   to {
       width: 79.8vw;
+  }
+}
+
+@keyframes growWidth2 {
+  from {
+      width: 0;
+  }
+  to {
+      width: 77vw;
   }
 }
 
@@ -410,10 +434,6 @@ margin-bottom: 3vw;
   transition: .5s;
 }
 
-.projpoint:hover{
-
-}
-
 .projpointblur {
   filter: blur(3.5px);
 }
@@ -446,6 +466,7 @@ margin-bottom: 3vw;
   display: inline-flex;
   width: 1.1vw;
   height: 1.1vw;
+  margin-right: .5vw;
   background-color: var(--color);
   cursor: pointer;
   /* transform: translate(-50%, -50%); */
@@ -695,6 +716,7 @@ margin-bottom: 3vw;
 }
 
 video{
+  margin-top: 1.5vw;
   width: 72vw;
   height: auto;
 }
@@ -774,7 +796,7 @@ video{
 }
 
 
-@media only screen and (max-height: 800px){
+@media only screen and (max-height: 500px){
   #home-content{
     transform: scale(.9);
     margin-top: -2.5vw;
@@ -783,4 +805,320 @@ video{
   .key{
     margin-top: 0;
   }
+}
+
+@media only screen and (max-width: 700px){
+
+  .header{
+    font-size: 7.75vw;
+    /* line-height:1;
+    justify-content: space-between;
+    padding: 0.4% 1% 1% 1%;
+    margin-bottom: 2.2vw; */
+    border-bottom: none;
+    padding:0;
+  }
+
+  #headerone{
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    text-align: center;
+  }
+
+  #welcome{
+    display: block;
+    position: absolute;
+    border-bottom: 1px dotted var(--color);
+    top: 1vw;
+    width: 100vw;
+    padding-top:3.5vw;
+    padding-bottom: 4.5vw;
+  }
+
+  #nav{
+   display: block;
+   border-top: 1px dotted var(--color);
+   position: absolute;
+   bottom:3.5vw;
+   width: 100vw;
+   padding-top:3.5vw;
+    padding-bottom: 3vw; 
+  }
+
+  #home-content{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
+
+  #graph{
+    width: 70.2vw;
+    height:  129.6vw;
+    display: grid;
+    position: relative;
+    margin: 0 auto;
+    /* grid-template-rows: repeat(96, 1.35vw);
+    grid-template-columns: repeat(52, 1.35vw); */
+    gap: 0px; /* Space between grid items */
+    margin-top: 0vw;
+    opacity: 0;
+    border: 1px solid var(--color);
+}
+
+    .grid-line {
+      width: 1.35vw;
+      height: 1.35vw;
+    }
+    .point {
+      width: 3vw;
+      height: 3vw;
+    }
+
+    .xaxis{
+      font-size: 3vw;
+      width: 100vw;
+      top:64.8vw;
+    }
+    
+    #print{
+      width: 11%;
+      margin-right: 0 auto;
+    }
+  
+    #digital{
+      width: 11%;
+      margin-left: auto;
+    }
+  
+    .yaxis{
+      font-size: 3vw;
+      justify-content: center;
+      text-align: center;
+      height: 135vw;
+      width: 100vw;
+    }
+  
+    #branding{
+      width: 100vw;
+      top:-1.1vw;
+    }
+  
+    #personal{
+      bottom: 0vw;
+      width: 100vw;
+    }
+  
+    .label{
+        padding-left: .1vw;
+        padding-right: .1vw;
+      }
+    
+    #one, #two{
+      display: none;
+    }
+
+    #one2{
+      height:0;
+      display: block;
+      animation: growHeight2 2s forwards;
+      animation-delay: 1s;
+    }
+
+    #two2{
+    width:0;
+    display: block;
+    animation: growWidth2 2s forwards;
+    animation-delay: 1s;
+    }
+
+    #arrow2{
+      transform: translateY(58vw);
+    }
+
+    #arrow1{
+      transform: translateY(-3vw);
+    }
+
+    #branding{
+      top:-3.5vw;
+    }
+  
+    #personal{
+      bottom: -8vw;
+    }
+
+    .key {
+      position: absolute;
+      top: 20vw;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 94vw;
+      font-size: 2vw;
+      margin: 0.5% auto;
+  }
+
+  .point-text{
+    font-size: 2vw;
+    margin-top: 1.5vw;
+  }
+
+  #headertwo{
+    padding-top: 3vw;
+    padding-left:.75vw;
+    padding-right:.75vw;
+    font-size: 7vw;
+    padding-bottom: 4vw;
+    border-bottom: 1px dotted var(--color);
+  }
+
+  #projnav{
+    display: none;
+  }
+  
+  #allprojects{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+  }
+
+  .box{
+    margin-top: 10vw;
+    width: 91vw;
+    margin-bottom: 10vw;
+  }
+
+  .first{
+    width: 98%;
+  }
+
+  .fullwidth{
+    width: 85.5vw;
+  }
+
+  .titlepoint{
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1vw;
+    display: block;
+  }
+
+  .title{
+    font-size: 6.75vw;
+    display: block;
+    text-align: left;
+    margin-bottom: 1vw;
+  }
+
+  .subtitle{
+    font-size: 3vw;
+    margin-bottom: 2vw;
+    margin-left:-1vw;
+  }
+
+  .caption{
+    font-size: 3.5vw;
+    margin-bottom: 2vw;
+  }
+
+  .expand, .close{
+    font-size: 3vw;
+    margin-left: 0;  
+  }
+
+  .subcaption{
+    margin-top: 0vw;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+  }
+
+  .twocol, .threecol, .threecol2, .threecol3, .twocol2, .twocol3, .twocol4, .sixcol, video{
+    width: 85.5vw;
+  }
+
+  .shirt img{
+    width: auto;
+    height: 28.5vw;
+  }
+
+  .logo{
+    width: 84vw;
+  }
+
+  .twocol2 img{
+    width: auto;
+    height: 51vw;
+  }
+
+  .twocol3 img{
+    width: auto;
+    height: 23vw;
+  }
+
+  .twocol4 img{
+    width: auto;
+    height: 41vw;
+  }
+  .carousel{
+    height: 41vw;
+  }
+
+  .five img{
+    width: auto;
+    height: 28vw;
+  }
+
+  .six img{
+    width: auto;
+    height: 34.5vw; 
+  }
+
+  .threecol2 img{
+    height: 50vw;
+    width: auto;
+  }
+  .seven img{
+    height: 40vw;
+  }
+  .eight img{
+    height: 30.5vw;
+  }
+  .nine img{
+    height: 43vw;
+  }
+  .ten img{
+    height: 38vw;
+  }
+
+  .copyright{
+    padding-top:16vw;
+    padding-bottom: 5vw;
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  #about, #about2 {
+    width: 85vw;
+    height: 85vw;
+    margin: auto;
+    padding: 2% 2.5% 2% 2.5%;
+}
+
+#drithi{
+  font-size: 7vw;
+}
+
+#main-text, .linkcontainer{
+  font-size: 3.5vw;
+}
+
+.linkpoints {
+  width: 4vw;
+  height: 4vw;
+}
+
+.linkcontainer{
+  margin-top: 2.5vw;
+}
 }
