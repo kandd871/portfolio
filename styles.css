@@ -460,6 +460,17 @@ padding-bottom: 1vw;
   margin-bottom: 3vw;
 }
 
+.box a{
+  transition: .5s;
+}
+
+.box a:hover{
+  background-color: var(--color);
+  color: var(--background);
+  filter: blur(4px);
+  cursor: alias
+}
+
 .title{
   font-size: 2vw; 
   text-transform: uppercase;
