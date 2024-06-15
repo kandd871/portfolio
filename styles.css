@@ -15,6 +15,7 @@
     box-sizing: border-box;
     overflow-x: hidden; 
     height: auto;
+    /* scroll-behavior: smooth; */
     /* cursor: url('cursor.svg') 5 5,auto; */
   }
 

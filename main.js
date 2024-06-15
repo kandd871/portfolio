@@ -147,15 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
         anchor.style.top = `${row * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
     
         anchor.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor click behavior
+        
+            allprojects.style.filter = "blur(7px)";
+            home.style.height = '0';
             document.body.style.overflow = "scroll";
             document.body.style.height = "auto";
-            allprojects.style.filter = "blur(7px)";
             home.style.filter = "blur(7px)";
+            projectsSection.style.animation = 'opacity 1s forwards ease-in';
+        
             setTimeout(function() {
                 allprojects.style.filter = "blur(0px)";
-            }, 500);
-            // home.style.display = "none";
+                
+                // Navigate to the href after 500ms
+                window.location.hash = anchor.getAttribute('href');
+            }, 700);
         });
+        
         // Create the point
         const point = document.createElement('div');
         point.className = 'point';
