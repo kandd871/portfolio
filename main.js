@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Navigate to the href after 500ms
                 window.location.hash = anchor.getAttribute('href');
-            }, 700);
+            }, 500);
         });
         
         // Create the point
