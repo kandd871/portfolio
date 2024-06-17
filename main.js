@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const interval = 500; // 0.5 seconds
     let rows = 52;
     let cols = 96;
-    let col1 = 89; let row1 = 1;
-    let col2 = 84; let row2 = 4;
-    let col3 = 80; let row3 = 8;
+    let col1 = 89; let row1 = 4;
+    let col2 = 84; let row2 = 1;
+    let col3 = 80; let row3 = 7;
     let col4 = 9; let row4 = 18;
     let col5 = 2; let row5 = 22;
 
@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gridSize = .8;
 
-            col1 = 89; row1 = 1;
-            col2 = 84; row2 = 4;
-            col3 = 80; row3 = 8;
+            col1 = 89; row1 = 4;
+            col2 = 84; row2 = 1;
+            col3 = 80; row3 = 7;
             col4 = 9; row4 = 18;
             col5 = 2; row5 = 22;
 
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             gridSize = 1.65;
 
-            col1 = 37; row1 = 1;
-            col2 = 34; row2 = 6;
-            col3 = 29; row3 = 11;
+            col1 = 37; row1 = 6;
+            col2 = 34; row2 = 1;
+            col3 = 29; row3 = 10;
 
             col4 = 7; row4 = 27;
             col5 = 1; row5 = 30;
