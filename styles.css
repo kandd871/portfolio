@@ -546,6 +546,21 @@ padding-bottom: 1vw;
   border-radius: .7vw;
 }
 
+.background{
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.second {
+  position: absolute; /* Position the second image absolutely within the background container */
+  top: 50%; /* Align the top edge of the image to the vertical center */
+  left: 50%; /* Align the left edge of the image to the horizontal center */
+  transform: translate(-50%, -50%); /* Adjust the image position to center it precisely */
+  max-width: 90%; /* Set the maximum width of the second image to 80% of the container */
+}
+
 .copyright{
   margin-top: 10vw;
   margin-bottom:0vw;
