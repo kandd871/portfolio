@@ -553,6 +553,7 @@ function saveInitialProjectsSectionHeight() {
 
 function adjustProjectsSectionHeight() {
     const projectsSection = document.getElementById('projects-section');
+    const copyrightSection = document.querySelector('.copyright');
     let additionalHeight = 0;
 
     document.querySelectorAll('.info').forEach(info => {
@@ -561,7 +562,11 @@ function adjustProjectsSectionHeight() {
         }
     });
 
-    projectsSection.style.height = initialProjectsSectionHeight + additionalHeight + 'px';
+    // Calculate the maximum allowed height based on the position of the .copyright section
+    const maxAllowedHeight = window.innerHeight - copyrightSection.getBoundingClientRect().top + (0.02 * window.innerWidth);
+    
+    // Set the new height, but ensure it does not exceed the max allowed height
+    projectsSection.style.height = Math.min(initialProjectsSectionHeight + additionalHeight, maxAllowedHeight) + 'px';
 }
 
 function resetProjectsSectionHeight() {
@@ -575,4 +580,5 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', adjustProjectsSectionHeight);
+
 
