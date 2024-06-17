@@ -38,7 +38,10 @@
     margin: 0;
     color: var(--color);
     width: 100vw;
-    font-family: 'PP Rader', sans-serif;
+    font-family: 'PP Rader', 'Helvetica', sans-serif;
+    /* font-family: "roc-grotesk", sans-serif;
+    font-weight: 700;
+    font-style: normal; */
     height: 100vh;
     background-color: var(--background);
     overflow-y: hidden!important;
