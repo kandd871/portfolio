@@ -454,14 +454,18 @@ padding-bottom: 1vw;
 
 .box{
   padding:0;
-  padding-top: 5vw;
+  padding-top: 6vw;
   width: 100%;
   margin: 0 auto;
   display: block;
   width:  76.8vw;
   justify-content: center;
-  margin-bottom: 3vw;
+  padding-bottom: 4vw;
 }
+
+/* .box:first-child {
+  padding-top: 10vw;
+} */
 
 .box a{
   transition: .5s;
@@ -563,6 +567,7 @@ padding-bottom: 1vw;
   margin-top:0;
   width: 72vw;
 }
+
 
 #blumenhaus-web{
   width:  72vw;

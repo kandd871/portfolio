@@ -145,24 +145,33 @@ document.addEventListener("DOMContentLoaded", () => {
         anchor.style.position = 'absolute';
         anchor.style.left = `${col * gridSize + gridSize/4 + gridSize/39}vw`; // Adjusting based on the provided code
         anchor.style.top = `${row * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
-    
+
         anchor.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default anchor click behavior
-        
+
             allprojects.style.filter = "blur(7px)";
             home.style.height = '0';
             document.body.style.overflow = "scroll";
             document.body.style.height = "auto";
             home.style.filter = "blur(7px)";
             projectsSection.style.animation = 'opacity 1s forwards ease-in';
-        
+
             setTimeout(function() {
                 allprojects.style.filter = "blur(0px)";
-                
-                // Navigate to the href after 500ms
-                window.location.hash = anchor.getAttribute('href');
+
+                // Check if the href is '#blumenhaus'
+                if (url === '#blumenhaus') {
+                    setTimeout(function() {
+                        // Navigate to the href after 700ms for '#blumenhaus'
+                        window.location.href = anchor.href;
+                    }, 500);
+                } else {
+                    // Navigate to the href after 500ms for other links
+                    window.location.href = anchor.href;
+                }
             }, 500);
         });
+
         
         // Create the point
         const point = document.createElement('div');
