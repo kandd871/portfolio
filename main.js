@@ -327,7 +327,7 @@ const header = document.getElementById('headertwo');
 var allprojects = document.getElementById('allprojects');
 const projpoints = document.querySelectorAll('.projpoint')
 
-const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'problem solver'];
+const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'illustrator', 'problem solver'];
 const skillSpans = document.querySelectorAll('.skills');
 const skillTexts = document.querySelectorAll('.skill-text');
 
@@ -492,66 +492,6 @@ document.querySelectorAll('.box').forEach(box => {
         }, 500);
     });
 });
-
-
-// window.addEventListener('scroll', function() {
-//     var headerOffset = projects.offsetTop;
-
-//     if (window.scrollY > headerOffset) {
-//         header.classList.add('fixed');
-//         allprojects.style.paddingTop = "8vw";
-//         projpoints.forEach(projpoint => {
-//         projpoint.style.width = ".95vw";  
-//         projpoint.style.height = ".95vw"; 
-//         projpoint.style.marginTop = "1.2vw"; 
-//         });
-//     } else {
-//         header.classList.remove('fixed');
-//         allprojects.style.padding = "1% 1.5% 1% 1.5%";
-//          projpoints.forEach(projpoint => {
-//         projpoint.style.width = "1.1vw";  
-//         projpoint.style.height = "1.1vw";
-//         projpoint.style.marginTop = "0vw";
-//         });
-//     }
-
-//     // Prevent scrolling above the header
-//     if (window.scrollY < headerOffset) {
-//         window.scrollTo(0, headerOffset);
-//     }
-// });
-
-// function adjustProjectsSectionHeight() {
-//     const projectsSection = document.getElementById('projects-section');
-//     projectsSection.style.height = projectsSection.scrollHeight * 1 + 'px';
-// }
-
-// window.addEventListener('load', adjustProjectsSectionHeight);
-// window.addEventListener('resize', adjustProjectsSectionHeight);
-
-// let initialProjectsSectionHeight;
-
-// function saveInitialProjectsSectionHeight() {
-//     const projectsSection = document.getElementById('projects-section');
-//     initialProjectsSectionHeight = projectsSection.scrollHeight;
-// }
-
-// function adjustProjectsSectionHeight() {
-//     const projectsSection = document.getElementById('projects-section');
-//     projectsSection.style.height = projectsSection.scrollHeight * 1 + 'px';
-// }
-
-// function resetProjectsSectionHeight() {
-//     const projectsSection = document.getElementById('projects-section');
-//     projectsSection.style.height = initialProjectsSectionHeight + 'px';
-// }
-
-// window.addEventListener('load', () => {
-//     saveInitialProjectsSectionHeight();
-//     adjustProjectsSectionHeight();
-// });
-
-// window.addEventListener('resize', adjustProjectsSectionHeight);
 
 let initialProjectsSectionHeight;
 
