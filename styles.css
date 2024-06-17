@@ -383,7 +383,7 @@ width: 100vw;
 /* min-height: 100vh; */
 display:block;
 background-color: var(--background);
-margin-bottom: 3vw;
+margin-bottom: 1vw;
 padding-bottom: 1vw;
 }
 
@@ -1118,7 +1118,7 @@ video{
 
   .copyright{
     padding-top:16vw;
-    padding-bottom: 2vw;
+    /* padding-bottom: 2vw; */
     font-size: 2vw;
     text-align: center;
   }
