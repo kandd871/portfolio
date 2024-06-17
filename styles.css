@@ -542,6 +542,10 @@ padding-bottom: 1vw;
   font-size: 1.3vw;
 }
 
+.border{
+  border-radius: .7vw;
+}
+
 .copyright{
   margin-top: 10vw;
   margin-bottom:0vw;
