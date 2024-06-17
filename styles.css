@@ -548,17 +548,18 @@ padding-bottom: 1vw;
 
 .background{
   position: relative;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
-  justify-content: center;
 }
 
 .second {
+  display: block;
+  justify-content: center;
   position: absolute; /* Position the second image absolutely within the background container */
   top: 50%; /* Align the top edge of the image to the vertical center */
-  left: 50%; /* Align the left edge of the image to the horizontal center */
+  left: 49.2%; /* Align the left edge of the image to the horizontal center */
   transform: translate(-50%, -50%); /* Adjust the image position to center it precisely */
-  max-width: 85%; /* Set the maximum width of the second image to 80% of the container */
+  max-width: 87%; /* Set the maximum width of the second image to 80% of the container */
 }
 
 .copyright{
