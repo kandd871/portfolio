@@ -4,6 +4,13 @@
       local("PP Rader"),
       url("PP Rader/PPRader-Regular.otf") format("opentype"),
   }
+  
+  @font-face {
+    font-family: "ABC Rom Condensed Regular";
+    src:
+      local("ABC Rom Condensed Medium Unlicensed Trial"),
+      url("ABCROMCondensed-Regular-Trial.otf") format("opentype"),
+  }
 
   :root {
     --color: #00aadf;

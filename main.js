@@ -327,7 +327,7 @@ const header = document.getElementById('headertwo');
 var allprojects = document.getElementById('allprojects');
 const projpoints = document.querySelectorAll('.projpoint')
 
-const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'illustrator', 'problem solver'];
+const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'problem solver'];
 const skillSpans = document.querySelectorAll('.skills');
 const skillTexts = document.querySelectorAll('.skill-text');
 
