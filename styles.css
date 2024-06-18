@@ -57,7 +57,7 @@
     transition: 1s;
     height: 100vh;
     z-index: -1;
-    animation: opacity 1.5s forwards ease-in;
+    animation: opacity 1s forwards ease-in;
     background-color: var(--black);
   }
 
@@ -210,8 +210,8 @@ margin-top: 3vw;
     margin-top: .5vw;
     opacity: 0;
     border: 1px solid var(--color);
-    animation: opacity .8s forwards ease-in;
-    animation-delay: 2.75s;
+    animation: opacity .5s forwards ease-in;
+    animation-delay: 2s;
     z-index: 9;
 }
 
@@ -251,56 +251,56 @@ margin-top: 3vw;
 #pointA-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 3.5s;
+  animation-delay: 2.5s;
 }
 
 #pointB-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 7.5s;
+  animation-delay: 4.5s;
 }
 
 
 #pointC-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 6s;
+  animation-delay: 3.75s;
 }
 
 #pointD-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 5s;
+  animation-delay: 3.25s;
 }
 
 #pointE-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 4.5s;
+  animation-delay: 3s;
 }
 
 #pointF-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 4s;
+  animation-delay: 2.75s;
 }
 
 #pointG-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 7s;
+  animation-delay: 4.25s;
 }
 
 #pointH-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 5.5s;
+  animation-delay: 3.5s;
 }
 
 #pointI-point{
   opacity:0;
   animation: opacityblur forwards 1s ease-in;
-  animation-delay: 6.5s;
+  animation-delay: 4s;
 }
 
 .arrows{
@@ -322,14 +322,14 @@ margin-top: 3vw;
 
 #one{
     height: 0vw;
-    animation: growHeight 2s forwards;
-    animation-delay: 1s;
+    animation: growHeight 1.25s forwards;
+    animation-delay: .9s;
 }
 
 #two{
   width: 0vw;
-  animation: growWidth 2s forwards;
-  animation-delay: 1s;
+  animation: growWidth 1.25s forwards;
+  animation-delay: .9s;
 }
 
 #one2, #two2{
@@ -977,15 +977,15 @@ video{
     #one2{
       height:0;
       display: block;
-      animation: growHeight2 2s forwards;
-      animation-delay: 1s;
+      animation: growHeight2 1.25s forwards;
+      animation-delay: .9s;
     }
 
     #two2{
     width:0;
     display: block;
-    animation: growWidth2 2s forwards;
-    animation-delay: 1s;
+    animation: growWidth2 1.25s forwards;
+    animation-delay: .9s;
     }
 
     #arrow2{

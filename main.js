@@ -1,9 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    const projpoints = document.querySelectorAll('.projpoint');
+const boxes = document.querySelectorAll('.box');
+
+const options = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.3 // Trigger callback when 30% of the section is visible
+};
+
+// Function to update projpoints styles
+function updateProjpoints(targetId) {
+    projpoints.forEach(projpoint => {
+        if (projpoint.dataset.target === targetId) {
+            projpoint.style.width = '1.1vw';
+            projpoint.style.height = '1.1vw';
+            projpoint.style.marginTop = '.9vw';
+            projpoint.style.filter = 'blur(0px)';
+        } else {
+            projpoint.style.width = '0.85vw';
+            projpoint.style.height = '0.85vw';
+            projpoint.style.marginTop = '1.1vw';
+            projpoint.style.filter = 'blur(2.6px)';
+        }
+    });
+}
+
+// Create the intersection observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const targetId = entry.target.closest('.box').id;
+            updateProjpoints(targetId);
+        }
+    });
+}, options);
+
+// Observe each .first element within each .box
+boxes.forEach(box => {
+    const firstElement = box.querySelector('.first');
+    if (firstElement) {
+        observer.observe(firstElement);
+    }
+});
+
+
+
+
     const gridContainer = document.getElementById('graph');
     const countElement = document.getElementById('count');
     let count = 0;
     const maxCount = 9;
-    const interval = 500; // 0.5 seconds
+    const interval = 275;
     let rows = 52;
     let cols = 96;
     let col1 = 89; let row1 = 4;
@@ -124,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createGrid();
     setTimeout(() => {
         incrementCount();
-    }, 4000);
+    }, 2900);
 
     window.addEventListener('resize', handleResize);
 
@@ -155,6 +203,31 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.height = "auto";
             home.style.filter = "blur(7px)";
             projectsSection.style.animation = 'opacity 1s forwards ease-in';
+
+            const targetId = anchor.href.split('#')[1]; // Extract the id from the URL
+            const targetBox = document.getElementById(targetId);
+
+             // Manually trigger the projpoints update
+             updateProjpoints(targetId);
+        
+
+            if (targetBox) {
+                const infoBox = targetBox.querySelector('.info');
+                const expandButton = targetBox.querySelector('.expand');
+                if (infoBox) {
+                    infoBox.style.display = 'block';
+                    infoBox.style.filter = 'blur(7px)';
+                    expandButton.textContent = '[HIDE DETAILS]';
+                    setTimeout(function() {
+                        infoBox.style.opacity = '1';
+                        infoBox.style.filter = 'blur(0px)';
+                    }, 500);
+                }
+                
+                setTimeout(() => {
+                    adjustProjectsSectionHeight();
+                }, 500);
+            }
 
             setTimeout(function() {
                 allprojects.style.filter = "blur(0px)";
@@ -245,47 +318,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             
 
-    const projpoints = document.querySelectorAll('.projpoint');
-    const boxes = document.querySelectorAll('.box');
-
-    const options = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger callback when 50% of the section is visible
-    };
-
-    // Create the intersection observer
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetId = entry.target.id;
-                projpoints.forEach(projpoint => {
-                    if (projpoint.dataset.target === targetId) {
-                        projpoint.style.width = '1.1vw';
-                        projpoint.style.height = '1.1vw';
-                        projpoint.style.marginTop = '.9vw';
-                         projpoint.style.filter = 'blur(0px)';
-                    } else {
-                        projpoint.style.width = '0.85vw';
-                        projpoint.style.height = '0.85vw';
-                        projpoint.style.marginTop = '1.1vw';
-                        projpoint.style.filter = 'blur(2.6px)';
-                    }
-                });
-            }
-        });
-    }, options);
-
-    // Observe each project section
-    boxes.forEach(box => {
-        observer.observe(box);
-    });
-
     // Add click event to each .projpoint to scroll to the corresponding section
     projpoints.forEach(projpoint => {
         projpoint.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default anchor behavior
             const targetId = projpoint.dataset.target;
+            updateProjpoints(targetId);
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
@@ -434,75 +472,61 @@ allnav.addEventListener('click', function(){
         }, 500);
 })
 
-document.querySelectorAll('.box').forEach(box => {
-    const content = box.querySelector('.content');
-    const expandButton = content.querySelector('.expand');
-    const info = content.querySelector('.info');
-    const expandIcon = expandButton.querySelector('img');
-    const closeButton = content.querySelector('.close');
-    
-    expandButton.addEventListener('click', () => {
-        if (info.style.display === 'none' || info.style.display === '') {
-            info.style.display = "block";
-            info.style.filter = "blur(7px)";
-            setTimeout(function() {
-                info.style.opacity = "1";
-                info.style.filter = "blur(0px)";
-                // adjustProjectsSectionHeight();
-            }, 500);
+function initializeBoxes() {
+    document.querySelectorAll('.box').forEach(box => {
+        const content = box.querySelector('.content');
+        const expandButton = content.querySelector('.expand');
+        const info = content.querySelector('.info');
+        const closeButton = content.querySelector('.close');
 
-            expandButton.textContent = '[HIDE DETAILS]';
-        } else {
+        expandButton.addEventListener('click', () => {
+            if (info.style.display === 'none' || info.style.display === '') {
+                info.style.display = "block";
+                info.style.filter = "blur(7px)";
+                setTimeout(function () {
+                    info.style.opacity = "1";
+                    info.style.filter = "blur(0px)";
+                    adjustProjectsSectionHeight();
+                }, 500);
+
+                expandButton.textContent = '[HIDE DETAILS]';
+            } else {
+                info.style.opacity = "0";
+                info.style.filter = "blur(7px)";
+                setTimeout(function () {
+                    info.style.display = "none";
+                }, 500);
+                expandButton.textContent = '[SHOW DETAILS]';
+            }
+            setTimeout(() => {
+                adjustProjectsSectionHeight();
+            }, 500);
+        });
+
+        closeButton.addEventListener('click', () => {
             info.style.opacity = "0";
             info.style.filter = "blur(7px)";
-            setTimeout(function() {
+            setTimeout(function () {
                 info.style.display = "none";
-            }, 500);
-            expandButton.textContent = '[SHOW DETAILS]';
-            // adjustProjectsSectionHeight();
-        }
-        setTimeout(() => {
-            adjustProjectsSectionHeight();
-        }, 500);
-    });
-
-    closeButton.addEventListener('click', () => {
-        if (info.style.display === 'none' || info.style.display === '') {
-            info.style.display = "block";
-            info.style.filter = "blur(7px)";
-            setTimeout(function() {
-                info.style.opacity = "1";
-                info.style.filter = "blur(0px)";
-                // adjustProjectsSectionHeight();
-            }, 500);
-
-            expandButton.textContent = '[CLOSE]';
-        } else {
-            info.style.opacity = "0";
-            info.style.filter = "blur(7px)";
-            setTimeout(function() {
-                info.style.display = "none";
-                // adjustProjectsSectionHeight();
             }, 500);
             expandButton.textContent = '[SHOW DETAILS]';
             box.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        setTimeout(() => {
-            adjustProjectsSectionHeight();
-        }, 500);
+            setTimeout(() => {
+                adjustProjectsSectionHeight();
+            }, 500);
+        });
     });
-});
+}
 
-let initialProjectsSectionHeight;
-
+// Function to save the initial height of the projects section
 function saveInitialProjectsSectionHeight() {
     const projectsSection = document.getElementById('projects-section');
     initialProjectsSectionHeight = projectsSection.scrollHeight;
 }
 
+// Function to adjust the height of the projects section
 function adjustProjectsSectionHeight() {
     const projectsSection = document.getElementById('projects-section');
-    const copyrightSection = document.querySelector('.copyright');
     let additionalHeight = 0;
 
     document.querySelectorAll('.info').forEach(info => {
@@ -511,23 +535,25 @@ function adjustProjectsSectionHeight() {
         }
     });
 
-    // Calculate the maximum allowed height based on the position of the .copyright section
-    const maxAllowedHeight = window.innerHeight - copyrightSection.getBoundingClientRect().top + (0.02 * window.innerWidth);
-    
-    // Set the new height, but ensure it does not exceed the max allowed height
-    projectsSection.style.height = Math.min(initialProjectsSectionHeight + additionalHeight, maxAllowedHeight) + 'px';
+    const newHeight = initialProjectsSectionHeight + additionalHeight;
+    projectsSection.style.height = newHeight + 'px';
 }
 
+// Function to reset the height of the projects section
 function resetProjectsSectionHeight() {
     const projectsSection = document.getElementById('projects-section');
     projectsSection.style.height = initialProjectsSectionHeight + 'px';
 }
 
+// Event listeners for loading and resizing
 window.addEventListener('load', () => {
     saveInitialProjectsSectionHeight();
     adjustProjectsSectionHeight();
 });
 
 window.addEventListener('resize', adjustProjectsSectionHeight);
+
+// Call this function to initialize the boxes when the DOM is ready
+initializeBoxes();
 
 
