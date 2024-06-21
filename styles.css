@@ -536,6 +536,7 @@ color: var(--background);
 .first:hover{
   transform: scale(1.05);
   cursor: alias;
+  animation: blur .5s forwards ease-out;
 }
 
 .background:hover{
@@ -917,6 +918,18 @@ video{
   to {
     filter: default;
     opacity: 1;
+  }
+}
+
+@keyframes blur {
+  0%{
+    filter: blur(1px);
+  }
+  50%{
+    filter: blur(4px);
+  }
+  100%{
+    filter: blur(0px);
   }
 }
 
