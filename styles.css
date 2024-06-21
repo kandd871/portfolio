@@ -232,7 +232,7 @@ margin-top: 3vw;
 }
 
 #key2{
- 
+  animation: opacityblur 1s alternate-reverse ease-in;
 }
 
 .grid-line {
@@ -736,7 +736,7 @@ color: var(--background);
 
 .twocol2 img{
   /* width: 30%; */
-  height: 27vw;
+  height: 43vw;
   margin-right: 4vw;
 }
 
