@@ -997,7 +997,7 @@ video{
     .grid-line {
       width: 1.65vw;
       height: 1.65vw;
-      border: .5px dashed #8b8b8b;
+      border: .75px solid #8b8b8b;
     }
     .point {
       width: 3.75vw;
