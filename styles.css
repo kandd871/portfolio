@@ -1100,6 +1100,7 @@ video{
       margin: 0.5% auto;
   }
   
+  
   .point-text{
     font-size: 2vw;
     margin-top: 3vw;
@@ -1133,6 +1134,9 @@ video{
     margin-bottom: 10vw;
   }
 
+  .subbox{
+    border: 1px dotted var(--background);
+  }
   .first{
     width: 98%;
   }
