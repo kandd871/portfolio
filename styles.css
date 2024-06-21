@@ -214,6 +214,10 @@ margin-top: 3vw;
     padding-right: .1vw;
   }
 
+  .highlight{
+    color: var(--color);
+  }
+
   #graph{
     height: 41.6vw;
     width:  76.8vw;
