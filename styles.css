@@ -232,7 +232,8 @@ margin-top: 3vw;
 }
 
 #key2{
-  animation: opacityblur 1s alternate-reverse ease-in;
+  animation: opacityblur 1.75s alternate-reverse ease infinite;
+  animation-delay: 4s;
 }
 
 .grid-line {
