@@ -119,39 +119,39 @@ boxes.forEach(box => {
     
                 // Draw points at specific positions with custom text and unique IDs
                 if (col === col1 && row === row1) {
-                    drawPoint(row, col, gridContainer, '(BLUMENHAUS LOGO (RE)DESIGN)', 'pointA', '#blumenhaus');
+                    drawPoint(row, col, gridContainer, '(BLUMENHAUS LOGO (RE)DESIGN, 2024)', 'pointA', '#blumenhaus');
                 }
     
                 if (col === col2 && row === row2) {
-                    drawPoint(row, col, gridContainer, '(CHAMBERLAIN COFFEE DATA-DRIVEN PACKAGING)', 'pointB', '#chamberlain');
+                    drawPoint(row, col, gridContainer, '(CHAMBERLAIN COFFEE DATA-DRIVEN PACKAGING, 2024)', 'pointB', '#chamberlain');
                 }
     
                 if (col === col3 && row === row3) {
-                    drawPoint(row, col, gridContainer, '(THE MET COMMUNITY DRIVEN DESIGN)', 'pointC', '#weaving');
+                    drawPoint(row, col, gridContainer, '(THE MET COMMUNITY DRIVEN DESIGN, 2024)', 'pointC', '#weaving');
                 }
     
                 if (col === col4 && row === row4) {
-                    drawPoint(row, col, gridContainer, '(MUTATED ODYSSEY)', 'pointD', '#mutated-odyssey');
+                    drawPoint(row, col, gridContainer, '(MUTATED ODYSSEY, 2024)', 'pointD', '#mutated-odyssey');
                 }
     
                 if (col === col5 && row === row5) {
-                    drawPoint(row, col, gridContainer, '(AIGA’S FIRST THINGS FIRST MANIFESTO)', 'pointE', '#first-things-first');
+                    drawPoint(row, col, gridContainer, '(AIGA’S FIRST THINGS FIRST MANIFESTO, 2024)', 'pointE', '#first-things-first');
                 }
     
                 if (col === col6 && row === row6) {
-                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 1)', 'pointF', '#macbook');
+                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 1, 2023)', 'pointF', '#macbook');
                 }
     
                 if (col === col7 && row === row7) {
-                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 2)', 'pointG', '#touch-some-grass');
+                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 2, 2023)', 'pointG', '#touch-some-grass');
                 }
     
                 if (col === col8 && row === row8) {
-                    drawPoint(row, col, gridContainer, '(HOME BOOK)', 'pointH', '#home-book');
+                    drawPoint(row, col, gridContainer, '(HOME BOOK, 2023)', 'pointH', '#home-book');
                 }
     
                 if (col === col9 && row === row9) {
-                    drawPoint(row, col, gridContainer, '(STARDEW TYPEFACE)', 'pointI', '#stardew');
+                    drawPoint(row, col, gridContainer, '(STARDEW TYPEFACE, 2023)', 'pointI', '#stardew');
                 }
             }
         }
@@ -191,7 +191,7 @@ boxes.forEach(box => {
         const anchor = document.createElement('a');
         anchor.href = url;
         anchor.style.position = 'absolute';
-        anchor.style.left = `${col * gridSize + gridSize/4 + gridSize/39}vw`; // Adjusting based on the provided code
+        anchor.style.left = `${col * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
         anchor.style.top = `${row * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
 
         anchor.addEventListener('click', (event) => {
@@ -250,7 +250,7 @@ boxes.forEach(box => {
         const point = document.createElement('div');
         point.className = 'point';
         point.id = `${id}-point`;
-        point.style.zIndex = '2';
+        point.style.zIndex = '200';
         anchor.appendChild(point);
     
         // Create the text below the point
@@ -404,9 +404,9 @@ click1.addEventListener('click', function(event) {
         setTimeout(function() {
             about.style.opacity = "1";
         }, 50); // Adjust this timeout as needed
-        home.style.filter = "blur(7px)";
-        allprojects.style.filter = "blur(7px)";
-        header.style.filter = "blur(7px)";
+        home.style.filter = "blur(10px)";
+        allprojects.style.filter = "blur(10px)";
+        header.style.filter = "blur(10px)";
     });
 
 
@@ -419,9 +419,9 @@ click2.addEventListener('click', function(event) {
     setTimeout(function() {
         about2.style.opacity = "1";
     }, 0); // Adjust this timeout as needed
-    allprojects.style.filter = "blur(7px)";
-    header.style.filter = "blur(7px)";
-    home.style.filter = "blur(7px)";
+    allprojects.style.filter = "blur(10px)";
+    header.style.filter = "blur(10px)";
+    home.style.filter = "blur(10px)";
 });
 
 document.body.addEventListener('click', function(event) {
