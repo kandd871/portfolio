@@ -551,6 +551,10 @@ color: var(--background);
 }
 
 
+.caption a{
+  cursor: alias;
+}
+
 .title{
   font-size: 2vw; 
   text-transform: uppercase;
