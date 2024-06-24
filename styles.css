@@ -530,6 +530,9 @@ color: var(--background);
 
 .info a:hover{
   filter: blur(4px);
+}
+
+.hover{
   cursor: alias;
 }
 
@@ -540,13 +543,11 @@ color: var(--background);
 
 .first:hover{
   transform: scale(1.05);
-  cursor: alias;
   animation: blur .5s forwards ease-out;
 }
 
 .background:hover{
   transform: scale(1.05);
-  cursor: alias;
 }
 
 
