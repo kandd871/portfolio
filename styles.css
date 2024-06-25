@@ -884,8 +884,8 @@ video{
   filter: blur(5px);
 }
 
-#homeweb{
-  margin-top:-1vw;
+#home-web{
+  margin-bottom:1vw;
 }
 
 #home-book button{
