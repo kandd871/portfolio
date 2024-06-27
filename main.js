@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+   
+
     const projpoints = document.querySelectorAll('.projpoint');
     const boxes = document.querySelectorAll('.box');
     
@@ -548,6 +550,7 @@ document.getElementById('right').addEventListener('click', function() {
         behavior: 'smooth' // Smooth scrolling
     });
 });
+
 
 
 

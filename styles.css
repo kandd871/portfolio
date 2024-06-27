@@ -466,6 +466,7 @@ width: auto;
   padding-right: .75vw;
   box-sizing: border-box;
   width: 87vw;
+  background-color: var(--black);
 }
 
 
@@ -1232,7 +1233,7 @@ visibility: hidden;
     }
 
     #arrow2{
-      transform: translateY(52.2vw);
+      transform: translateY(52vw);
     }
 
     #arrow1{
