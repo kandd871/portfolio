@@ -455,152 +455,152 @@ allprojects.addEventListener('mousemove', (event) => {
     }
 });
 
+});
 
-        function changeSkill() {
-            skillTexts.forEach(skillText => {
-                // Remove blur
-                setTimeout(() => {
-                    skillText.classList.remove('blur');
-                }, 10);
+function changeSkill() {
+    skillTexts.forEach(skillText => {
+        // Remove blur
+        setTimeout(() => {
+            skillText.classList.remove('blur');
+        }, 10);
 
-                // Set new skill text and add blur
-                skillText.textContent = skills[index];
-                setTimeout(() => {
-                    skillText.classList.add('blur');
-                }, 1000);
-            });
+        // Set new skill text and add blur
+        skillText.textContent = skills[index];
+        setTimeout(() => {
+            skillText.classList.add('blur');
+        }, 1000);
+    });
 
-            // Update index for next skill
-            index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
-        }
+    // Update index for next skill
+    index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
+}
 
-        // Initial call to set the first skill
-        changeSkill();
+// Initial call to set the first skill
+changeSkill();
 
-        // Set interval to change skill every 1.5 seconds (adjust as needed)
-        setInterval(changeSkill, 1500);
+// Set interval to change skill every 1.5 seconds (adjust as needed)
+setInterval(changeSkill, 1500);
 
-        click1.addEventListener('click', function(event) {
-                // Prevent event propagation to the home click event listener
-                event.stopPropagation();
+click1.addEventListener('click', function(event) {
+        // Prevent event propagation to the home click event listener
+        event.stopPropagation();
 
-                about.style.display = "block";
-                about.style.position = "fixed";
-                setTimeout(function() {
-                    about.style.opacity = "1";
-                }, 50); // Adjust this timeout as needed
-                home.style.filter = "blur(10px)";
-                allprojects.style.filter = "blur(10px)";
-                header.style.filter = "blur(10px)";
-                arrowsholder.style.filter = "blur(10px)";
-                home.style.pointerEvents = 'none';
-            });
+        about.style.display = "block";
+        about.style.position = "fixed";
+        setTimeout(function() {
+            about.style.opacity = "1";
+        }, 50); // Adjust this timeout as needed
+        home.style.filter = "blur(10px)";
+        allprojects.style.filter = "blur(10px)";
+        header.style.filter = "blur(10px)";
+        arrowsholder.style.filter = "blur(10px)";
+        home.style.pointerEvents = 'none';
+    });
 
 
-        click2.addEventListener('click', function(event) {
-            // Prevent event propagation to the home click event listener
-            event.stopPropagation();
+click2.addEventListener('click', function(event) {
+    // Prevent event propagation to the home click event listener
+    event.stopPropagation();
 
-            about2.style.display = "block";
-            about2.style.position = "fixed";
-            setTimeout(function() {
-                about2.style.opacity = "1";
-            }, 0); // Adjust this timeout as needed
-            allprojects.style.filter = "blur(10px)";
-            header.style.filter = "blur(10px)";
-            home.style.filter = "blur(10px)";
-            allprojects.style.pointerEvents = 'none';
-            arrowsholder.style.filter = "blur(10px)";
-        });
+    about2.style.display = "block";
+    about2.style.position = "fixed";
+    setTimeout(function() {
+        about2.style.opacity = "1";
+    }, 0); // Adjust this timeout as needed
+    allprojects.style.filter = "blur(10px)";
+    header.style.filter = "blur(10px)";
+    home.style.filter = "blur(10px)";
+    allprojects.style.pointerEvents = 'none';
+    arrowsholder.style.filter = "blur(10px)";
+});
 
-        document.body.addEventListener('click', function(event) {
-            // Check if click target is not inside the about box
-            if (!about.contains(event.target) && about.style.display === "block") {
-                about.style.opacity = "0";
-                about.style.filter = "blur(7px)";
-                setTimeout(function() {
-                    about.style.display = "none";
-                    about.style.filter = "blur(0px)";
-                }, 500); // Adjust this timeout to match transition duration
-                home.style.filter = "blur(0px)";
-                allprojects.style.filter = "blur(0px)"; 
-                header.style.filter = "blur(0px)";  
-                arrowsholder.style.filter = "blur(0px)";
-                home.style.pointerEvents = 'auto';
-            }
-        });
+document.body.addEventListener('click', function(event) {
+    // Check if click target is not inside the about box
+    if (!about.contains(event.target) && about.style.display === "block") {
+        about.style.opacity = "0";
+        about.style.filter = "blur(7px)";
+        setTimeout(function() {
+            about.style.display = "none";
+            about.style.filter = "blur(0px)";
+        }, 500); // Adjust this timeout to match transition duration
+        home.style.filter = "blur(0px)";
+        allprojects.style.filter = "blur(0px)"; 
+        header.style.filter = "blur(0px)";  
+        arrowsholder.style.filter = "blur(0px)";
+        home.style.pointerEvents = 'auto';
+    }
+});
 
-        document.body.addEventListener('click', function(event) {
-            // Check if click target is not inside the about box
-            if (!about2.contains(event.target) && about2.style.display === "block") {
-                about2.style.opacity = "0";
-                about2.style.filter = "blur(7px)";
-                setTimeout(function() {
-                    about2.style.display = "none";
-                    about2.style.filter = "blur(0px)";
-                }, 500); // Adjust this timeout to match transition duration
-                allprojects.style.filter = "blur(0px)"; 
-                header.style.filter = "blur(0px)"; 
-                home.style.filter = "blur(0px)"; 
-                arrowsholder.style.filter = "blur(0px)";
-                allprojects.style.pointerEvents = 'auto';
-            }
-        });
+document.body.addEventListener('click', function(event) {
+    // Check if click target is not inside the about box
+    if (!about2.contains(event.target) && about2.style.display === "block") {
+        about2.style.opacity = "0";
+        about2.style.filter = "blur(7px)";
+        setTimeout(function() {
+            about2.style.display = "none";
+            about2.style.filter = "blur(0px)";
+        }, 500); // Adjust this timeout to match transition duration
+        allprojects.style.filter = "blur(0px)"; 
+        header.style.filter = "blur(0px)"; 
+        home.style.filter = "blur(0px)"; 
+        arrowsholder.style.filter = "blur(0px)";
+        allprojects.style.pointerEvents = 'auto';
+    }
+});
 
-        nav.addEventListener('click', function(){
-            home.style.height = '0';
-            document.body.style.overflow = "scroll";
-            document.body.style.height = "auto";
-            home.style.filter = "blur(7px)";
-            projectsSection.style.animation = 'opacity 1s forwards ease-in';
-            footer.style.visibility = "visible";
-            arrowsholder.style.visibility = "visible";
-            arrowsholder.style.opacity = "1";
-            arrowsholder.style.filter = "blur(7px)";
-            setTimeout(function() {
-                arrowsholder.style.filter = "blur(0px)";
-            }, 500);
-        })
+nav.addEventListener('click', function(){
+    home.style.height = '0';
+    document.body.style.overflow = "scroll";
+    document.body.style.height = "auto";
+    home.style.filter = "blur(7px)";
+    projectsSection.style.animation = 'opacity 1s forwards ease-in';
+    footer.style.visibility = "visible";
+    arrowsholder.style.visibility = "visible";
+    arrowsholder.style.opacity = "1";
+    arrowsholder.style.filter = "blur(7px)";
+    setTimeout(function() {
+        arrowsholder.style.filter = "blur(0px)";
+    }, 500);
+})
 
-        allnav.addEventListener('click', function(){
-            home.style.height = '100vh';
-            arrowsholder.style.visibility = "hidden";
-            footer.style.visibility = "hidden";
-            arrowsholder.style.opacity = "0";
-            arrowsholder.style.filter = "blur(7px)";
-            document.body.style.overflow = "hidden";
-            document.body.style.height = "100vh";
-            home.style.filter = "blur(7px)";
-                setTimeout(function() {
-                    home.style.filter = "blur(0px)";
-                }, 500);
-        })
+allnav.addEventListener('click', function(){
+    home.style.height = '100vh';
+    arrowsholder.style.visibility = "hidden";
+    footer.style.visibility = "hidden";
+    arrowsholder.style.opacity = "0";
+    arrowsholder.style.filter = "blur(7px)";
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    home.style.filter = "blur(7px)";
+        setTimeout(function() {
+            home.style.filter = "blur(0px)";
+        }, 500);
+})
 
-        document.getElementById('up').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+document.getElementById('up').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-        document.getElementById('down').addEventListener('click', function() {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        });
+document.getElementById('down').addEventListener('click', function() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
 
-        document.getElementById('left').addEventListener('click', function() {
-            const container = document.getElementById('allprojects');
-            const box = document.querySelector('.box');
-            const boxWidth = box ? box.offsetWidth : 0;
-            container.scrollBy({
-                left: -boxWidth, 
-                behavior: 'smooth' // Smooth scrolling
-            });
-        });
+document.getElementById('left').addEventListener('click', function() {
+    const container = document.getElementById('allprojects');
+    const box = document.querySelector('.box');
+    const boxWidth = box ? box.offsetWidth : 0;
+    container.scrollBy({
+        left: -boxWidth, 
+        behavior: 'smooth' // Smooth scrolling
+    });
+});
 
-        document.getElementById('right').addEventListener('click', function() {
-            const container = document.getElementById('allprojects');
-            const box = document.querySelector('.box');
-            const boxWidth = box ? box.offsetWidth : 0;
-            container.scrollBy({
-                left: boxWidth, // Scroll right by the width of .box
-                behavior: 'smooth' // Smooth scrolling
-            });
-        });
+document.getElementById('right').addEventListener('click', function() {
+    const container = document.getElementById('allprojects');
+    const box = document.querySelector('.box');
+    const boxWidth = box ? box.offsetWidth : 0;
+    container.scrollBy({
+        left: boxWidth, // Scroll right by the width of .box
+        behavior: 'smooth' // Smooth scrolling
+    });
 });
