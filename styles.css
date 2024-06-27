@@ -547,8 +547,8 @@ position: relative;
 
 .arrow-container {
 position: relative;
-width: 3vw; /* Adjust the width as needed */
-height: 3vw; /* Adjust the height as needed */
+width: 4vw; /* Adjust the width as needed */
+height: 4vw; /* Adjust the height as needed */
 display: flex;
 z-index: 5;
 }
@@ -556,8 +556,8 @@ z-index: 5;
 
 .arrow-container2 {
 position: absolute;
-width: 3vw; /* Adjust the width as needed */
-height: 3vw; /* Adjust the height as needed */
+width: 4vw; /* Adjust the width as needed */
+height: 4vw; /* Adjust the height as needed */
 display: flex;
 background-color: var(--color);
 filter: blur(3px);
@@ -576,7 +576,7 @@ animation: opacityblur forwards .25s ease-out alternate;
 }
 
 .arrowsvert {
-width: 1vw;
+height: 2.25vw;
 position: absolute;
 display: flex;
 left: 50%;
@@ -599,7 +599,7 @@ justify-content: space-between;
 
 .arrowshor {
 display: flex;
-height: 1vw;
+height: 1.25vw;
 position: absolute;
 top: 50%;
 transform: translateY(-50%);
