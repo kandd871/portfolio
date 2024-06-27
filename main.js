@@ -1,49 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const projpoints = document.querySelectorAll('.projpoint');
-const boxes = document.querySelectorAll('.box');
-
-const options = {
-    root: null, // Use the viewport as the root
-    rootMargin: '0px',
-    threshold: 0.3 // Trigger callback when 30% of the section is visible
-};
-
-// Function to update projpoints styles
-function updateProjpoints(targetId) {
-    projpoints.forEach(projpoint => {
-        if (projpoint.dataset.target === targetId) {
-            projpoint.style.width = '1.1vw';
-            projpoint.style.height = '1.1vw';
-            projpoint.style.marginTop = '.9vw';
-            projpoint.style.filter = 'blur(0px)';
-        } else {
-            projpoint.style.width = '0.85vw';
-            projpoint.style.height = '0.85vw';
-            projpoint.style.marginTop = '1.1vw';
-            projpoint.style.filter = 'blur(2.6px)';
-        }
-    });
-}
-
-// Create the intersection observer
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const targetId = entry.target.closest('.box').id;
-            updateProjpoints(targetId);
-        }
-    });
-}, options);
-
-// Observe each .first element within each .box
-boxes.forEach(box => {
-    const firstElement = box.querySelector('.first');
-    if (firstElement) {
-        observer.observe(firstElement);
+    const boxes = document.querySelectorAll('.box');
+    
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: '5px',
+        threshold: 0.06
+    };
+    
+    // Function to update projpoints styles
+    function updateProjpoints(targetId) {
+        projpoints.forEach(projpoint => {
+            if (projpoint.dataset.target === targetId) {
+                projpoint.style.width = '1.1vw';
+                projpoint.style.height = '1.1vw';
+                projpoint.style.marginTop = '.9vw';
+                projpoint.style.filter = 'blur(0px)';
+            } else {
+                projpoint.style.width = '0.85vw';
+                projpoint.style.height = '0.85vw';
+                projpoint.style.marginTop = '1.1vw';
+                projpoint.style.filter = 'blur(2.6px)';
+            }
+        });
     }
-});
-
+    
+    let currentlyScaledBox = null;
+    
+    // Set the initial blur state for all boxes
+    boxes.forEach(box => {
+        const subbox = box.querySelector('.subbox');
+        box.style.transition = '.5s';
+        box.style.filter = 'blur(10px)';
+    });
+    
+    // Create the intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const box = entry.target.closest('.box');
+            const subbox = box.querySelector('.subbox');
+            const info = box.querySelector('.info');
+            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                if (currentlyScaledBox && currentlyScaledBox !== box) {
+                    currentlyScaledBox.style.filter = 'blur(10px)';
+                }
+                const targetId = box.id;
+                updateProjpoints(targetId);
+                box.style.filter = 'blur(0px)'; // Remove blur from the new box
+                currentlyScaledBox = box; // Update the reference to the currently scaled box
+            } else if (currentlyScaledBox === box) {
+                box.style.filter = 'blur(10px)';
+                currentlyScaledBox = null; // Clear the reference as the box is no longer intersecting
+            }
+        });
+    }, options);
+    
+    // Observe each .first element within each .box
+    boxes.forEach(box => {
+        if (box) {
+            observer.observe(box);
+        }
+    });
+    
+    // Add event listener to prevent blurring when scrolling vertically
+    window.addEventListener('scroll', () => {
+        if (currentlyScaledBox) {
+            currentlyScaledBox.style.filter = 'blur(0px)';
+        }
+    }, true);
+    
+// Add event listener to update the currently scaled box on horizontal scroll
+window.addEventListener('scroll', () => {
+    if (currentlyScaledBox) {
+        currentlyScaledBox.style.filter = 'blur(0px)';
+    }
+}, true);
 
 
 
@@ -196,55 +228,40 @@ boxes.forEach(box => {
 
         anchor.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default anchor click behavior
-
+            // Blur effect and other styling adjustments
             allprojects.style.filter = "blur(7px)";
-            home.style.height = '0';
-            document.body.style.overflow = "scroll";
             document.body.style.height = "auto";
             home.style.filter = "blur(7px)";
             projectsSection.style.animation = 'opacity 1s forwards ease-in';
-
-            const targetId = anchor.href.split('#')[1]; // Extract the id from the URL
-            const targetBox = document.getElementById(targetId);
-
-             // Manually trigger the projpoints update
-             updateProjpoints(targetId);
         
-
-            if (targetBox) {
-                const infoBox = targetBox.querySelector('.info');
-                const expandButton = targetBox.querySelector('.expand');
-                if (infoBox) {
-                    infoBox.style.display = 'block';
-                    infoBox.style.filter = 'blur(7px)';
-                    expandButton.textContent = '[HIDE DETAILS]';
-                    setTimeout(function() {
-                        infoBox.style.opacity = '1';
-                        infoBox.style.filter = 'blur(0px)';
-                    }, 500);
-                }
-                
-                setTimeout(() => {
-                    adjustProjectsSectionHeight();
-                }, 500);
-            }
-
+            const targetId = anchor.getAttribute('href'); // Extract the id from the anchor's href attribute
+        
+            // Manually trigger the projpoints update
+            updateProjpoints(targetId);
+            // const targetElement = document.querySelector(targetId);
+            // if (targetElement) {
+            //     const container = document.getElementById('allprojects');
+    
+            //     container.scrollTo({
+            //         top: 0,
+            //         behavior: 'smooth'
+            //     });
+            // }
+        
             setTimeout(function() {
                 allprojects.style.filter = "blur(0px)";
-
-                // Check if the href is '#blumenhaus'
-                if (url === '#blumenhaus') {
-                    setTimeout(function() {
-                        // Navigate to the href after 700ms for '#blumenhaus'
-                        window.location.href = anchor.href;
-                    }, 500);
-                } else {
-                    // Navigate to the href after 500ms for other links
-                    window.location.href = anchor.href;
-                }
+                // Navigate to the href after 500ms for other links
+                window.location.href = anchor.href;
+                home.style.height = '0';
+                document.body.style.overflow = "scroll";
+                arrowsholder.style.visibility = "visible";
+                arrowsholder.style.opacity = "1";
+                arrowsholder.style.filter = "blur(0px)";
+                footer.style.visibility = "visible";
+                // Scroll to the top of the target element within #allprojects
             }, 500);
         });
-
+        
         
         // Create the point
         const point = document.createElement('div');
@@ -315,33 +332,45 @@ boxes.forEach(box => {
       showImage(currentIndex);
       resetAutoSlide(); // Reset auto slide timer on user interaction
     });
-
-            
-
-    // Add click event to each .projpoint to scroll to the corresponding section
+    
     projpoints.forEach(projpoint => {
         projpoint.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default anchor behavior
             const targetId = projpoint.dataset.target;
             updateProjpoints(targetId);
             const targetSection = document.getElementById(targetId);
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
             if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+                // Scroll both vertically and horizontally to the target position
+                setTimeout(() => {
+                    allprojects.scrollTo({
+                        top: 0,
+                        left: targetSection.offsetLeft,
+                        behavior: 'smooth'
+                    });
+                }, 250);
+                
             }
         });
     });
-
+    
     window.addEventListener('scroll', function() {
         const headerOffset = document.querySelector('#projects').offsetTop;
         const header = document.querySelector('#headertwo');
         const allprojects = document.querySelector('#allprojects');
+        const projnav = document.querySelector('#projnav');
 
         if (window.scrollY > headerOffset) {
             header.classList.add('fixed');
-            allprojects.style.paddingTop = "8vw";
+            allprojects.style.paddingTop = "7vw";
+            projnav.style.marginTop = "-0.4vw";
         } else {
             header.classList.remove('fixed');
-            allprojects.style.padding = "1% 1.5% 1% 1.5%";
+            allprojects.style.paddingTop = "1vw";
+            projnav.style.marginTop = "0.25vw";
         }
 
         // Prevent scrolling above the header
@@ -364,7 +393,8 @@ const graph = document.getElementById('graph');
 const header = document.getElementById('headertwo');
 var allprojects = document.getElementById('allprojects');
 const projpoints = document.querySelectorAll('.projpoint')
-
+const arrowsholder = document.querySelector('.arrowsholder');
+const footer = document.querySelector('.footer');
 const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'problem solver'];
 const skillSpans = document.querySelectorAll('.skills');
 const skillTexts = document.querySelectorAll('.skill-text');
@@ -407,6 +437,8 @@ click1.addEventListener('click', function(event) {
         home.style.filter = "blur(10px)";
         allprojects.style.filter = "blur(10px)";
         header.style.filter = "blur(10px)";
+        arrowsholder.style.filter = "blur(10px)";
+        home.style.pointerEvents = 'none';
     });
 
 
@@ -422,6 +454,8 @@ click2.addEventListener('click', function(event) {
     allprojects.style.filter = "blur(10px)";
     header.style.filter = "blur(10px)";
     home.style.filter = "blur(10px)";
+    allprojects.style.pointerEvents = 'none';
+    arrowsholder.style.filter = "blur(10px)";
 });
 
 document.body.addEventListener('click', function(event) {
@@ -436,6 +470,8 @@ document.body.addEventListener('click', function(event) {
         home.style.filter = "blur(0px)";
         allprojects.style.filter = "blur(0px)"; 
         header.style.filter = "blur(0px)";  
+        arrowsholder.style.filter = "blur(0px)";
+        home.style.pointerEvents = 'auto';
     }
 });
 
@@ -451,6 +487,8 @@ document.body.addEventListener('click', function(event) {
         allprojects.style.filter = "blur(0px)"; 
         header.style.filter = "blur(0px)"; 
         home.style.filter = "blur(0px)"; 
+        arrowsholder.style.filter = "blur(0px)";
+        allprojects.style.pointerEvents = 'auto';
     }
 });
 
@@ -459,11 +497,22 @@ nav.addEventListener('click', function(){
     document.body.style.overflow = "scroll";
     document.body.style.height = "auto";
     home.style.filter = "blur(7px)";
-    projectsSection.style.animation = 'opacity 1s forwards ease-in'
+    projectsSection.style.animation = 'opacity 1s forwards ease-in';
+    footer.style.visibility = "visible";
+    arrowsholder.style.visibility = "visible";
+    arrowsholder.style.opacity = "1";
+    arrowsholder.style.filter = "blur(7px)";
+    setTimeout(function() {
+        arrowsholder.style.filter = "blur(0px)";
+    }, 500);
 })
 
 allnav.addEventListener('click', function(){
     home.style.height = '100vh';
+    arrowsholder.style.visibility = "hidden";
+    footer.style.visibility = "hidden";
+    arrowsholder.style.opacity = "0";
+    arrowsholder.style.filter = "blur(7px)";
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
     home.style.filter = "blur(7px)";
@@ -472,88 +521,34 @@ allnav.addEventListener('click', function(){
         }, 500);
 })
 
-function initializeBoxes() {
-    document.querySelectorAll('.box').forEach(box => {
-        const content = box.querySelector('.content');
-        const expandButton = content.querySelector('.expand');
-        const info = content.querySelector('.info');
-        const closeButton = content.querySelector('.close');
-
-        expandButton.addEventListener('click', () => {
-            if (info.style.display === 'none' || info.style.display === '') {
-                info.style.display = "block";
-                info.style.filter = "blur(7px)";
-                setTimeout(function () {
-                    info.style.opacity = "1";
-                    info.style.filter = "blur(0px)";
-                    adjustProjectsSectionHeight();
-                }, 500);
-
-                expandButton.textContent = '[HIDE DETAILS]';
-            } else {
-                info.style.opacity = "0";
-                info.style.filter = "blur(7px)";
-                setTimeout(function () {
-                    info.style.display = "none";
-                }, 500);
-                expandButton.textContent = '[SHOW DETAILS]';
-            }
-            setTimeout(() => {
-                adjustProjectsSectionHeight();
-            }, 500);
-        });
-
-        closeButton.addEventListener('click', () => {
-            info.style.opacity = "0";
-            info.style.filter = "blur(7px)";
-            setTimeout(function () {
-                info.style.display = "none";
-            }, 500);
-            expandButton.textContent = '[SHOW DETAILS]';
-            box.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => {
-                adjustProjectsSectionHeight();
-            }, 500);
-        });
-    });
-}
-
-// Function to save the initial height of the projects section
-function saveInitialProjectsSectionHeight() {
-    const projectsSection = document.getElementById('projects-section');
-    initialProjectsSectionHeight = projectsSection.scrollHeight;
-}
-
-// Function to adjust the height of the projects section
-function adjustProjectsSectionHeight() {
-    const projectsSection = document.getElementById('projects-section');
-    let additionalHeight = 0;
-
-    document.querySelectorAll('.info').forEach(info => {
-        if (info.style.display !== 'none') {
-            additionalHeight += info.scrollHeight;
-        }
-    });
-
-    const newHeight = initialProjectsSectionHeight + additionalHeight;
-    projectsSection.style.height = newHeight + 'px';
-}
-
-// Function to reset the height of the projects section
-function resetProjectsSectionHeight() {
-    const projectsSection = document.getElementById('projects-section');
-    projectsSection.style.height = initialProjectsSectionHeight + 'px';
-}
-
-// Event listeners for loading and resizing
-window.addEventListener('load', () => {
-    saveInitialProjectsSectionHeight();
-    adjustProjectsSectionHeight();
+document.getElementById('up').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-window.addEventListener('resize', adjustProjectsSectionHeight);
+document.getElementById('down').addEventListener('click', function() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
 
-// Call this function to initialize the boxes when the DOM is ready
-initializeBoxes();
+document.getElementById('left').addEventListener('click', function() {
+    const container = document.getElementById('allprojects');
+    const box = document.querySelector('.box');
+    const boxWidth = box ? box.offsetWidth : 0;
+    container.scrollBy({
+        left: -boxWidth, 
+        behavior: 'smooth' // Smooth scrolling
+    });
+});
+
+document.getElementById('right').addEventListener('click', function() {
+    const container = document.getElementById('allprojects');
+    const box = document.querySelector('.box');
+    const boxWidth = box ? box.offsetWidth : 0;
+    container.scrollBy({
+        left: boxWidth, // Scroll right by the width of .box
+        behavior: 'smooth' // Smooth scrolling
+    });
+});
+
+
 
 
