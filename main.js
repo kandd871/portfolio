@@ -407,7 +407,7 @@ function createProjPoint(x, y) {
     mousepoints.style.left = `${x}px`;
     mousepoints.style.top = `${y}px`;
     mousepoints.style.zIndex = `-2000`;
-    projectsSection.appendChild(mousepoints);
+    allprojects.appendChild(mousepoints);
 
     // Set a timeout to remove the point after 1 second
     setTimeout(() => {
@@ -417,13 +417,13 @@ function createProjPoint(x, y) {
 
         setTimeout(() => {
             if (mousepoints.parentNode) {
-                projectsSection.removeChild(mousepoints); // Remove the projpoint after fade-out
+                allprojects.removeChild(mousepoints); // Remove the projpoint after fade-out
             }
         }, 500); // Adjust timing to match transition duration
     }, 2000); // Remove point after 1 second
 
     // Remove old projpoints if exceeding maxPoints
-    const points = projectsSection.querySelectorAll('.projpoints');
+    const points = allprojects.querySelectorAll('.projpoints');
     if (points.length > maxPoints) {
         const oldestPoint = points[0];
         oldestPoint.style.backgroundColor = 'var(--black)';
@@ -432,7 +432,7 @@ function createProjPoint(x, y) {
 
         setTimeout(() => {
             if (oldestPoint.parentNode) {
-                projectsSection.removeChild(oldestPoint); // Remove the oldest projpoint after fade-out
+                allprojects.removeChild(oldestPoint); // Remove the oldest projpoint after fade-out
             }
         }, 500); // Adjust timing to match transition duration
     }
