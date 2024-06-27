@@ -466,7 +466,7 @@ width: auto;
   padding-right: .75vw;
   box-sizing: border-box;
   width: 87vw;
-  background-color: var(--black);
+  background-color: rgba(197, 197, 197, 0.6);
 }
 
 
