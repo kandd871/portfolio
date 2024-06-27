@@ -603,7 +603,4 @@ allprojects.addEventListener('mousemove', (event) => {
                 behavior: 'smooth' // Smooth scrolling
             });
         });
-
-
 });
-
