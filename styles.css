@@ -70,15 +70,6 @@
     animation: opacity 1s forwards ease-in;
     background-color: var(--background);;
   }
-
-  #canvas{
-    height: 100%;
-    width: auto;
-    top: 100vh;
-    position: absolute;
-    z-index: -1000;
-  }
-
   .blur {
     filter: blur(10px);
 }
