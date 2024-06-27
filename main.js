@@ -1,8 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-   
-
-    const projpoints = document.querySelectorAll('.projpoint');
+    const about = document.getElementById('about');
+    const about2 = document.getElementById('about2');
+    const home = document.getElementById('home');
+    const projectsSection = document.getElementById('projects-section');
+    const projects = document.getElementById('projects');
+    const click1 = document.getElementById('click1');
+    const nav = document.getElementById('nav');
+    const allnav = document.getElementById('allnav');
+    const graph = document.getElementById('graph');
+    const header = document.getElementById('headertwo');
+    var allprojects = document.getElementById('allprojects');
+    const projpoints = document.querySelectorAll('.projpoint')
+    const arrowsholder = document.querySelector('.arrowsholder');
+    const footer = document.querySelector('.footer');
+    const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'problem solver'];
+    const skillSpans = document.querySelectorAll('.skills');
+    const skillTexts = document.querySelectorAll('.skill-text');
+    let index = 0;
     const boxes = document.querySelectorAll('.box');
     
     const options = {
@@ -381,177 +396,214 @@ window.addEventListener('scroll', () => {
         }
     });
 
-});
+    let mouseMoveCounter = 0;
+const maxPoints = 5; // Maximum number of projpoints to keep
 
-const about = document.getElementById('about');
-const about2 = document.getElementById('about2');
-const home = document.getElementById('home');
-const projectsSection = document.getElementById('projects-section');
-const projects = document.getElementById('projects');
-const click1 = document.getElementById('click1');
-const nav = document.getElementById('nav');
-const allnav = document.getElementById('allnav');
-const graph = document.getElementById('graph');
-const header = document.getElementById('headertwo');
-var allprojects = document.getElementById('allprojects');
-const projpoints = document.querySelectorAll('.projpoint')
-const arrowsholder = document.querySelector('.arrowsholder');
-const footer = document.querySelector('.footer');
-const skills = ['graphic designer', 'creative coder', 'multidisciplinary artist', 'product designer', 'problem solver'];
-const skillSpans = document.querySelectorAll('.skills');
-const skillTexts = document.querySelectorAll('.skill-text');
+// Function to create projpoint divs
+function createProjPoint(x, y) {
+    const mousepoints = document.createElement('div');
+    mousepoints.classList.add('projpoints');
+    mousepoints.style.position = 'absolute';
+    mousepoints.style.left = `${x}px`;
+    mousepoints.style.top = `${y}px`;
+    mousepoints.style.zIndex = `-2000`;
+    allprojects.appendChild(mousepoints);
 
-let index = 0;
+    // Set a timeout to remove the point after 1 second
+    setTimeout(() => {
+        mousepoints.style.transition = '.3s'; // Add transition for opacity fade-out
+        mousepoints.style.backgroundColor = 'var(--black)';
+        mousepoints.style.filter = 'blur(6px)';
 
-function changeSkill() {
-    skillTexts.forEach(skillText => {
-        // Remove blur
         setTimeout(() => {
-            skillText.classList.remove('blur');
-        }, 10);
+            if (mousepoints.parentNode) {
+                allprojects.removeChild(mousepoints); // Remove the projpoint after fade-out
+            }
+        }, 500); // Adjust timing to match transition duration
+    }, 2000); // Remove point after 1 second
 
-        // Set new skill text and add blur
-        skillText.textContent = skills[index];
+    // Remove old projpoints if exceeding maxPoints
+    const points = allprojects.querySelectorAll('.projpoints');
+    if (points.length > maxPoints) {
+        const oldestPoint = points[0];
+        oldestPoint.style.backgroundColor = 'var(--black)';
+        oldestPoint.style.transition = '.3s';
+        oldestPoint.style.filter = 'blur(6px)';
+
         setTimeout(() => {
-            skillText.classList.add('blur');
-        }, 1000);
-    });
-
-    // Update index for next skill
-    index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
+            if (oldestPoint.parentNode) {
+                allprojects.removeChild(oldestPoint); // Remove the oldest projpoint after fade-out
+            }
+        }, 500); // Adjust timing to match transition duration
+    }
 }
 
-// Initial call to set the first skill
-changeSkill();
+// Event listener for mousemove to draw projpoints
+allprojects.addEventListener('mousemove', (event) => {
+    mouseMoveCounter++;
 
-// Set interval to change skill every 1.5 seconds (adjust as needed)
-setInterval(changeSkill, 1500);
+    // Draw projpoint every 8th mousemove
+    if (mouseMoveCounter % 8 === 0) {
+        const rect = allprojects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
+        const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
+        const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
 
-click1.addEventListener('click', function(event) {
-        // Prevent event propagation to the home click event listener
-        event.stopPropagation();
-
-        about.style.display = "block";
-        about.style.position = "fixed";
-        setTimeout(function() {
-            about.style.opacity = "1";
-        }, 50); // Adjust this timeout as needed
-        home.style.filter = "blur(10px)";
-        allprojects.style.filter = "blur(10px)";
-        header.style.filter = "blur(10px)";
-        arrowsholder.style.filter = "blur(10px)";
-        home.style.pointerEvents = 'none';
-    });
-
-
-click2.addEventListener('click', function(event) {
-    // Prevent event propagation to the home click event listener
-    event.stopPropagation();
-
-    about2.style.display = "block";
-    about2.style.position = "fixed";
-    setTimeout(function() {
-        about2.style.opacity = "1";
-    }, 0); // Adjust this timeout as needed
-    allprojects.style.filter = "blur(10px)";
-    header.style.filter = "blur(10px)";
-    home.style.filter = "blur(10px)";
-    allprojects.style.pointerEvents = 'none';
-    arrowsholder.style.filter = "blur(10px)";
-});
-
-document.body.addEventListener('click', function(event) {
-    // Check if click target is not inside the about box
-    if (!about.contains(event.target) && about.style.display === "block") {
-        about.style.opacity = "0";
-        about.style.filter = "blur(7px)";
-        setTimeout(function() {
-            about.style.display = "none";
-            about.style.filter = "blur(0px)";
-        }, 500); // Adjust this timeout to match transition duration
-        home.style.filter = "blur(0px)";
-        allprojects.style.filter = "blur(0px)"; 
-        header.style.filter = "blur(0px)";  
-        arrowsholder.style.filter = "blur(0px)";
-        home.style.pointerEvents = 'auto';
+        // Check if #home section's height is 0 before drawing projpoints
+        if (home.clientHeight === 0) {
+            createProjPoint(mouseX, mouseY);
+        }
     }
 });
 
-document.body.addEventListener('click', function(event) {
-    // Check if click target is not inside the about box
-    if (!about2.contains(event.target) && about2.style.display === "block") {
-        about2.style.opacity = "0";
-        about2.style.filter = "blur(7px)";
-        setTimeout(function() {
-            about2.style.display = "none";
-            about2.style.filter = "blur(0px)";
-        }, 500); // Adjust this timeout to match transition duration
-        allprojects.style.filter = "blur(0px)"; 
-        header.style.filter = "blur(0px)"; 
-        home.style.filter = "blur(0px)"; 
-        arrowsholder.style.filter = "blur(0px)";
-        allprojects.style.pointerEvents = 'auto';
-    }
+
+        function changeSkill() {
+            skillTexts.forEach(skillText => {
+                // Remove blur
+                setTimeout(() => {
+                    skillText.classList.remove('blur');
+                }, 10);
+
+                // Set new skill text and add blur
+                skillText.textContent = skills[index];
+                setTimeout(() => {
+                    skillText.classList.add('blur');
+                }, 1000);
+            });
+
+            // Update index for next skill
+            index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
+        }
+
+        // Initial call to set the first skill
+        changeSkill();
+
+        // Set interval to change skill every 1.5 seconds (adjust as needed)
+        setInterval(changeSkill, 1500);
+
+        click1.addEventListener('click', function(event) {
+                // Prevent event propagation to the home click event listener
+                event.stopPropagation();
+
+                about.style.display = "block";
+                about.style.position = "fixed";
+                setTimeout(function() {
+                    about.style.opacity = "1";
+                }, 50); // Adjust this timeout as needed
+                home.style.filter = "blur(10px)";
+                allprojects.style.filter = "blur(10px)";
+                header.style.filter = "blur(10px)";
+                arrowsholder.style.filter = "blur(10px)";
+                home.style.pointerEvents = 'none';
+            });
+
+
+        click2.addEventListener('click', function(event) {
+            // Prevent event propagation to the home click event listener
+            event.stopPropagation();
+
+            about2.style.display = "block";
+            about2.style.position = "fixed";
+            setTimeout(function() {
+                about2.style.opacity = "1";
+            }, 0); // Adjust this timeout as needed
+            allprojects.style.filter = "blur(10px)";
+            header.style.filter = "blur(10px)";
+            home.style.filter = "blur(10px)";
+            allprojects.style.pointerEvents = 'none';
+            arrowsholder.style.filter = "blur(10px)";
+        });
+
+        document.body.addEventListener('click', function(event) {
+            // Check if click target is not inside the about box
+            if (!about.contains(event.target) && about.style.display === "block") {
+                about.style.opacity = "0";
+                about.style.filter = "blur(7px)";
+                setTimeout(function() {
+                    about.style.display = "none";
+                    about.style.filter = "blur(0px)";
+                }, 500); // Adjust this timeout to match transition duration
+                home.style.filter = "blur(0px)";
+                allprojects.style.filter = "blur(0px)"; 
+                header.style.filter = "blur(0px)";  
+                arrowsholder.style.filter = "blur(0px)";
+                home.style.pointerEvents = 'auto';
+            }
+        });
+
+        document.body.addEventListener('click', function(event) {
+            // Check if click target is not inside the about box
+            if (!about2.contains(event.target) && about2.style.display === "block") {
+                about2.style.opacity = "0";
+                about2.style.filter = "blur(7px)";
+                setTimeout(function() {
+                    about2.style.display = "none";
+                    about2.style.filter = "blur(0px)";
+                }, 500); // Adjust this timeout to match transition duration
+                allprojects.style.filter = "blur(0px)"; 
+                header.style.filter = "blur(0px)"; 
+                home.style.filter = "blur(0px)"; 
+                arrowsholder.style.filter = "blur(0px)";
+                allprojects.style.pointerEvents = 'auto';
+            }
+        });
+
+        nav.addEventListener('click', function(){
+            home.style.height = '0';
+            document.body.style.overflow = "scroll";
+            document.body.style.height = "auto";
+            home.style.filter = "blur(7px)";
+            projectsSection.style.animation = 'opacity 1s forwards ease-in';
+            footer.style.visibility = "visible";
+            arrowsholder.style.visibility = "visible";
+            arrowsholder.style.opacity = "1";
+            arrowsholder.style.filter = "blur(7px)";
+            setTimeout(function() {
+                arrowsholder.style.filter = "blur(0px)";
+            }, 500);
+        })
+
+        allnav.addEventListener('click', function(){
+            home.style.height = '100vh';
+            arrowsholder.style.visibility = "hidden";
+            footer.style.visibility = "hidden";
+            arrowsholder.style.opacity = "0";
+            arrowsholder.style.filter = "blur(7px)";
+            document.body.style.overflow = "hidden";
+            document.body.style.height = "100vh";
+            home.style.filter = "blur(7px)";
+                setTimeout(function() {
+                    home.style.filter = "blur(0px)";
+                }, 500);
+        })
+
+        document.getElementById('up').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById('down').addEventListener('click', function() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+
+        document.getElementById('left').addEventListener('click', function() {
+            const container = document.getElementById('allprojects');
+            const box = document.querySelector('.box');
+            const boxWidth = box ? box.offsetWidth : 0;
+            container.scrollBy({
+                left: -boxWidth, 
+                behavior: 'smooth' // Smooth scrolling
+            });
+        });
+
+        document.getElementById('right').addEventListener('click', function() {
+            const container = document.getElementById('allprojects');
+            const box = document.querySelector('.box');
+            const boxWidth = box ? box.offsetWidth : 0;
+            container.scrollBy({
+                left: boxWidth, // Scroll right by the width of .box
+                behavior: 'smooth' // Smooth scrolling
+            });
+        });
+
+
 });
-
-nav.addEventListener('click', function(){
-    home.style.height = '0';
-    document.body.style.overflow = "scroll";
-    document.body.style.height = "auto";
-    home.style.filter = "blur(7px)";
-    projectsSection.style.animation = 'opacity 1s forwards ease-in';
-    footer.style.visibility = "visible";
-    arrowsholder.style.visibility = "visible";
-    arrowsholder.style.opacity = "1";
-    arrowsholder.style.filter = "blur(7px)";
-    setTimeout(function() {
-        arrowsholder.style.filter = "blur(0px)";
-    }, 500);
-})
-
-allnav.addEventListener('click', function(){
-    home.style.height = '100vh';
-    arrowsholder.style.visibility = "hidden";
-    footer.style.visibility = "hidden";
-    arrowsholder.style.opacity = "0";
-    arrowsholder.style.filter = "blur(7px)";
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
-    home.style.filter = "blur(7px)";
-        setTimeout(function() {
-            home.style.filter = "blur(0px)";
-        }, 500);
-})
-
-document.getElementById('up').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-document.getElementById('down').addEventListener('click', function() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-});
-
-document.getElementById('left').addEventListener('click', function() {
-    const container = document.getElementById('allprojects');
-    const box = document.querySelector('.box');
-    const boxWidth = box ? box.offsetWidth : 0;
-    container.scrollBy({
-        left: -boxWidth, 
-        behavior: 'smooth' // Smooth scrolling
-    });
-});
-
-document.getElementById('right').addEventListener('click', function() {
-    const container = document.getElementById('allprojects');
-    const box = document.querySelector('.box');
-    const boxWidth = box ? box.offsetWidth : 0;
-    container.scrollBy({
-        left: boxWidth, // Scroll right by the width of .box
-        behavior: 'smooth' // Smooth scrolling
-    });
-});
-
-
-
-
 

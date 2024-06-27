@@ -71,6 +71,14 @@
     background-color: var(--background);;
   }
 
+  #canvas{
+    height: 100%;
+    width: auto;
+    top: 100vh;
+    position: absolute;
+    z-index: -1000;
+  }
+
   .blur {
     filter: blur(10px);
 }
@@ -439,6 +447,7 @@ padding-bottom: 1vw;
 overflow-x: scroll; 
 overflow-y: scroll;
 display: flex;
+position: relative;
 flex-direction: row;
 /* gap: 7vw; */
 width: auto;
@@ -647,6 +656,16 @@ width: auto;
   margin-right: 3vw;
   transition: .5s;
   filter: blur(3px);
+}
+
+.projpoints {
+  width:  1.2vw;
+  height: 1.2vw;
+  background-color: var(--color);
+  transition: .3s;
+  filter: blur(4px);
+  pointer-events: none;
+  animation: opacityblur forwards .75s ease-in;
 }
 
 .scale-up{
