@@ -101,7 +101,7 @@ window.addEventListener('scroll', () => {
     let count = 0;
     const maxCount = 9;
     const interval = 275;
-    let rows = 52;
+    let rows = 54;
     let cols = 96;
     let col1 = 89; let row1 = 4;
     let col2 = 84; let row2 = 1;
@@ -112,13 +112,13 @@ window.addEventListener('scroll', () => {
     let col6 = 24; let row6 = 36;
     let col7 = 72; let row7 = 36;
     
-    let col8 = 6; let row8 = 49;
+    let col8 = 6; let row8 = 52;
     let col9 = 92; let row9 = 47;   
 
     let gridSize = .8;
 
         function setPointValues() {
-            rows= 52;
+            rows= 54;
             cols = 96;
 
             gridSize = .8;
@@ -132,7 +132,7 @@ window.addEventListener('scroll', () => {
             col6 = 24; row6 = 36;
             col7 = 72; row7 = 36;
             
-            col8 = 6; row8 = 49;
+            col8 = 6; row8 = 52;
             col9 = 92; row9 = 47;
             const width = window.innerWidth;
             if (width < 700) {
@@ -382,12 +382,12 @@ window.addEventListener('scroll', () => {
 
         if (window.scrollY > headerOffset) {
             header.classList.add('fixed');
-            allprojects.style.paddingTop = "7vw";
-            projnav.style.marginTop = "-0.4vw";
+            allprojects.style.paddingTop = "5vw";
+            projnav.style.marginTop = "-0.5vw";
         } else {
             header.classList.remove('fixed');
             allprojects.style.paddingTop = "1vw";
-            projnav.style.marginTop = "0.25vw";
+            projnav.style.marginTop = "0vw";
         }
 
         // Prevent scrolling above the header
@@ -396,7 +396,7 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    let mouseMoveCounter = 0;
+let mouseMoveCounter = 0;
 const maxPoints = 5; // Maximum number of projpoints to keep
 
 // Function to create projpoint divs

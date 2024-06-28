@@ -1,0 +1,292 @@
+@font-face {
+    font-family: "PP Rader";
+    src: local("PP Rader"), url("PP Rader/PPRader-Regular.otf") format("opentype");
+}
+
+:root {
+    --color: #ed26ff;
+    --background: #404040;
+    --black: #c8c8c8;
+}
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    color: var(--black);
+    width: 100vw;
+    font-family: 'PP Rader', 'Helvetica', sans-serif;
+    height: auto;
+    background-color: var(--black);
+}
+
+#about{
+  position: fixed!important;
+  width: 45vw;
+  height: 45vw;
+  background-color: var(--background);
+  color: var(--color);
+  margin: auto;
+  top: 50vh;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 1% 1.5% 1% 1.5%;
+  line-height: 1;
+  z-index: 101;
+  opacity: 0;
+  display: none;
+  transition: .5s!important;
+  }
+
+  #about2 .linkpoints{
+    background-color: var(--color);
+    }
+    
+    #about2 a{
+    color: var(--color);
+    }
+
+
+    .click{
+      /* text-decoration: underline; */
+      cursor: pointer;
+      padding: 0;;
+      background-color: var(--color);
+      color: var(--background);
+      }
+      
+      #drithi{
+      font-size: 3.75vw;
+      margin:0;
+      text-transform: uppercase;
+      }
+      
+      #main-text, .linkcontainer{
+      font-size: 2vw;
+      }
+      
+      #linkcontainer{
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      margin-top: 3vw;
+      }
+      
+      #linkcontainer a{
+      text-decoration: none;
+      }
+      
+      .linkcontainer {
+      text-align: center; /* To center the text */
+      }
+      
+      .linkpoints {
+      display: inline-block; /* Make the point inline with text */
+      width: 1.2vw;
+      height: 1.2vw;
+      background-color: var(--color);
+      cursor: pointer;
+      }
+
+
+.header{
+    font-size: 2.5vw;
+    display: flex;
+    line-height:1;
+    justify-content: space-between;
+    padding: 1% 1% 1% 1%;
+    margin-bottom: 2.2vw;
+    transition: .5s;
+    /* border-bottom: 1.5px dotted var(--black); */
+    line-height: 1;
+    color: var(--background);
+  }
+  
+  .header span{
+    background-color: var(--color);
+    color: var(--background); 
+  }
+
+  .blur {
+    filter: blur(10px);
+  }
+  
+  .skill-text{
+  transition: .5s;
+  }
+
+  
+  #side{
+    display: inline-flex;
+  }
+
+  #archive{
+    text-decoration: underline;
+  }
+  
+  #allnav{
+    padding-left: .5vw;
+  }
+
+  #headertwo{
+    margin-bottom:0;
+    display: flex;
+    /* background-color: rgba(212, 212, 212, 0.7); */
+    /* border-bottom: 1.5px dotted var(--background); */
+    background: rgb(200,200,200);
+    background: linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(200,200,200,.75) 20%, rgba(200,200,200,0) 100%);
+    padding-bottom: 1vw;
+    cursor: auto;
+    }
+    
+    
+    #headertwo a{
+    z-index: 2000;
+    color: var(--background);
+    }
+    
+    #allnav a{
+    text-decoration: none;
+    /* background-color: var(--color); */
+    }
+
+    #allnav a:hover{
+      background-color: var(--color);
+      text-decoration: underline;
+    }
+
+  .click{
+  /* text-decoration: underline; */
+  cursor: pointer;
+  padding: 0;
+  background-color: var(--color);
+  color: var(--background);
+  }
+  
+  img{
+    border: .5px solid var(--color);
+  }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vw;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 31%;
+    max-width: 31%;
+    padding: .5vw;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: .5vw;
+}
+
+.fixed {
+  position: fixed!important;
+  top: 0;
+  width: 98vw; 
+  background-color: rgba(197, 197, 197, 0.7); 
+  z-index: 100; 
+  font-size: 1.3vw;
+  margin-bottom: 0;
+  padding-bottom: .5vw;
+  transition: .5s;
+  /* padding-top:.5vw; */
+  }
+
+
+.footer{
+  width: 100%;
+  height: 3.75vw;
+  display: block;
+  position: fixed;
+  background: rgb(200,200,200);
+  background: linear-gradient(180deg, rgba(200,200,200,0) 0%, rgba(200,200,200,.5) 90%, rgba(200,200,200,1) 100%);
+  bottom:0;
+  transition: .5s;
+  }
+
+a{
+  transition: .5s;
+  text-decoration: none;
+  color: var(--color);
+}
+
+.click:hover{
+  transition: .5s;
+  filter:blur(7px);
+  }
+
+#allnav:hover{
+  transition: .5s;
+  filter:blur(7px);
+  text-decoration: underline;
+}
+
+#projects{
+  animation: opacity 2s forwards ease-in;
+  padding-top: 3vw;
+}
+
+#projects a:hover{
+    filter: blur(4px);
+    cursor: alias;
+    }
+
+
+.projpoints {
+width:  1.2vw;
+height: 1.2vw;
+background-color: var(--color);
+transition: .3s;
+filter: blur(4px);
+pointer-events: none;
+animation: opacityblur forwards .75s ease-in;
+}
+
+.copyright{
+  display: block;
+  margin-bottom:1vw;
+  font-size: .8vw;
+  margin-left: 1.5vw; 
+  text-transform: uppercase;
+  text-align: center;
+  }
+  
+  #copy{
+  background-color: var(--color);
+  }
+
+@keyframes opacityblur {
+  from {
+    filter: blur(4px);
+    opacity: 0;
+  }
+  to {
+    filter: default;
+    opacity: 1;
+  }
+  }
+  
+
+@keyframes opacity {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
