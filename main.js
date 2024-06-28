@@ -159,7 +159,7 @@ window.addEventListener('scroll', () => {
             col8 = 3; row8 = 65;
             col9 = 38; row9 = 60;
 
-            col10 = 30; row10 = 28;   
+            col10 = 30; row10 = 26;   
             }
         }
     
