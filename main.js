@@ -103,17 +103,20 @@ window.addEventListener('scroll', () => {
     const interval = 275;
     let rows = 54;
     let cols = 96;
-    let col1 = 89; let row1 = 4;
-    let col2 = 84; let row2 = 1;
-    let col3 = 80; let row3 = 7;
+
+    let col1 = 89; let row1 = 3;
+    let col2 = 70; let row2 = 1;
+    let col3 = 85; let row3 = 7;
     let col4 = 9; let row4 = 18;
     let col5 = 2; let row5 = 22;
 
     let col6 = 24; let row6 = 36;
-    let col7 = 72; let row7 = 36;
+    // let col7 = 72; let row7 = 36;
     
-    let col8 = 6; let row8 = 52;
+    let col8 = 6; let row8 = 51;
     let col9 = 92; let row9 = 47;   
+
+    let col10 = 77; let row10 = 21;   
 
     let gridSize = .8;
 
@@ -123,17 +126,19 @@ window.addEventListener('scroll', () => {
 
             gridSize = .8;
 
-            col1 = 89; row1 = 4;
-            col2 = 84; row2 = 1;
-            col3 = 80; row3 = 7;
+            col1 = 89; row1 = 3;
+            col2 = 70; row2 = 1;
+            col3 = 85; row3 = 7;
             col4 = 9; row4 = 18;
             col5 = 2; row5 = 22;
 
             col6 = 24; row6 = 36;
-            col7 = 72; row7 = 36;
+            // col7 = 72; row7 = 36;
             
-            col8 = 6; row8 = 52;
+            col8 = 6; row8 = 51;
             col9 = 92; row9 = 47;
+            col10 = 77; row10 = 21;  
+
             const width = window.innerWidth;
             if (width < 700) {
             rows= 68;
@@ -141,18 +146,20 @@ window.addEventListener('scroll', () => {
 
             gridSize = 1.65;
 
-            col1 = 37; row1 = 6;
-            col2 = 34; row2 = 1;
-            col3 = 29; row3 = 10;
+            col1 = 38; row1 = 6;
+            col2 = 29; row2 = 1;
+            col3 = 36; row3 = 10;
 
             col4 = 7; row4 = 27;
             col5 = 1; row5 = 30;
 
             col6 = 11; row6 = 50;
-            col7 = 30; row7 = 50;
+            // col7 = 30; row7 = 50;
 
             col8 = 3; row8 = 65;
             col9 = 38; row9 = 60;
+
+            col10 = 30; row10 = 28;   
             }
         }
     
@@ -182,18 +189,18 @@ window.addEventListener('scroll', () => {
                 if (col === col4 && row === row4) {
                     drawPoint(row, col, gridContainer, '(MUTATED ODYSSEY, 2024)', 'pointD', '#mutated-odyssey');
                 }
-    
+
                 if (col === col5 && row === row5) {
                     drawPoint(row, col, gridContainer, '(AIGA’S FIRST THINGS FIRST MANIFESTO, 2024)', 'pointE', '#first-things-first');
                 }
     
                 if (col === col6 && row === row6) {
-                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 1, 2023)', 'pointF', '#macbook');
+                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM, 2023)', 'pointF', '#macbook');
                 }
     
-                if (col === col7 && row === row7) {
-                    drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 2, 2023)', 'pointG', '#touch-some-grass');
-                }
+                // if (col === col7 && row === row7) {
+                //     drawPoint(row, col, gridContainer, '(EXPLORING ESCAPISM PT. 2, 2023)', 'pointG', '#touch-some-grass');
+                // }
     
                 if (col === col8 && row === row8) {
                     drawPoint(row, col, gridContainer, '(HOME BOOK, 2023)', 'pointH', '#home-book');
@@ -201,6 +208,11 @@ window.addEventListener('scroll', () => {
     
                 if (col === col9 && row === row9) {
                     drawPoint(row, col, gridContainer, '(STARDEW TYPEFACE, 2023)', 'pointI', '#stardew');
+                }
+
+                    
+                if (col === col10 && row === row10) {
+                    drawPoint(row, col, gridContainer, '(EDITORIAL ILLUSTRATION, 2024)', 'pointJ', '#editorial');
                 }
             }
         }
@@ -276,7 +288,7 @@ window.addEventListener('scroll', () => {
                 arrowsholder.style.filter = "blur(0px)";
                 footer.style.visibility = "visible";
                 // Scroll to the top of the target element within #allprojects
-            }, 500);
+            }, 250);
         });
         
         
@@ -303,6 +315,7 @@ window.addEventListener('scroll', () => {
             pointText.style.visibility = 'visible';
             pointText.style.opacity = '1';
             point.style.filter = 'blur(2px)';
+            point.style.transition = '.5s';
         });
     }
 
@@ -379,15 +392,22 @@ window.addEventListener('scroll', () => {
         const header = document.querySelector('#headertwo');
         const allprojects = document.querySelector('#allprojects');
         const projnav = document.querySelector('#projnav');
+        const brackets = document.querySelectorAll('.bracket1')
 
         if (window.scrollY > headerOffset) {
             header.classList.add('fixed');
             allprojects.style.paddingTop = "5vw";
             projnav.style.marginTop = "-0.5vw";
+            brackets.forEach(bracket => {
+                bracket.style.top = "-.1rem";
+            });    
         } else {
             header.classList.remove('fixed');
             allprojects.style.paddingTop = "1vw";
             projnav.style.marginTop = "0vw";
+            brackets.forEach(bracket => {
+                bracket.style.top = "-.17rem";
+            }); 
         }
 
         // Prevent scrolling above the header
@@ -521,7 +541,7 @@ allprojects.addEventListener('mousemove', (event) => {
                 setTimeout(function() {
                     about.style.display = "none";
                     about.style.filter = "blur(0px)";
-                }, 500); // Adjust this timeout to match transition duration
+                }, 250); // Adjust this timeout to match transition duration
                 home.style.filter = "blur(0px)";
                 allprojects.style.filter = "blur(0px)"; 
                 header.style.filter = "blur(0px)";  
@@ -538,7 +558,7 @@ allprojects.addEventListener('mousemove', (event) => {
                 setTimeout(function() {
                     about2.style.display = "none";
                     about2.style.filter = "blur(0px)";
-                }, 500); // Adjust this timeout to match transition duration
+                }, 250); // Adjust this timeout to match transition duration
                 allprojects.style.filter = "blur(0px)"; 
                 header.style.filter = "blur(0px)"; 
                 home.style.filter = "blur(0px)"; 
@@ -559,7 +579,7 @@ allprojects.addEventListener('mousemove', (event) => {
             arrowsholder.style.filter = "blur(7px)";
             setTimeout(function() {
                 arrowsholder.style.filter = "blur(0px)";
-            }, 500);
+            }, 250);
         })
 
         allnav.addEventListener('click', function(){
@@ -573,7 +593,7 @@ allprojects.addEventListener('mousemove', (event) => {
             home.style.filter = "blur(7px)";
                 setTimeout(function() {
                     home.style.filter = "blur(0px)";
-                }, 500);
+                }, 250);
         })
 
         document.getElementById('up').addEventListener('click', function() {

@@ -37,12 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerOffset = header.offsetTop;
     
     window.addEventListener('scroll', function() {
+        const brackets = document.querySelectorAll('.bracket')
         if (window.scrollY > headerOffset) {
             header.classList.add('fixed');
             projects.style.paddingTop = "7vw";
+            brackets.forEach(bracket => {
+                bracket.style.top = "-.1rem";
+            });            
         } else {
             header.classList.remove('fixed');
             projects.style.paddingTop = "3vw";
+            brackets.forEach(bracket => {
+                bracket.style.top = "-.17rem";
+            });    
+        }
+        if (window.scrollY < headerOffset) {
+            window.scrollTo(0, headerOffset);
         }
     });
     
@@ -124,9 +134,9 @@ projects.addEventListener('mousemove', (event) => {
 
     // Draw projpoint every 8th mousemove
     if (mouseMoveCounter % 8 === 0) {
-        const rect = projects.getBoundingClientRect();
+        const rect = projects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + projects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
-        const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
+        const mouseY = event.clientY + projects.scrollTop - rect.top; // Adjust mouseY for vertical scroll
 
         createProjPoint(mouseX, mouseY);
     }

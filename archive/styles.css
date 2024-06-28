@@ -41,7 +41,7 @@ body {
   z-index: 101;
   opacity: 0;
   display: none;
-  transition: .5s!important;
+  transition: .25s!important;
   }
 
   #about2 .linkpoints{
@@ -102,23 +102,28 @@ body {
     justify-content: space-between;
     padding: 1% 1% 1% 1%;
     margin-bottom: 2.2vw;
-    transition: .5s;
+    transition: .25s;
     /* border-bottom: 1.5px dotted var(--black); */
     line-height: 1;
     color: var(--background);
   }
   
+  .bracket{
+    position: relative;
+    top: -.17rem;
+  }
+/*   
   .header span{
     background-color: var(--color);
     color: var(--background); 
-  }
+  } */
 
   .blur {
     filter: blur(10px);
   }
   
   .skill-text{
-  transition: .5s;
+  transition: .25s;
   }
 
   
@@ -127,7 +132,9 @@ body {
   }
 
   #archive{
-    text-decoration: underline;
+    background-color: var(--background);
+    /* text-decoration: underline; */
+    color: var(--black)!important;
   }
   
   #allnav{
@@ -153,7 +160,6 @@ body {
     
     #allnav a{
     text-decoration: none;
-    /* background-color: var(--color); */
     }
 
     #allnav a:hover{
@@ -203,7 +209,7 @@ body {
   font-size: 1.3vw;
   margin-bottom: 0;
   padding-bottom: .5vw;
-  transition: .5s;
+  transition: .25s;
   /* padding-top:.5vw; */
   }
 
@@ -216,22 +222,22 @@ body {
   background: rgb(200,200,200);
   background: linear-gradient(180deg, rgba(200,200,200,0) 0%, rgba(200,200,200,.5) 90%, rgba(200,200,200,1) 100%);
   bottom:0;
-  transition: .5s;
+  transition: .25s;
   }
 
 a{
-  transition: .5s;
+  transition: .25s;
   text-decoration: none;
   color: var(--color);
 }
 
 .click:hover{
-  transition: .5s;
+  transition: .25s;
   filter:blur(7px);
   }
 
 #allnav:hover{
-  transition: .5s;
+  transition: .25s;
   filter:blur(7px);
   text-decoration: underline;
 }
@@ -239,6 +245,8 @@ a{
 #projects{
   animation: opacity 2s forwards ease-in;
   padding-top: 3vw;
+  padding-bottom: 10vw;
+  position: relative;
 }
 
 #projects a:hover{
@@ -259,11 +267,12 @@ animation: opacityblur forwards .75s ease-in;
 
 .copyright{
   display: block;
-  margin-bottom:1vw;
+  margin-bottom:2vw;
   font-size: .8vw;
   margin-left: 1.5vw; 
   text-transform: uppercase;
   text-align: center;
+  color: var(--background);
   }
   
   #copy{
@@ -289,4 +298,37 @@ from {
 to {
   opacity: 1;
 }
+}
+
+
+@media only screen and (max-width: 700px){
+
+  .header{
+    font-size: 8.5vw;
+    /* line-height:1;
+    justify-content: space-between;
+    padding: 0.4% 1% 1% 1%;
+    margin-bottom: 2.2vw; */
+    border-bottom: none;
+    padding:0;
+  }
+
+  #headertwo{
+    padding-top: 2vw;
+    padding-left:.75vw;
+    padding-right:.75vw;
+    font-size: 8.5vw;
+    padding-bottom: 4vw;
+  }
+
+  .column{
+    padding: 1vw;
+  }
+
+  .copyright{
+    padding-top:16vw;
+    padding-bottom: 3vw;
+    font-size: 2.5vw;
+    text-align: center;
+  }
 }
