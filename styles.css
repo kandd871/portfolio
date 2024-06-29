@@ -947,6 +947,7 @@ display: flex;
 }
 
 .two{
+  margin-top: 1.25vw;
   width: 82vw;
   display: flex; 
 }
