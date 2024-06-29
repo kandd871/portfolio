@@ -694,22 +694,51 @@ transform: translateX(-.75vw);
 transform: translateX(.75vw);
 }
 
-#projnav{
-display: inline-flex;
-margin: 0 auto;
-margin-top: 0vw; 
+#projnav {
+  display: inline-flex;
+  margin: 0 auto;
+  margin-top: 0vw;
+}
+
+.navhover {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2.25vw;
 }
 
 .projpoint {
-width: .85vw;
-height: .85vw;
-background-color: var(--color);
-cursor: pointer;
-display: inline-flex;
-margin-left: 2.25vw;
-margin-right: 2.25vw;
-transition: .25s;
-filter: blur(3px);
+  width: .85vw;
+  height: .85vw;
+  background-color: var(--color);
+  cursor: pointer;
+  transition: .25s;
+}
+
+.tooltiptext {
+  text-transform: uppercase;
+  visibility: hidden;
+  font-size: .8vw;
+  color: var(--background);
+  text-align: center;
+  line-height: .9;
+  position: absolute;
+  z-index: 1;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  white-space: nowrap;
+  display: flex;
+  transition: 0.2s;
+  margin-top: -.3vw;
+  transition: .2s;
+}
+
+.navhover:hover .tooltiptext {
+  visibility: visible;
+  opacity: .9;
 }
 
 .projpoints {
@@ -721,6 +750,7 @@ filter: blur(4px);
 pointer-events: none;
 animation: opacityblur forwards .75s ease-in;
 }
+
 
 .scale-up{
 width: 1.2vw;
@@ -836,14 +866,18 @@ margin-top: 1.5vw;
 font-size: 1.3vw;
 }
 
-.border{
-border-radius: .7vw;
-}
-
 .background{
 position: relative;
-/* margin: 0 auto; */
+margin: 0 auto;
+margin-top: .5vw;
 display: flex;
+width: 82vw;
+height: 50vw;
+background-color: black;
+}
+
+.background:hover{
+  transform: scale(1);
 }
 
 .second {
@@ -853,7 +887,7 @@ position: absolute; /* Position the second image absolutely within the backgroun
 top: 50%; /* Align the top edge of the image to the vertical center */
 left: 49.2%; /* Align the left edge of the image to the horizontal center */
 transform: translate(-50%, -50%); /* Adjust the image position to center it precisely */
-max-width: 87%; /* Set the maximum width of the second image to 80% of the container */
+max-height: 48vw; /* Set the maximum width of the second image to 80% of the container */
 }
 
 .copyright{
@@ -947,7 +981,8 @@ width: auto;
 }
 
 .twocolweb img{
-width: 40.5vw;
+width: 43.25vw;
+margin-left: -1.5vw;
 }
 
 #blum-code{
@@ -1247,9 +1282,9 @@ display: none;
 
 #home-content{
   position: absolute;
-  top: 49vh;
+  top: 48vh;
   left: 50vw;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(.91);
 }
 
 #graph{
@@ -1279,7 +1314,7 @@ display: none;
   .xaxis{
     font-size: 3vw;
     width: 100vw;
-    top:58.75vw;
+    top:58vw;
   }
   
   #print{
@@ -1296,7 +1331,7 @@ display: none;
     font-size: 3vw;
     justify-content: center;
     text-align: center;
-    height: 135vw;
+    height: 134vw;
     width: 100vw;
   }
 
@@ -1351,7 +1386,7 @@ display: none;
 
   .key {
     position: absolute;
-    top: 34vw;
+    top: 29vw;
     left: 50%;
     transform: translateX(-50%);
     width: 95vw;

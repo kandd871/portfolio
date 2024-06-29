@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to update projpoints styles
     function updateProjpoints(targetId) {
         projpoints.forEach(projpoint => {
+            tooltiptext = projpoint.querySelector('.tooltiptext');
             if (projpoint.dataset.target === targetId) {
                 projpoint.style.width = '1.1vw';
                 projpoint.style.height = '1.1vw';
