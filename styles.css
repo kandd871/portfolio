@@ -1212,7 +1212,7 @@ to {
 }
 
 
-@media only screen and (max-height: 850px){
+@media only screen and (max-height: 800px){
 #home-content{
   transform: scale(.9);
   margin-top: -2vw;
@@ -1316,7 +1316,7 @@ display: none;
   .xaxis{
     font-size: 3vw;
     width: 100vw;
-    top:58vw;
+    top:58.6vw;
   }
   
   #print{
@@ -1333,13 +1333,13 @@ display: none;
     font-size: 3vw;
     justify-content: center;
     text-align: center;
-    height: 134vw;
+    height: 134.3vw;
     width: 100vw;
   }
 
   #branding{
     width: 100vw;
-    top:-1.1vw;
+    top:-1vw;
   }
 
   #personal{

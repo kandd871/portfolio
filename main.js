@@ -105,10 +105,10 @@ window.addEventListener('scroll', () => {
     let rows = 54;
     let cols = 96;
 
-    let col1 = 89; let row1 = 3;
+    let col1 = 87; let row1 = 3;
     let col2 = 70; let row2 = 1;
     let col3 = 85; let row3 = 7;
-    let col4 = 9; let row4 = 18;
+    let col4 = 18; let row4 = 11;
     let col5 = 2; let row5 = 22;
 
     let col6 = 24; let row6 = 36;
@@ -127,10 +127,10 @@ window.addEventListener('scroll', () => {
 
             gridSize = .8;
 
-            col1 = 89; row1 = 3;
+            col1 = 87; row1 = 3;
             col2 = 70; row2 = 1;
             col3 = 85; row3 = 7;
-            col4 = 9; row4 = 18;
+            col4 = 18; row4 = 11;
             col5 = 2; row5 = 22;
 
             col6 = 24; row6 = 36;
@@ -151,7 +151,7 @@ window.addEventListener('scroll', () => {
             col2 = 29; row2 = 1;
             col3 = 36; row3 = 10;
 
-            col4 = 7; row4 = 27;
+            col4 = 10; row4 = 17;
             col5 = 1; row5 = 30;
 
             col6 = 11; row6 = 50;
