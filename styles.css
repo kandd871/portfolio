@@ -946,9 +946,17 @@ width: 38vw;
 display: flex;
 }
 
-/* #illustrations{
-width: 98%;
-} */
+.two{
+  width: 82vw;
+  display: flex; 
+}
+
+.two img{
+  width: 50%;
+}
+#cover1 {
+  transform: rotate(180deg); /* Rotate cover2 by 180 degrees */
+}
 
 .twocol, .twocolweb, .threecol, .threecol2, .threecol3, .twocol2, .twocol3, .twocol4, .sixcol{
 width: 82vw;
@@ -1487,6 +1495,7 @@ display: none;
   margin-bottom: 2vw;
   font-size: 3.5vw;
 }
+
 
 .twocol, .twocolweb .threecol, .threecol2, .threecol3, .twocol2, .twocol3, .twocol4, .sixcol, video{
   width: 82.25vw;
