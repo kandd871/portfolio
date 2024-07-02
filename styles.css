@@ -125,6 +125,7 @@ margin-top: 3vw;
 
 #linkcontainer a{
 text-decoration: none;
+color: var(--color);
 }
 
 .linkcontainer {
