@@ -105,7 +105,7 @@ window.addEventListener('scroll', () => {
     let rows = 54;
     let cols = 96;
 
-    let col1 = 87; let row1 = 3;
+    let col1 = 87; let row1 = 4;
     let col2 = 70; let row2 = 1;
     let col3 = 85; let row3 = 7;
     let col4 = 18; let row4 = 11;
@@ -127,7 +127,7 @@ window.addEventListener('scroll', () => {
 
             gridSize = .8;
 
-            col1 = 87; row1 = 3;
+            col1 = 87; row1 = 4;
             col2 = 70; row2 = 1;
             col3 = 85; row3 = 7;
             col4 = 18; row4 = 11;
@@ -459,12 +459,66 @@ function createProjPoint(x, y) {
     }
 }
 
+// Function to create projpoint divs for #home section
+function createHomeProjPoint(x, y) {
+    const homemousepoints = document.createElement('div');
+    homemousepoints.classList.add('homeprojpoints');
+    homemousepoints.style.position = 'absolute';
+    homemousepoints.style.left = `${x}px`;
+    homemousepoints.style.top = `${y}px`;
+    homemousepoints.style.zIndex = `-1`;
+    home.appendChild(homemousepoints); // Append to #home section
+
+    // Set a timeout to remove the point after 1 second
+    setTimeout(() => {
+        homemousepoints.style.transition = '.3s'; // Add transition for opacity fade-out
+        homemousepoints.style.backgroundColor = 'var(--background)';
+        homemousepoints.style.filter = 'blur(6px)';
+
+        setTimeout(() => {
+            if (homemousepoints.parentNode) {
+                home.removeChild(homemousepoints); // Remove the projpoint after fade-out
+            }
+        }, 500); // Adjust timing to match transition duration
+    }, 2000); // Remove point after 1 second
+
+    // Remove old projpoints if exceeding maxPoints
+    const homepoints = home.querySelectorAll('.homeprojpoints');
+    const maxPoints = 5; // Maximum number of projpoints to keep for #home
+    if (homepoints.length > maxPoints) {
+        const homeoldestPoint = points[0];
+        homeoldestPoint.style.backgroundColor = 'var(--black)';
+        homeoldestPoint.style.transition = '.3s';
+        homeoldestPoint.style.filter = 'blur(6px)';
+
+        setTimeout(() => {
+            if (homeoldestPoint.parentNode) {
+                home.removeChild(homeoldestPoint); // Remove the oldest projpoint after fade-out
+            }
+        }, 500); // Adjust timing to match transition duration
+    }
+}
+
+home.addEventListener('mousemove', (event) => {
+    mouseMoveCounter++;
+
+    // Draw projpoint every 8th mousemove
+    if (mouseMoveCounter % 15 === 0) {
+        const rect = home.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
+        const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
+        const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
+
+        createHomeProjPoint(mouseX, mouseY);
+    }
+});
+
+
 // Event listener for mousemove to draw projpoints
 allprojects.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
     // Draw projpoint every 8th mousemove
-    if (mouseMoveCounter % 8 === 0) {
+    if (mouseMoveCounter % 10 === 0) {
         const rect = allprojects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
