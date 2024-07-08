@@ -896,6 +896,11 @@ margin-top: 1.5vw;
 font-size: 1.3vw;
 }
 
+.details{
+  opacity: .8;
+  margin-bottom: -.75vw;
+}
+
 .background{
 position: relative;
 margin: 0 auto;
@@ -951,12 +956,13 @@ width: 98%;
 }
 .fullwidth{
 width: 82vw;
-margin-top: 1.25vw;
+margin-top: 1.5vw;
 }
 
 .homegif{
 width: 83vw!important;
 margin-left: -.5vw;
+margin-top: .5vw;
 }
 
 #blumenhaus-web{
