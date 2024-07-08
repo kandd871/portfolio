@@ -12,6 +12,15 @@
     url("ABCROMCondensed-Regular-Trial.otf") format("opentype"),
 }
 
+
+@font-face {
+  font-family: "Px Grotesk";
+  src:
+    local("Px Grotesk Regular"),
+    url("Px-Grotesk-Regular.ttf") format("truetype"),
+}
+
+
 :root {
   --color: #ed26ff;
   --background: rgb(64, 64, 64);
