@@ -1140,15 +1140,15 @@ top: 0;
 bottom: 0;
 width: 50%;
 }
-.carousel::before {
+/* .carousel img::before {
 left: 0%;
 z-index:2;
 cursor: url('arrowleftnav.svg'), auto;
 }
-.carousel::after {
+.carousel img::after {
 right: 0;
 cursor: url('arrowrightnav.svg'), auto;
-}
+} */
 
 .last{
 margin-bottom: 1vw
