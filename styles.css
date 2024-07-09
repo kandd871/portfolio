@@ -1105,17 +1105,19 @@ width: auto;
 
 .carousel {
 display: flex;
-width: 49vw;
-height: 60vh;
-/* margin-top: -8vw; */
+height: 52vw;
+width: 82vw;
+padding: 0;
+margin-top: 1.5vw;
+background-color: beige;
 position: relative;
 justify-content: center;
 align-items: center;
 }
 .carousel img {
 position: absolute;
-width: 60vw;
-top: 50%;
+width: 88vw;
+top: 43.5%;
 left: 50%;
 transform: translate(-50%, -50%);
 transition: transform 0.5s ease, opacity 0.5s ease;
@@ -1568,7 +1570,7 @@ display: none;
   height: 41vw;
 }
 .carousel{
-  height: 41vw;
+  height: 52.5vw;
 }
 
 .five img{
