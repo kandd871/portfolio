@@ -224,7 +224,7 @@ window.addEventListener('scroll', () => {
 
     function handleResize() {
         const width = window.innerWidth;
-        if (width < 900) {
+        if (width < 700) {
             setPointValues();
             createGrid();
         }
