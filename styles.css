@@ -473,7 +473,7 @@ animation-delay: 4s;
 }
 
 #key{
-padding: .05% .35% .05% .35%;
+padding: .035% .35% .2% .35%;
 border: .2px solid var(--black);
 }
 
