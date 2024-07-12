@@ -1435,7 +1435,7 @@ display: none;
 
   .key {
     position: absolute;
-    top: 29vw;
+    top: 30vw;
     left: 50%;
     transform: translateX(-50%);
     width: 95vw;
