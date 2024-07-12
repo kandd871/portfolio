@@ -1269,8 +1269,8 @@ to {
 }
 
 .key{
-  position: relative;
-  top: -.5vw;
+  /* position: relative; */
+  /* top: -.5vw; */
   margin-top: -1vw;
 }
 }
@@ -1686,6 +1686,7 @@ overflow-y: scroll!important;
 
 @media only screen and (max-width: 500px){
   .key{
-    top: 15.25%;
+    /* top: 15.25%; */
+    bottom: 81%;
   }
 }
