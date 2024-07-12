@@ -459,14 +459,17 @@ animation-delay: 4s;
   animation-delay: 4.25s;
   }
 
-.key{
-margin: 0.5% 1% 0.5% 1%;
-margin-top:3vw;
-display: inline-flex;
-font-size: .8vw;
-width: 98vw;
-justify-content: space-between;
-color: var(--color)
+.key {
+    margin: 0.5% 1% 0.5% 1%;
+    margin-top: 3vw;
+    display: inline-flex;
+    font-size: .8vw;
+    height: auto;
+    width: 98vw;
+    justify-content: space-between;
+    color: var(--color);
+    position: absolute; /* Add this line */
+    bottom: 1.25vh; /* Add this line */
 }
 
 #key{
@@ -1434,8 +1437,7 @@ display: none;
   }
 
   .key {
-    position: absolute;
-    top: 31vw;
+    /* position: absolute; */
     left: 50%;
     transform: translateX(-50%);
     width: 95vw;
@@ -1680,4 +1682,10 @@ overflow-y: scroll!important;
 .subcaption{
   margin-bottom: 5vw;
 }
+}
+
+@media only screen and (max-width: 500px){
+  .key{
+    top: 15.25%;
+  }
 }
