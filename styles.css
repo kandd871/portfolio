@@ -233,6 +233,7 @@ a{
   justify-content: space-between;
   width: 91.5vw;
   top:22.5vw;
+  transition: .25s;
 }
 
 #print{
@@ -1770,7 +1771,7 @@ overflow-y: scroll!important;
 }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 420px){
 
   body{
     overflow: scroll;
