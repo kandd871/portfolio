@@ -406,6 +406,7 @@ window.addEventListener('resize', updateBlurState);
         const header = document.querySelector('#headertwo');
         const allprojects = document.querySelector('#allprojects');
         const projnav = document.querySelector('#projnav');
+        const arrowsholder = document.querySelector('#arrowheader');
         const brackets = document.querySelectorAll('.bracket1')
 
         if (window.scrollY > headerOffset) {
@@ -426,6 +427,11 @@ window.addEventListener('resize', updateBlurState);
 
         const screenWidth = window.innerWidth;
         if (screenWidth < 500) {
+            if (window.scrollY > headerOffset) {
+                arrowsholder.classList.add('fixed2');
+            } else {
+                arrowsholder.classList.remove('fixed2');
+            }
         
         } else {
             // Prevent scrolling above the header

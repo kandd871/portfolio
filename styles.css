@@ -1067,6 +1067,13 @@ transition: .25s;
 /* padding-top:.5vw; */
 }
 
+.fixed2 {
+  position: fixed!important;
+  top: 7.4%;
+  transition: .25s;
+  /* padding-top:.5vw; */
+  }
+
 #chamberlain-web{
 margin-top: 0vw;
 }
@@ -1828,7 +1835,9 @@ overflow-y: scroll!important;
   }
   
   .count{
-    font-size: 8vw;
+    position: relative;
+    top: -1.25vw;
+    font-size: 6vw;
   }
   
   #home{
@@ -2131,7 +2140,10 @@ overflow-y: scroll!important;
   }
   
   .arrowsholder {
+    position: relative;
     top: -85.5%;
+    opacity: 1;
+    visibility: visible;
   }
   
   .arrow-container {
@@ -2187,6 +2199,6 @@ overflow-y: scroll!important;
 
   .key{
     /* top: 15.25%; */
-    bottom: 80.5%;
+    bottom: 79.5%;
   }
 }
