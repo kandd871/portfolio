@@ -424,10 +424,16 @@ window.addEventListener('resize', updateBlurState);
             }); 
         }
 
-        // Prevent scrolling above the header
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 500) {
+        
+        } else {
+            // Prevent scrolling above the header
         if (window.scrollY < headerOffset) {
             window.scrollTo(0, headerOffset);
         }
+        }
+
     });
 
 let mouseMoveCounter = 0;
