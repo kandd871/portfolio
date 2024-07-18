@@ -1280,8 +1280,8 @@ to {
   
   #home-content{
     position: relative;
-    top: 5vh;
-    transform: scale(1);
+    top: 2vh;
+    transform: scale(.98);
     }
   
   .key{
@@ -1296,7 +1296,7 @@ to {
   position: absolute;
   top: 49vh;
   left: 50vw;
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(.98);
   }
 
   #branding{
@@ -1332,7 +1332,7 @@ to {
     position: absolute;
     top: 49vh;
     left: 50vw;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1);
     }
 
     #arrow2{
