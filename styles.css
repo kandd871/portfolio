@@ -473,13 +473,13 @@ animation-delay: 4s;
 }
 
 #key{
-padding: .035% .35% .2% .35%;
+padding: .035% .3% 0% .3%;
 border: .2px solid var(--black);
 }
 
 #key2{
   background-color: var(--color);
-  padding: .05% .3% .05% .3%;
+  padding: .05% .25% .01% .25%;
   color: var(--background);
   /* opacity: 0; */
   animation: opacityblur 1.75s alternate-reverse ease infinite;
