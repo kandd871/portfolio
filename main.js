@@ -45,20 +45,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     let currentlyScaledBox = null;
-    
-    // Set the initial blur state for all boxes
+
+// Function to update the blur state based on screen width
+const updateBlurState = () => {
+    const screenWidth = window.innerWidth;
     boxes.forEach(box => {
-        const subbox = box.querySelector('.subbox');
-        box.style.transition = '.5s';
-        box.style.filter = 'blur(10px)';
+        if (screenWidth < 500) {
+            box.style.filter = 'none';
+        } else {
+            box.style.filter = 'blur(10px)';
+        }
     });
-    
-    // Create the intersection observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const box = entry.target.closest('.box');
-            const subbox = box.querySelector('.subbox');
-            const info = box.querySelector('.info');
+};
+
+// Set the initial blur state for all boxes
+updateBlurState();
+
+// Create the intersection observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const box = entry.target.closest('.box');
+        if (window.innerWidth >= 500) {
             if (entry.isIntersecting && entry.intersectionRatio > 0) {
                 if (currentlyScaledBox && currentlyScaledBox !== box) {
                     currentlyScaledBox.style.filter = 'blur(10px)';
@@ -71,29 +78,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 box.style.filter = 'blur(10px)';
                 currentlyScaledBox = null; // Clear the reference as the box is no longer intersecting
             }
-        });
-    }, options);
-    
-    // Observe each .first element within each .box
-    boxes.forEach(box => {
-        if (box) {
-            observer.observe(box);
+        } else {
+            box.style.filter = 'none'; // Remove blur for screens less than 500px
         }
     });
-    
-    // Add event listener to prevent blurring when scrolling vertically
-    window.addEventListener('scroll', () => {
-        if (currentlyScaledBox) {
-            currentlyScaledBox.style.filter = 'blur(0px)';
-        }
-    }, true);
-    
-// Add event listener to update the currently scaled box on horizontal scroll
+}, options);
+
+// Observe each .first element within each .box
+boxes.forEach(box => {
+    if (box) {
+        observer.observe(box);
+    }
+});
+
+// Add event listener to prevent blurring when scrolling vertically
 window.addEventListener('scroll', () => {
-    if (currentlyScaledBox) {
+    if (currentlyScaledBox && window.innerWidth >= 500) {
         currentlyScaledBox.style.filter = 'blur(0px)';
     }
 }, true);
+
+// Add event listener to update the currently scaled box on horizontal scroll
+window.addEventListener('scroll', () => {
+    if (currentlyScaledBox && window.innerWidth >= 500) {
+        currentlyScaledBox.style.filter = 'blur(0px)';
+    }
+}, true);
+
+// Add event listener to update blur state on window resize
+window.addEventListener('resize', updateBlurState);
 
 
 
@@ -141,7 +154,7 @@ window.addEventListener('scroll', () => {
             col10 = 77; row10 = 21;  
 
             const width = window.innerWidth;
-            if (width < 700) {
+            if (width <= 700) {
             rows= 68;
             cols = 42;
 
