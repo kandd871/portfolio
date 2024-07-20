@@ -240,6 +240,9 @@ window.addEventListener('resize', updateBlurState);
         if (width < 900) {
             setPointValues();
             createGrid();
+        } else if (width > 1000 && width < 1200){
+            setPointValues();
+            createGrid();
         }
     }
     // Initialize the grid on page load
