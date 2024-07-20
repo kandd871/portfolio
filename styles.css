@@ -1899,7 +1899,7 @@ overflow-y: scroll!important;
   
   #home-content{
     position: absolute;
-    top: 53.5vh;
+    bottom: -10vw;
     left: 50vw;
     transform: translate(-50%, -50%) scale(.91);
   }
