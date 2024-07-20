@@ -2268,13 +2268,13 @@ overflow-y: scroll!important;
    right: 0;
    width: 90vw;
    padding-top:2.7vw;
-    padding-bottom: 20.5vw;
+    padding-bottom: 2vw;
     margin: 0 auto;
   }
   
   #home-content{
     position: absolute;
-    top: 48.5vh;
+    top: 53vh;
     left: 50vw;
     transform: translate(-50%, -50%) scale(.91);
   }
