@@ -235,24 +235,28 @@ window.addEventListener('resize', updateBlurState);
             // gridContainer.style.gridTemplateColumns = `repeat(${cols}, ${gridSize}vw)`;
     }
 
-    function handleResize() {
-        const width = window.innerWidth;
-        if (width < 900) {
-            setPointValues();
-            createGrid();
-        } else if (width > 1000 && width < 1200){
-            setPointValues();
-            createGrid();
-        }
-    }
-    // Initialize the grid on page load
-    setPointValues();
-    createGrid();
-    setTimeout(() => {
-        incrementCount();
-    }, 2900);
+    let previousWidth = window.innerWidth;
 
-    window.addEventListener('resize', handleResize);
+function handleResize() {
+    const width = window.innerWidth;
+    
+    // Check for crossing the 700px threshold
+    if ((previousWidth >= 700 && width < 700) || (previousWidth < 700 && width >= 700)) {
+        setPointValues();
+        createGrid();
+    }
+    
+    previousWidth = width; // Update previousWidth for next resize event
+}
+
+// Initialize the grid on page load
+setPointValues();
+createGrid();
+setTimeout(() => {
+    incrementCount();
+}, 2900);
+
+window.addEventListener('resize', handleResize);
 
     function incrementCount() {
       if (count < maxCount) {
