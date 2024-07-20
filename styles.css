@@ -2284,7 +2284,7 @@ overflow-y: scroll!important;
     transform: translate(-50%, -50%) scale(.91);
   }
 
-  #nav{
+  #side{
     bottom:0vw;
     left:0;
     right: 0;
