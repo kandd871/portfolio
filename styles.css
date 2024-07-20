@@ -2286,7 +2286,7 @@ overflow-y: scroll!important;
 
   #home-content{
     position: absolute;
-    top: 59vh;
+    top: 55vh;
     left: 50vw;
     transform: translate(-50%, -50%) scale(.91);
   }
@@ -2296,7 +2296,7 @@ overflow-y: scroll!important;
     left:0;
     right: 0;
     width: 90vw;
-    padding-top:16vw;
+    padding-top:3vw;
      padding-bottom: 3vw;
    }
   }
