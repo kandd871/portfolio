@@ -2256,28 +2256,27 @@ overflow-y: scroll!important;
   }
 }
 
-@media only screen and (max-width: 370px){
+@media only screen and (max-width: 400px){
   
   
-  /* #side{
+  #side{
    display: inline-flex;
    border-top: 1px dotted var(--background);
-   position: absolute;
-   bottom:3.5vw;
+   position: relative;
+   top:90%;
    left:0;
    right: 0;
    width: 90vw;
-   padding-top:2.7vw;
+   padding-top:0vw;
     padding-bottom: 2vw;
     margin: 0 auto;
-  } */
+  }
   
   #home-content{
-    /* position: absolute;
-    top: 53vh;
+    position: relative;
+    top: 360px;
     left: 50vw;
-    transform: translate(-50%, -50%) scale(.91); */
-    display: none;
+    transform: translate(-50%, -50%) scale(.91);
   }
   
 }
