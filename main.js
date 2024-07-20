@@ -414,30 +414,36 @@ window.addEventListener('resize', handleResize);
         const allprojects = document.querySelector('#allprojects');
         const projnav = document.querySelector('#projnav');
         const arrowsholder = document.querySelector('#arrowheader');
-        const brackets = document.querySelectorAll('.bracket1')
-
-        if (window.scrollY > headerOffset) {
-            header.classList.add('fixed');
-            allprojects.style.paddingTop = "5vw";
-            projnav.style.marginTop = "-0.5vw";
-            brackets.forEach(bracket => {
-                bracket.style.top = "-.1rem";
-            });    
-        } else {
-            header.classList.remove('fixed');
-            allprojects.style.paddingTop = "1vw";
-            projnav.style.marginTop = "0vw";
-            brackets.forEach(bracket => {
-                bracket.style.top = "-.17rem";
-            }); 
-        }
-
+        const brackets = document.querySelectorAll('.bracket1');
         const screenWidth = window.innerWidth;
-        if (screenWidth < 500) {
+
+        if (screenWidth >= 500) {
+            if (window.scrollY > headerOffset) {
+                header.classList.add('fixed');
+                allprojects.style.paddingTop = "5vw";
+                projnav.style.marginTop = "-0.5vw";
+                brackets.forEach(bracket => {
+                    bracket.style.top = "-.1rem";
+                });    
+            } else {
+                header.classList.remove('fixed');
+                allprojects.style.paddingTop = "1vw";
+                projnav.style.marginTop = "0vw";
+                brackets.forEach(bracket => {
+                    bracket.style.top = "-.17rem";
+                }); 
+            }
+        }   else if (screenWidth < 500) {
             if (window.scrollY > headerOffset) {
                 arrowsholder.classList.add('fixed2');
+                header.classList.add('fixed3');
+                allprojects.style.paddingTop = "25vw";
+              
             } else {
                 arrowsholder.classList.remove('fixed2');
+                header.classList.remove('fixed3');
+                allprojects.style.paddingTop = "0vw";
+                
             }
         
         } else {
