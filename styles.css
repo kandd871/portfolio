@@ -115,17 +115,17 @@ background-color: var(--color);
 color: var(--background);
 }
 
-#drithi{
+.drithi{
 font-size: 3.75vw;
 margin:0;
 text-transform: uppercase;
 }
 
-#main-text, .linkcontainer{
+.main-text, .linkcontainer{
 font-size: 2vw;
 }
 
-#linkcontainer{
+#linkcontainer, #linkcontainer2{
 display: flex;
 justify-content: space-between;
 text-transform: uppercase;
@@ -137,6 +137,11 @@ text-decoration: none;
 color: var(--color);
 }
 
+#linkcontainer2 a{
+  text-decoration: none;
+  color: var(--color);
+  }
+  
 .linkcontainer {
 text-align: center; /* To center the text */
 }
@@ -1732,11 +1737,11 @@ display: none;
   padding: 2% 2.5% 2% 2.5%;
 }
 
-#drithi{
+.drithi{
 font-size: 7vw;
 }
 
-#main-text, .linkcontainer{
+.main-text, .linkcontainer{
 font-size: 4vw;
 }
 
@@ -2146,11 +2151,11 @@ overflow-y: scroll!important;
     padding: 2% 2.5% 2% 2.5%;
   }
   
-  #drithi{
+  .drithi{
   font-size: 7vw;
   }
   
-  #main-text, .linkcontainer{
+  .main-text, .linkcontainer{
   font-size: 4vw;
   }
   

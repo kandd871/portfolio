@@ -44,15 +44,6 @@ body {
   transition: .25s!important;
   }
 
-  #about2 .linkpoints{
-    background-color: var(--color);
-    }
-    
-    #about2 a{
-    color: var(--color);
-    }
-
-
     .click{
       /* text-decoration: underline; */
       cursor: pointer;
@@ -359,6 +350,30 @@ to {
     font-size: 2.5vw;
     text-align: center;
   }
+
+  #about, #about2 {
+    width: 85vw;
+    height: 85vw;
+    margin: auto;
+    padding: 2% 2.5% 2% 2.5%;
+  }
+  
+  #drithi{
+  font-size: 7vw;
+  }
+  
+  #main-text, .linkcontainer{
+  font-size: 4vw;
+  }
+  
+  .linkpoints {
+  width: 4vw;
+  height: 4vw;
+  }
+  
+  .linkcontainer{
+  margin-top: -3vw;
+  }
 }
 
 @media only screen and (max-width: 450px){
@@ -371,6 +386,39 @@ to {
     margin-bottom: 2.2vw; */
     border-bottom: none;
     padding:0;
+  }
+
+  #headertwo{
+    padding-top: 1.5vw;
+    padding-left:.75vw;
+    padding-right:.75vw;
+    font-size: 8.5vw;
+    padding-bottom: 4vw;
+  }
+  
+
+  #about, #about2 {
+    width: 85vw;
+    height: 85vw;
+    margin: auto;
+    padding: 2% 2.5% 2% 2.5%;
+  }
+  
+  #drithi{
+  font-size: 7vw;
+  }
+  
+  #main-text, .linkcontainer{
+  font-size: 4vw;
+  }
+  
+  .linkpoints {
+  width: 4vw;
+  height: 4vw;
+  }
+  
+  .linkcontainer{
+  margin-top: -3vw;
   }
 }
 
