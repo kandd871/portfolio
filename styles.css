@@ -2282,11 +2282,11 @@ overflow-y: scroll!important;
 }
 
 
-@media only screen and (max-height: 670px){
+@media only screen and (max-height: 665px){
 
   #home-content{
     position: absolute;
-    top: 60vh;
+    top: 55vh;
     left: 50vw;
     transform: translate(-50%, -50%) scale(.91);
   }
