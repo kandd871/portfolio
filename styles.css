@@ -2275,7 +2275,7 @@ overflow-y: scroll!important;
 }
 
 
-@media only screen and (max-height: 750px){
+@media only screen and (max-height: 610px){
 
   #home-content{
     position: absolute;
