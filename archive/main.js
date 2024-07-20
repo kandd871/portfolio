@@ -35,25 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     const headerOffset = header.offsetTop;
-    
+
     window.addEventListener('scroll', function() {
-        const brackets = document.querySelectorAll('.bracket')
-        if (window.scrollY > headerOffset) {
-            header.classList.add('fixed');
-            projects.style.paddingTop = "7vw";
-            brackets.forEach(bracket => {
-                bracket.style.top = "-.1rem";
-            });            
-        } else {
-            header.classList.remove('fixed');
-            projects.style.paddingTop = "3vw";
-            brackets.forEach(bracket => {
-                bracket.style.top = "-.17rem";
-            });    
+        const header = document.querySelector('#headertwo');
+        const brackets = document.querySelectorAll('.bracket');
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth >= 500) {
+            if (window.scrollY > headerOffset) {
+                header.classList.add('fixed');
+                projects.style.paddingTop = "5vw";
+                projnav.style.marginTop = "-0.5vw";
+                brackets.forEach(bracket => {
+                    bracket.style.top = "-.1rem";
+                });    
+            } else {
+                header.classList.remove('fixed');
+                projects.style.paddingTop = "1vw";
+                projnav.style.marginTop = "0vw";
+                brackets.forEach(bracket => {
+                    bracket.style.top = "-.17rem";
+                }); 
+            }
+        }   else if (screenWidth < 500) {
+            if (window.scrollY > headerOffset) {
+                header.classList.add('fixed3');
+                projects.style.paddingTop = "25vw";
+              
+            } else {
+                header.classList.remove('fixed3');
+                projects.style.paddingTop = "0vw";
+                
+            }
+        
         }
-        if (window.scrollY < headerOffset) {
-            window.scrollTo(0, headerOffset);
-        }
+
     });
     
     click2.addEventListener('click', function(event) {
