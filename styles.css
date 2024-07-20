@@ -2281,7 +2281,7 @@ overflow-y: scroll!important;
   
 }
 
-
+/* 
 @media only screen and (max-height: 650px){
 
   #home-content{
@@ -2299,4 +2299,4 @@ overflow-y: scroll!important;
     padding-top:16vw;
      padding-bottom: 3vw;
    }
-  }
+  } */
