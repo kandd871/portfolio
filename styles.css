@@ -1415,6 +1415,7 @@ to {
   margin-bottom: 2.2vw; */
   border-bottom: none;
   padding:0;
+  overflow-y: scroll;
 }
 
 #archiveog{
@@ -1827,6 +1828,12 @@ overflow-y: scroll!important;
 .subcaption{
   margin-bottom: 5vw;
 }
+
+.key{
+  margin-top: 0vw;
+  bottom: 11vh; 
+}
+
 }
 
 @media only screen and (max-width: 450px){
@@ -2261,7 +2268,7 @@ overflow-y: scroll!important;
    right: 0;
    width: 90vw;
    padding-top:2.7vw;
-    padding-bottom: 20.5vw;
+    /* padding-bottom: 20.5vw; */
     margin: 0 auto;
   }
   
@@ -2275,7 +2282,7 @@ overflow-y: scroll!important;
 }
 
 
-@media only screen and (max-height: 650px){
+@media only screen and (max-height: 690px){
 
   #home-content{
     position: absolute;
