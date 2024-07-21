@@ -1292,6 +1292,16 @@ to {
 }
 }
 
+@media only screen and (min-height: 1000px){
+  #home-content{
+    transform: scale(1.1);
+    margin-top: 8vw;
+  }
+  
+  .key{
+    margin-top: -1vw;
+  }
+}
 
 @media only screen and (max-height: 800px){
 #home-content{
@@ -1305,8 +1315,6 @@ to {
   margin-top: -1vw;
 }
 }
-
-
 
 
 @media only screen and (max-width: 1400px){
@@ -1358,8 +1366,6 @@ to {
   }
   
 }
-
-
 @media only screen and (max-width: 1100px){
   
   #home-content{
