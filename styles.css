@@ -1854,6 +1854,10 @@ overflow-y: scroll!important;
   #arrow2{
     transform: translateY(51.5vw);
   }
+
+  .count{
+    font-size: 6vw;
+  }
 }
 
 
