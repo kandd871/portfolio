@@ -1419,8 +1419,6 @@ to {
     
 }
 
-
-
 @media only screen and (max-width: 700px){
 
 .header{
@@ -1851,6 +1849,13 @@ overflow-y: scroll!important;
 }
 
 }
+
+@media only screen and (max-width: 600px){
+  #arrow2{
+    transform: translateY(51.5vw);
+  }
+}
+
 
 @media only screen and (max-width: 450px){
 
