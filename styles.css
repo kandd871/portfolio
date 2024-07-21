@@ -1852,7 +1852,7 @@ overflow-y: scroll!important;
 
 @media only screen and (max-width: 600px){
   #arrow2{
-    transform: translateY(51.5vw);
+    transform: translateY(51.4vw);
   }
 
   .count{
