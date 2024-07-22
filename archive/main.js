@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 projnav.style.marginTop = "-0.5vw";
                 brackets.forEach(bracket => {
                     bracket.style.top = "-.1rem";
-                });    
+                });   
             } else {
                 header.classList.remove('fixed');
                 projects.style.paddingTop = "1vw";

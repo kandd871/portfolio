@@ -823,6 +823,7 @@ transform: translateX(.75vw);
   transition: 0.2s;
   margin-top: -.3vw;
   transition: .2s;
+  background-color: rgba(197, 197, 197, 0.95);
 }
 
 .navhover:hover .tooltiptext {

@@ -451,6 +451,7 @@ window.addEventListener('resize', handleResize);
     
     window.addEventListener('scroll', function() {
         const headerOffset = document.querySelector('#projects').offsetTop;
+        const tooltiptexts = document.querySelectorAll('.tooltiptext');
         const header = document.querySelector('#headertwo');
         const allprojects = document.querySelector('#allprojects');
         const projnav = document.querySelector('#projnav');
@@ -465,13 +466,19 @@ window.addEventListener('resize', handleResize);
                 projnav.style.marginTop = "-0.5vw";
                 brackets.forEach(bracket => {
                     bracket.style.top = "-.1rem";
-                });    
+                });  
+                tooltiptexts.forEach(tooltiptext => {
+                    tooltiptext.style.marginTop = ".175vw";
+                });   
             } else {
                 header.classList.remove('fixed');
                 allprojects.style.paddingTop = "1vw";
                 projnav.style.marginTop = "0vw";
                 brackets.forEach(bracket => {
                     bracket.style.top = "-.17rem";
+                }); 
+                tooltiptexts.forEach(tooltiptext => {
+                    tooltiptext.style.marginTop = "0vw";
                 }); 
             }
         }   else if (screenWidth < 500) {
