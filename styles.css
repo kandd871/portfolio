@@ -1857,6 +1857,10 @@ overflow-y: scroll!important;
   .count{
     font-size: 6vw;
   }
+
+  #archivehide1{
+    padding-top: 0vw;
+  }
 }
 
 
