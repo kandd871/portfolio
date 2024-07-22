@@ -396,7 +396,6 @@ to {
 .point-text {
 position: absolute;
 display: inline-flex;
-transform: translate(-50%, 0); /* Center text horizontally */
 line-height: 1;
 font-size: 1.2vw; 
 text-transform: uppercase;
@@ -405,6 +404,7 @@ opacity:0;
 transition: .5s;
 white-space: nowrap;
 color: var(--black);
+transform: translate(-50%, 0);
 justify-content: center;
 text-align: center;
 margin-left: 0.6vw;
@@ -472,6 +472,59 @@ animation-delay: 4s;
   animation: opacityblur forwards 1s ease-in;
   animation-delay: 4.25s;
   }
+
+  .cross{
+    position: absolute;
+    text-decoration: none;
+    cursor: pointer;
+    height: 1.2vw;
+    width: 1.2vw;
+  }
+
+  .cross-text {
+  visibility: hidden;
+  text-decoration: none;
+  position: absolute;
+  line-height: 1;
+  font-size: 1.2vw; 
+  text-transform: uppercase;
+  opacity:0;
+  transition: .5s;
+  transform: translate(-40%, 0);
+  justify-content: center;
+  text-align: center;
+  /* margin-left: -0.5vw; */
+  padding: .05vh .15vh .5vh .15vh;
+}
+
+.cross::after {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    width: 1.3vw;
+    height: .15vw;
+    background-color: var(--black);
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+.cross::before {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 1.3vw;
+  height: .15vw;
+  background-color: var(--black);
+  transform: rotate(-45deg);
+  margin: 0 auto;
+}
+
 
 .key {
     margin: 0.5% 1% 0.5% 1%;

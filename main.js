@@ -132,6 +132,8 @@ window.addEventListener('resize', updateBlurState);
 
     let col10 = 77; let row10 = 21;   
 
+    // let col11 = 50; let row11 = 23;   
+
     let gridSize = .8;
 
         function setPointValues() {
@@ -152,6 +154,7 @@ window.addEventListener('resize', updateBlurState);
             col8 = 6; row8 = 51;
             col9 = 92; row9 = 47;
             col10 = 77; row10 = 21;  
+            col11 = 47; row11 = 31;   
 
             const width = window.innerWidth;
             if (width <= 700) {
@@ -173,7 +176,8 @@ window.addEventListener('resize', updateBlurState);
             col8 = 3; row8 = 65;
             col9 = 38; row9 = 60;
 
-            col10 = 30; row10 = 26;   
+            col10 = 30; row10 = 26;
+            // col11 = 21; row11 = 36;   
             }
         }
     
@@ -228,6 +232,10 @@ window.addEventListener('resize', updateBlurState);
                 if (col === col10 && row === row10) {
                     drawPoint(row, col, gridContainer, '(EDITORIAL ILLUSTRATION, 2024)', 'pointJ', '#editorial');
                 }
+
+                // if (col === col11 && row === row11) {
+                //     drawCross(row, col, gridContainer, '[ARCHIVE]', 'pointK', 'archive/archive.html');
+                // }
             }
         }
              // Update grid template rows and columns based on current rows and cols
@@ -266,8 +274,6 @@ window.addEventListener('resize', handleResize);
       }
     }
 
-
-    
     function drawPoint(row, col, container, text, id, url) {
         // Create the anchor tag
         const anchor = document.createElement('a');
@@ -339,6 +345,41 @@ window.addEventListener('resize', handleResize);
             point.style.transition = '.5s';
         });
     }
+
+    // function drawCross(row, col, container, text, id, url) {
+    //     // Create the anchor tag
+    //     const anchor = document.createElement('a');
+    //     anchor.href = url;
+    //     anchor.style.textDecoration = 'none';
+    //     anchor.style.width = '1.2vw';
+    //     anchor.style.height = '1.2vw';
+    //     anchor.style.position = 'absolute';
+    //     anchor.style.cursor = "pointer";
+    //     anchor.style.left = `${col * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
+    //     anchor.style.top = `${row * gridSize + gridSize/4}vw`; // Adjusting based on the provided code
+    
+    //     const cross = document.createElement('div');
+    //     cross.className = 'cross';
+    
+    //     // Create the text below the 'X'
+    //     const crossText = document.createElement('div');
+    //     crossText.className = 'cross-text';
+    //     crossText.id = `${id}-text`;
+    //     crossText.innerText = text;
+    //     crossText.style.top = '1.0vw'; // Slightly adjusted to ensure the text appears below the 'X'
+    //     crossText.style.zIndex = '1';
+
+    //     cross.appendChild(crossText);
+    //     anchor.appendChild(cross);
+    //     container.appendChild(anchor);
+
+    //     // Add hover event to make text visible permanently
+    //    cross.addEventListener('mouseover', () => {
+    //     crossText.style.opacity = '1';
+    //     crossText.style.visibility = 'visible';
+    // });
+    // }
+    
 
     const carousel = document.querySelector('.carousel');
     const images = carousel.querySelectorAll('img');
