@@ -1309,8 +1309,12 @@ width: auto;
 }
 
 .eight img{
-height: 29.75vw;
+height: 26vw;
 width: auto;
+}
+
+#pls{
+  transform: rotate(-5deg) translate(-5%, -1%);
 }
 
 .nine img{
@@ -1958,7 +1962,7 @@ display: none;
   height: 39vw;
 }
 .eight img{
-  height: 29.5vw;
+  height: 26vw;
 }
 .nine img{
   height: 43vw;
@@ -2406,7 +2410,7 @@ input{
     height: 39vw;
   }
   .eight img{
-    height: 29.5vw;
+    height: 26vw;
   }
   .nine img{
     height: 43vw;
