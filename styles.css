@@ -12,18 +12,21 @@
     url("ABCROMCondensed-Regular-Trial.otf") format("opentype"),
 }
 
-
 @font-face {
-  font-family: "Px Grotesk";
-  src:
-    local("Px Grotesk Regular"),
-    url("Px-Grotesk-Regular.ttf") format("truetype"),
+  font-family: 'stardewRegular';
+  src: local('stardewRegular'), url('stardewRegular-Regular.otf') format('opentype');
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'stardewVariable';
+  src: local('stardewVariable'), url('stardewVariableVF.ttf') format('truetype');
+  font-style: normal;
+}
 
 :root {
   --color: #ed26ff;
-  --background: rgb(64, 64, 64);
+  --background: #404040;
   --black: #c8c8c8;
 }
 
@@ -1078,6 +1081,124 @@ justify-content: space-between;
 margin-top: 1.5vw;
 }
 
+#starweb{
+  text-decoration: none!important;
+  background-color: transparent;
+  border: none;
+}
+
+#starweb:hover{
+  cursor: alias;
+}
+
+.tester{
+  background-color: var(--color);
+  width: 82vw;
+  padding-top:3vw;
+  padding-bottom: 2.5vw;
+  margin-bottom: 3.5vw;
+  border: 1px solid #404040;
+  border-radius: 1vw;
+}
+
+#text {
+  font-family: 'stardewVariable', Arial, sans-serif;
+  font-size: 15vw;
+  line-height: 1.1;
+  text-transform: lowercase;
+  text-align: center;
+  width: 82vw; /* Adjust width as needed */
+  outline: none;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent text wrapping */
+  -webkit-text-stroke-width: 0.5px; /* Adjust stroke width as needed */
+  -webkit-text-stroke-color: var(--background); /* Initial stroke color */
+  cursor: text;
+  animation: floatAnimation 2s infinite alternate, textShadowAnimation 2s infinite alternate;
+  text-shadow: 0px 0px 0px transparent;
+  box-sizing: border-box;
+  margin: 2vw;
+  margin-left: 0vw;
+  transition: .35s;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 12vw;
+  height: 1vw;
+  border-radius: 1vw;
+  background: transparent;
+  outline: none;
+  border: 1.25px solid var(--background);
+  -webkit-transition: .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2vw;
+  height: 2vw;
+  border: 0;
+  background: url('star.png');
+  background-size: contain;
+  cursor: pointer;
+}
+
+input[type="color"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 1.25px solid var(--background);
+  cursor: pointer;
+  /* border-radius: 50%; */
+}
+
+input{
+  border: none;
+  margin-left: .5vw;
+  margin-right: .5vw;
+}
+
+.inputs{
+  width: 82vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  margin: 0 auto;
+}
+
+.chars {
+  font-family: 'stardewRegular', Arial, sans-serif;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap; /* Ensures the text wraps */
+  width: 82vw;
+  font-size: 10vw;
+  margin-top:4vw;
+  margin-bottom:4vw;
+  line-height: 1;
+  /* color: white; */
+  cursor: pointer;
+}
+
+.chars span {
+  display: flex;
+  position: relative;
+  margin:  .25vw .5vw 0.25vw .5vw;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.chars span:hover {
+  color: var(--black);
+  -webkit-text-stroke: 1px var(--background);
+}
+
 .twocol img{
 width: 49.25%;
 height: 100%;
@@ -1354,6 +1475,24 @@ to {
 100%{
   filter: blur(0px);
 }
+}
+
+@keyframes floatAnimation {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-10px); /* Adjust the floating distance as needed */
+  }
+}
+
+@keyframes textShadowAnimation {
+  from {
+    text-shadow: 0px 0px 0px transparent;
+  }
+  to {
+    text-shadow: 0px 0px 6px rgba(var(--stroke-rgb), 0.45);
+  }
 }
 
 @media only screen and (min-height: 1000px){
@@ -1912,6 +2051,34 @@ overflow-y: scroll!important;
   bottom: 11vh; 
 }
 
+.tester{
+  margin-top: 5vw;
+  margin-bottom: 4vw;
+}
+
+
+#text{
+  margin-top: 4vw;
+  font-size: 18vw;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 17vw;
+  height: 2.5vw;
+  border-radius: 2vw;
+}
+
+.slider::-webkit-slider-thumb {
+  width: 5vw;
+  height: 5vw;
+}
+
+input{
+  border: none;
+  margin-left: 1vw;
+  margin-right:1vw;
+}
 }
 
 @media only screen and (max-width: 600px){
