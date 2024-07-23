@@ -588,8 +588,7 @@ function createHomeProjPoint(x, y) {
 home.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
-    // Draw projpoint every 8th mousemove
-    if (mouseMoveCounter % 15 === 0) {
+    if (mouseMoveCounter % 18 === 0) {
         const rect = home.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
@@ -604,7 +603,7 @@ allprojects.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
     // Draw projpoint every 8th mousemove
-    if (mouseMoveCounter % 10 === 0) {
+    if (mouseMoveCounter % 11 === 0) {
         const rect = allprojects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
