@@ -1053,6 +1053,11 @@ width: 38vw;
 display: flex;
 }
 
+#illustrations{
+  margin-top:0vw;
+  margin-bottom: 1vw;
+}
+
 .two{
   margin-top: 1.25vw;
   width: 82vw;
@@ -1712,10 +1717,6 @@ display: none;
   /* margin-top: 1vw; */
 }
 
-#illustrations{
-  margin-top:-4vh;
-}
-
 .titlepoint{
   width: 3.5vw;
   height: 3.5vw;
@@ -1754,6 +1755,11 @@ display: none;
   margin-top: 0vw;
   margin-bottom: 2vw;
   font-size: 3.5vw;
+}
+
+#illustrations{
+  margin-top:-3vw;
+  margin-bottom: 2vw;
 }
 
 
@@ -2134,10 +2140,6 @@ overflow-y: scroll!important;
   .fullwidth{
     width: 82.25vw;
     /* margin-top: 1vw; */
-  }
-  
-  #illustrations{
-    margin-top:-4vh;
   }
   
   .titlepoint{
