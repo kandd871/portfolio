@@ -149,7 +149,7 @@ projects.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
     // Draw projpoint every 8th mousemove
-    if (mouseMoveCounter % 8 === 0) {
+    if (mouseMoveCounter % 11 === 0) {
         const rect = projects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + projects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY + projects.scrollTop - rect.top; // Adjust mouseY for vertical scroll
