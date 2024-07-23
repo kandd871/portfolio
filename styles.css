@@ -1097,9 +1097,14 @@ border-radius: 10px;
 }
 
 .shirt img{
-height: 27.5vw;
+height: 28.2vw;
 width: auto;
 }
+
+.poster img{
+  height:35.7vw;
+  width: auto;
+  }
 
 .twocolweb img{
 width: 43.25vw;
@@ -1769,7 +1774,7 @@ display: none;
 
 .shirt img{
   width: auto;
-  height: 27.25vw;
+  height: 28vw;
 }
 
 .logo{
