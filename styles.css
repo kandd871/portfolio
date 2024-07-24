@@ -1525,6 +1525,23 @@ to {
 }
 }
 
+@media only screen and (max-height: 5500px){
+
+  #home-content{
+    position: absolute;
+    top: 55vh;
+    left: 50vw;
+    transform: translate(-50%, -50%) scale(.8);
+  }
+
+  #personal{
+   width: 92vw;
+  }
+  #branding{
+    width: 92vw;
+   }
+  }
+
 @media only screen and (max-width: 1400px){
   
   #home-content{
@@ -2542,23 +2559,3 @@ input{
   }
   
 }
-
-/* 
-@media only screen and (max-height: 663px){
-
-  #home-content{
-    position: absolute;
-    top: 55vh;
-    left: 50vw;
-    transform: translate(-50%, -50%) scale(.91);
-  }
-
-  #side{
-    bottom:0vw;
-    left:0;
-    right: 0;
-    width: 90vw;
-    padding-top:20vw;
-     padding-bottom: 3vw;
-   }
-  } */
