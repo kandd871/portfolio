@@ -780,8 +780,8 @@ allprojects.addEventListener('mousemove', (event) => {
             rootMargin: '0px',
             threshold: 0.05 // 1% of the element is visible
         };
-    
-        const observerCallback = (entries, observer) => {
+        const width = window.innerWidth;
+        const observerCallback = (entries, observer2) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     projectsSection.style.backgroundColor = '#c8c8c8';
@@ -789,10 +789,18 @@ allprojects.addEventListener('mousemove', (event) => {
                     home.style.filter = "blur(4px)";
                     click2.style.opacity = `1`;
                     header.style.background = `linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(200,200,200,.75) 20%, rgba(200,200,200,0) 100%)`;  
+                    if (width >= 700) {
                     subboxes.forEach(subbox => {
                     subbox.style.background = `background-color: rgba(197, 197, 197, 0.75)`;
-                     subbox.style.border = `1.5px dotted #404040`;
-                    })
+                    subbox.style.border = `1.5px dotted #404040`;
+                    }) 
+                } else {
+                    subboxes.forEach(subbox => {
+                        subbox.style.background = `background-color: rgba(197, 197, 197, 0.75)`;
+                        subbox.style.border = `1px dotted #404040`;
+                        })
+                    }
+                    
                     projectsSection.style.transition = '.4s';
 
                     arrowsholder.style.visibility = "visible";
@@ -807,10 +815,12 @@ allprojects.addEventListener('mousemove', (event) => {
                     click2.style.filter = `blur(4px)`;
                     click2.style.opacity = `0`;
                     header.style.background = 'none';
+                    if (width >= 700) {
                     subboxes.forEach(subbox => {
                         subbox.style.background = `none`;
-                        subbox.style.border = `1.5px dotted #c8c8c8`
+                        subbox.style.border = `1.5px dotted #c8c8c8`;
                     })
+                     }   
                     arrowsholder.style.visibility = "hidden";
                     arrowsholder.style.opacity = "0";
                     arrowsholder.style.filter = "blur(7px)";
