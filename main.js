@@ -284,39 +284,50 @@ window.addEventListener('resize', handleResize);
 
         anchor.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default anchor click behavior
+            
             // Blur effect and other styling adjustments
             allprojects.style.filter = "blur(7px)";
             document.body.style.height = "auto";
             home.style.filter = "blur(7px)";
             projectsSection.style.animation = 'opacity 1s forwards ease-in';
         
-            const targetId = anchor.getAttribute('href'); // Extract the id from the anchor's href attribute
+            const targetId = anchor.getAttribute('href').substring(1); // Extract the id from the anchor's href attribute and remove the '#'
+            const targetElement = document.getElementById(targetId); // Find the target element by id
         
             // Manually trigger the projpoints update
             updateProjpoints(targetId);
-            // const targetElement = document.querySelector(targetId);
-            // if (targetElement) {
-            //     const container = document.getElementById('allprojects');
-    
-            //     container.scrollTo({
-            //         top: 0,
-            //         behavior: 'smooth'
-            //     });
-            // }
         
             setTimeout(function() {
                 allprojects.style.filter = "blur(0px)";
-                // Navigate to the href after 500ms for other links
-                window.location.href = anchor.href;
                 home.style.height = '0';
                 document.body.style.overflow = "scroll";
                 arrowsholder.style.visibility = "visible";
                 arrowsholder.style.opacity = "1";
                 arrowsholder.style.filter = "blur(0px)";
                 footer.style.visibility = "visible";
-                // Scroll to the top of the target element within #allprojects
+                
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+                
             }, 250);
+
+            setTimeout(function() {
+                if (targetElement) {
+                    // Scroll both vertically and horizontally to the target position
+                    setTimeout(() => {
+                        allprojects.scrollTo({
+                            top: 0,
+                            left: targetElement.offsetLeft,
+                            behavior: 'smooth'
+                        });
+                    }, 250);
+                    
+                }
+            }, 310);
         });
+        
         
         
         // Create the point
@@ -728,8 +739,8 @@ allprojects.addEventListener('mousemove', (event) => {
             footer.style.visibility = "hidden";
             arrowsholder.style.opacity = "0";
             arrowsholder.style.filter = "blur(7px)";
-            document.body.style.overflow = "hidden";
-            document.body.style.height = "100vh";
+            // document.body.style.overflow = "hidden";
+            // document.body.style.height = "100vh";
             home.style.filter = "blur(7px)";
                 setTimeout(function() {
                     home.style.filter = "blur(0px)";
@@ -763,4 +774,5 @@ allprojects.addEventListener('mousemove', (event) => {
                 behavior: 'smooth' // Smooth scrolling
             });
         });
+
 });

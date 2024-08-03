@@ -71,13 +71,14 @@ body{
   font-style: normal; */
   height: 100vh;
   background-color: var(--black);
-  overflow-y: hidden!important;
+  /* overflow-y: hidden!important; */
 }
 
 #home{
   transition: .5s;
   height: 100vh;
   z-index: 100;
+  overflow-x: hidden;
   width: 100vw;
   animation: opacity 1s forwards ease-in;
   background-color: var(--background);;
@@ -340,7 +341,7 @@ animation: growWidth 1.25s forwards;
 animation-delay: .9s;
 }
 
-#one2, #two2{
+#one2, #two2, #one3, #two3{
 display: none;
 }
 
@@ -362,6 +363,16 @@ to {
 }
 }
 
+@keyframes growHeight3 {
+  from {
+      height: 0;
+      /* transform: translateY(-1.4vw)scale(1.25); */
+  }
+  to {
+      height: 60vw;
+      transform: translateY(-8.5vw)scale(1.25);
+  }
+  }
 
 @keyframes growWidth {
 from {
@@ -380,6 +391,16 @@ to {
     width: 77vw;
 }
 }
+
+/* @keyframes growWidth3 {
+  from {
+      width: 0;
+  }
+  to {
+      width: 90vw;
+  }
+  } */
+
 
 .grid-line {
   width: .8vw;
@@ -2542,3 +2563,113 @@ input{
   }
   
 }
+
+@media only screen and (min-width: 1700px){
+
+  #home{
+    animation: opacity 1.5s forwards ease-in;
+  }
+  
+  #home-content{
+    transform: scale(.8);
+    margin-top: -8vh;
+  }
+
+/* #arrow1{
+transform: scale(1.25) translateY(.25vw);
+}  */
+#one{
+  animation:none;
+ height: 45vw;
+ transform: scale(1.12) translateY(-.75vw);
+} 
+
+#two{
+  animation:none;
+ width: 120vw;
+ transform: scale(1.15) translateY(.1vw);
+}
+ 
+#graph{
+  animation-delay: 1.4s;
+}
+}
+
+@media only screen and (min-width: 1950px){
+
+  #home{
+    animation: opacity 1.5s forwards ease-in;
+  }
+  
+  #home-content{
+    transform: scale(.8);
+    margin-top: -8vh;
+  }
+
+/* #arrow1{
+transform: scale(1.25) translateY(.25vw);
+}  */
+#one{
+  animation:none;
+ height: 45vw;
+ transform: scale(1.16) translateY(-.75vw);
+} 
+
+#two{
+  animation:none;
+ width: 125vw;
+ transform: scale(1.2) translateY(.1vw);
+}
+ 
+#graph{
+  animation-delay: 1.4s;
+}
+}
+
+@media only screen and (min-width: 2000px){
+
+#one{
+ transform: scale(1.2) translateY(-.75vw);
+} 
+
+#two{
+ transform: scale(1.24) translateY(.1vw);
+}
+
+}
+
+@media only screen and (min-width: 2100px){
+
+  #one{
+   transform: scale(1.26) translateY(-.75vw);
+  } 
+  
+  #two{
+   transform: scale(1.3) translateY(.1vw);
+  }
+  
+  }
+
+  @media only screen and (min-width: 2200px){
+
+    #one{
+     transform: scale(1.32) translateY(-.7vw);
+    } 
+    
+    #two{
+     transform: scale(1.36) translateY(.1vw);
+    }
+    
+    }
+
+    @media only screen and (min-width: 2240px){
+
+      #one{
+       transform: scale(1.35) translateY(-.6vw);
+      } 
+      
+      #two{
+       transform: scale(1.39) translateY(0vw);
+      }
+      
+      }
