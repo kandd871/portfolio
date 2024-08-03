@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const skillTexts = document.querySelectorAll('.skill-text');
     let index = 0;
     const boxes = document.querySelectorAll('.box');
+    const subboxes = document.querySelectorAll('.subbox');
     
     const options = {
         root: null, // Use the viewport as the root
@@ -735,8 +736,8 @@ allprojects.addEventListener('mousemove', (event) => {
 
         allnav.addEventListener('click', function(){
             home.style.height = '100vh';
-            arrowsholder.style.visibility = "hidden";
             footer.style.visibility = "hidden";
+            arrowsholder.style.visibility = "hidden";
             arrowsholder.style.opacity = "0";
             arrowsholder.style.filter = "blur(7px)";
             // document.body.style.overflow = "hidden";
@@ -774,5 +775,50 @@ allprojects.addEventListener('mousemove', (event) => {
                 behavior: 'smooth' // Smooth scrolling
             });
         });
+
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.05 // 1% of the element is visible
+        };
+    
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    projectsSection.style.backgroundColor = '#c8c8c8';
+                    click2.style.filter = `blur(0px)`;
+                    click2.style.opacity = `1`;
+                    header.style.background = `linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(200,200,200,.75) 20%, rgba(200,200,200,0) 100%)`;  
+                    subboxes.forEach(subbox => {
+                    subbox.style.background = `background-color: rgba(197, 197, 197, 0.75)`;
+                     subbox.style.border = `1.5px dotted #404040`;
+                    })
+                    projectsSection.style.transition = '.4s';
+
+                    arrowsholder.style.visibility = "visible";
+                    arrowsholder.style.opacity = "1";
+                    arrowsholder.style.filter = "blur(7px)";
+                    setTimeout(function() {
+                        arrowsholder.style.filter = "blur(0px)";
+                    }, 250);
+                } else {
+                    projectsSection.style.backgroundColor = '#404040';
+                    projectsSection.style.transition = '.4s';
+                    click2.style.filter = `blur(4px)`;
+                    click2.style.opacity = `0`;
+                    header.style.background = 'none';
+                    subboxes.forEach(subbox => {
+                        subbox.style.background = `none`;
+                        subbox.style.border = `1.5px dotted #c8c8c8`
+                    })
+                    arrowsholder.style.visibility = "hidden";
+                    arrowsholder.style.opacity = "0";
+                    arrowsholder.style.filter = "blur(7px)";
+                }
+            });
+        };
+    
+        const observer2 = new IntersectionObserver(observerCallback, observerOptions);
+        observer2.observe(projectsSection);
 
 });

@@ -684,7 +684,6 @@ margin-bottom:0;
 display: flex;
 /* background-color: rgba(212, 212, 212, 0.7); */
 /* border-bottom: 1.5px dotted var(--background); */
-background: rgb(200,200,200);
 background: linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(200,200,200,.75) 20%, rgba(200,200,200,0) 100%);
 padding-bottom: 1vw;
 cursor: auto;
@@ -696,7 +695,7 @@ z-index: 2000;
 color: var(--background);
 }
 
-.arrowsholder {
+.arrowsholder{
 height: 100%;
 display: flex;
 position: fixed;
@@ -713,7 +712,7 @@ margin-right: 1.25%;
 z-index:50;
 }
 
-#arrowheader {
+#arrowheader{
 display: flex;
 justify-content: center;
 align-items: center;
@@ -2595,6 +2594,32 @@ transform: scale(1.25) translateY(.25vw);
 }
 }
 
+@media only screen and (min-width: 1750px){
+
+#one{
+ height: 45vw;
+ transform: scale(1.05) translateY(-.75vw);
+} 
+
+#two{
+ width: 120vw;
+ transform: scale(1.085) translateY(.1vw);
+}
+}
+
+@media only screen and (min-width: 1850px){
+
+  #one{
+   height: 45vw;
+   transform: scale(1.12) translateY(-.75vw);
+  } 
+  
+  #two{
+   transform: scale(1.15) translateY(.1vw);
+  }
+  }
+
+
 @media only screen and (min-width: 1950px){
 
   #home{
@@ -2638,6 +2663,19 @@ transform: scale(1.25) translateY(.25vw);
 
 }
 
+@media only screen and (min-width: 2050px){
+
+  #one{
+   transform: scale(1.24) translateY(-.75vw);
+  } 
+  
+  #two{
+   transform: scale(1.27) translateY(.1vw);
+  }
+  
+  }
+  
+
 @media only screen and (min-width: 2100px){
 
   #one{
@@ -2673,3 +2711,40 @@ transform: scale(1.25) translateY(.25vw);
       }
       
       }
+    
+      @media only screen and (min-width: 2300px){
+
+        #one{
+         transform: scale(1.40) translateY(-.6vw);
+        } 
+        
+        #two{
+         transform: scale(1.43) translateY(0vw);
+        }
+        
+        }
+
+        @media only screen and (min-width: 2350px){
+
+          #one{
+           transform: scale(1.42) translateY(-.6vw);
+          } 
+          
+          #two{
+           transform: scale(1.455) translateY(0vw);
+          }
+          
+          }
+  
+        @media only screen and (min-width: 2400px){
+
+          #one{
+           transform: scale(1.46) translateY(-.6vw);
+          } 
+          
+          #two{
+           transform: scale(1.49) translateY(0vw);
+          }
+          
+          }
+
