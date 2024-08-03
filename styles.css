@@ -1289,9 +1289,10 @@ transition: .25s;
 
 .fixed2 {
   position: fixed!important;
-  top: 9%;
+  top: 0%;
   transition: .25s;
-  /* padding-top:.5vw; */
+  padding-top:0vw;
+  margin-top:-2vw;
   }
 
 .fixed3{

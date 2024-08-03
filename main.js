@@ -467,7 +467,6 @@ window.addEventListener('resize', handleResize);
         const header = document.querySelector('#headertwo');
         const allprojects = document.querySelector('#allprojects');
         const projnav = document.querySelector('#projnav');
-        const arrowsholder = document.querySelector('#arrowheader');
         const brackets = document.querySelectorAll('.bracket1');
         const screenWidth = window.innerWidth;
 
