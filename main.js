@@ -786,6 +786,7 @@ allprojects.addEventListener('mousemove', (event) => {
                 if (entry.isIntersecting) {
                     projectsSection.style.backgroundColor = '#c8c8c8';
                     click2.style.filter = `blur(0px)`;
+                    home.style.filter = "blur(4px)";
                     click2.style.opacity = `1`;
                     header.style.background = `linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(200,200,200,.75) 20%, rgba(200,200,200,0) 100%)`;  
                     subboxes.forEach(subbox => {
@@ -813,6 +814,7 @@ allprojects.addEventListener('mousemove', (event) => {
                     arrowsholder.style.visibility = "hidden";
                     arrowsholder.style.opacity = "0";
                     arrowsholder.style.filter = "blur(7px)";
+                    home.style.filter = "blur(0px)";
                 }
             });
         };
