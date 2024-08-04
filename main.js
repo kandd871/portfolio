@@ -443,19 +443,27 @@ window.addEventListener('resize', handleResize);
             const targetId = projpoint.dataset.target;
             updateProjpoints(targetId);
             const targetSection = document.getElementById(targetId);
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
             if (targetSection) {
                 // Scroll both vertically and horizontally to the target position
                 setTimeout(() => {
-                    allprojects.scrollTo({
-                        top: 0,
-                        left: targetSection.offsetLeft,
-                        behavior: 'smooth'
-                    });
-                }, 250);
+                    if (home.style.height === "0") {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        allprojects.scrollTo({
+                            top: 0,
+                            left: targetSection.offsetLeft,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        allprojects.scrollTo({
+                            top: 0,
+                            left: targetSection.offsetLeft,
+                            behavior: 'smooth'
+                        });
+                }
+            }, 250);
                 
             }
         });
