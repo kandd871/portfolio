@@ -966,17 +966,8 @@ line-height: 1;
 /* position: relative; */
 }
 
-.expand{
-font-size: 3vw;
-display: block;
-align-self: center;
-color: var(--color);
-background: none;
-border: none;
-cursor: pointer;
-padding: 0;
-margin: 0;
-text-decoration: underline;
+.subcaption{
+  line-height: 1.1;
 }
 
 .caption{
@@ -992,7 +983,6 @@ font-size: 1.3vw;
 
 .details{
   opacity: .8;
-  margin-bottom: -.75vw;
 }
 
 .background{
