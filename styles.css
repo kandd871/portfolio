@@ -239,7 +239,19 @@ a{
 }
 
 #home-content{
-  transform: translateY(-.5vw);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:0;
+}
+
+.home-inner{
+  display:grid;
 }
 
 .xaxis{
@@ -270,18 +282,21 @@ a{
   justify-content: center;
   text-align: center;
   height: 50vw;
+  width: 91.5vw;
+  display: flex;
+  padding:0;
 }
 
 #branding{
   position:absolute;
-  width: 100vw;
+  /* width: 100vw; */
   top:-1.5vw;
 }
 
 #personal{
   position:absolute;
   bottom: 1.9vw;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .label{
@@ -324,7 +339,7 @@ a{
 
 #arrow2{
   position: absolute;
-  transform: translateY(21vw);
+  transform: translateY(20.9vw);
   z-index: 16;
 }
 
@@ -1515,9 +1530,9 @@ to {
 }
 
 @media only screen and (min-height: 1000px){
-  #home-content{
+  .home-inner{
     transform: scale(1.1);
-    margin-top: 8vw;
+    /* margin-top: 8vw; */
   }
   
   .key{
@@ -1526,9 +1541,9 @@ to {
 }
 
 @media only screen and (max-height: 800px){
-#home-content{
+.home-inner{
   transform: scale(.9);
-  margin-top: -3vw;
+  /* margin-top: -3vw; */
 }
 
 .key{
@@ -1540,9 +1555,9 @@ to {
 
 @media only screen and (max-width: 1400px){
   
-  #home-content{
-    position: relative;
-    top: 2vh;
+  .home-inner{
+    /* position: relative;
+    top: 2vh; */
     transform: scale(.98);
     }
   
@@ -1554,15 +1569,15 @@ to {
 
 @media only screen and (max-width: 1300px){
   
-  #home-content{
-  position: absolute;
+  .home-inner{
+  /* position: absolute;
   margin-top: -1vw;
   top: 49vh;
-  left: 50vw;
-  transform: translate(-50%, -50%) scale(.98);
+  left: 50vw; */
+  transform: scale(.98);
   }
 
-  #branding{
+  /* #branding{
     width: 91.5vw;
   }
 
@@ -1578,22 +1593,24 @@ to {
     height:50vw;
   }
 
+  */
+  
   #arrow2{
     transform: translateY(20.9vw);
   }
 
   .key{
-    font-size: 1.1vw;
+    font-size: 1.05vw;
   }
   
 }
 @media only screen and (max-width: 1100px){
   
-  #home-content{
-    position: absolute;
+  .home-inner{
+    /* position: absolute;
     top: 49vh;
-    left: 50vw;
-    transform: translate(-50%, -50%) scale(1);
+    left: 50vw; */
+    transform: scale(1);
     }
 
     #arrow2{
@@ -1631,11 +1648,8 @@ to {
       font-size: 1.5vw;
     }
 
-    #home-content{
-      position: absolute;
-      top: 49vh;
-      left: 50vw;
-      transform: translate(-50%, -50%) scale(1.1);
+    .home-inner{
+      transform: scale(1.1);
     }
     
 }
@@ -1712,11 +1726,8 @@ display: none;
  overflow-x: hidden;
 }
 
-#home-content{
-  position: absolute;
-  top: 49vh;
-  left: 50vw;
-  transform: translate(-50%, -50%) scale(.75);
+.home-inner{
+  transform: scale(.75);
 }
 
 #graph{
@@ -2176,11 +2187,9 @@ input{
    overflow-x: hidden;
   }
   
-  #home-content{
-    position: absolute;
+  .home-inner{
     bottom: -7%;
-    left: 50vw;
-    transform: translate(-50%, -50%) scale(.91);
+    transform: scale(.91);
   }
   
   #graph{
@@ -2265,7 +2274,7 @@ input{
     }
   
     #arrow2{
-      transform: translateY(52vw);
+      transform: translateY(52.5vw);
     }
   
     #arrow1{
@@ -2546,12 +2555,21 @@ input{
     padding-bottom: 2vw;
     margin: 0 auto;
   }
-  
+
   #home-content{
+    display: block;
+  }
+  
+  .home-inner{
     position: relative;
-    top: 360px;
-    left: 50vw;
-    transform: translate(-50%, -50%) scale(.91);
+    top: 122px;
+    /* left: 50vw; */
+    /* margin-top: 30px; */
+    transform: scale(.91);
+  }
+
+  #arrow2{
+    transform: translateY(52vw);
   }
   
 }
@@ -2562,9 +2580,9 @@ input{
     animation: opacity 1.5s forwards ease-in;
   }
   
-  #home-content{
+  .home-inner{
     transform: scale(.8);
-    margin-top: -8vh;
+    /* margin-top: -8vh; */
   }
 
 /* #arrow1{
@@ -2619,9 +2637,8 @@ transform: scale(1.25) translateY(.25vw);
     animation: opacity 1.5s forwards ease-in;
   }
   
-  #home-content{
+  .home-inner{
     transform: scale(.8);
-    margin-top: -8vh;
   }
 
 /* #arrow1{
@@ -2714,7 +2731,11 @@ transform: scale(1.25) translateY(.25vw);
         #two{
          transform: scale(1.43) translateY(0vw);
         }
-        
+
+        #arrow2{
+          transform: translateY(21.25vw);
+        }
+
         }
 
         @media only screen and (min-width: 2350px){
