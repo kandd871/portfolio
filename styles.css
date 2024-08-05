@@ -2112,6 +2112,16 @@ input{
 }
 
 @media only screen and (max-width: 600px){
+  .key{
+    margin-top: 0vw;
+    font-size: 2.2vw;
+    bottom: 87vh; 
+  }
+
+  .home-inner{
+    transform: scale(.86);
+  }
+
   #arrow2{
     transform: translateY(51.4vw);
   }
@@ -2541,7 +2551,11 @@ input{
 }
 
 @media only screen and (max-width: 400px){
-  
+
+  .key{
+    /* top: 15.25%; */
+    bottom: 80.5%;
+  }
   
   #side{
    display: inline-flex;
@@ -2562,7 +2576,7 @@ input{
   
   .home-inner{
     position: relative;
-    top: 122px;
+    top: 131px;
     /* left: 50vw; */
     /* margin-top: 30px; */
     transform: scale(.91);
