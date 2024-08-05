@@ -532,7 +532,7 @@ function createProjPoint(x, y) {
     mousepoints.style.position = 'absolute';
     mousepoints.style.left = `${x}px`;
     mousepoints.style.top = `${y}px`;
-    mousepoints.style.zIndex = `-2000`;
+    mousepoints.style.zIndex = `-1`;
     allprojects.appendChild(mousepoints);
 
     // Set a timeout to remove the point after 1 second
