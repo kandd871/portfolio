@@ -836,7 +836,7 @@ allprojects.addEventListener('mousemove', (event) => {
         const observer2 = new IntersectionObserver(observerCallback, observerOptions);
         observer2.observe(projectsSection);
 
-        document.body.style.cursor = 'wait'; // Set cursor to loading state
+        // document.body.style.cursor = 'wait'; // Set cursor to loading state
 
 // window.addEventListener('load', () => {
 //     const images = document.querySelectorAll('img');
