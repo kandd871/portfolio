@@ -589,9 +589,8 @@ function createHomeProjPoint(x, y) {
 
     // Remove old projpoints if exceeding maxPoints
     const homepoints = home.querySelectorAll('.homeprojpoints');
-    const maxPoints = 5; // Maximum number of projpoints to keep for #home
     if (homepoints.length > maxPoints) {
-        const homeoldestPoint = points[0];
+        const homeoldestPoint = homepoints[0];
         homeoldestPoint.style.backgroundColor = 'var(--black)';
         homeoldestPoint.style.transition = '.3s';
         homeoldestPoint.style.filter = 'blur(6px)';
@@ -604,33 +603,30 @@ function createHomeProjPoint(x, y) {
     }
 }
 
+// Event listener for mousemove to draw projpoints in #home
 home.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
     if (mouseMoveCounter % 18 === 0) {
-        const rect = home.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
+        const rect = home.getBoundingClientRect(); // Get the bounding rectangle of #home
         const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
-        const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
+        const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #home
 
         createHomeProjPoint(mouseX, mouseY);
     }
 });
 
-
-// Event listener for mousemove to draw projpoints
+// Event listener for mousemove to draw projpoints in #allprojects
 allprojects.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
-    // Draw projpoint every 8th mousemove
+    // Draw projpoint every 11th mousemove
     if (mouseMoveCounter % 11 === 0) {
         const rect = allprojects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects
 
-        // Check if #home section's height is 0 before drawing projpoints
-        if (home.clientHeight === 0) {
-            createProjPoint(mouseX, mouseY);
-        }
+        createProjPoint(mouseX, mouseY);
     }
 });
 
@@ -839,5 +835,37 @@ allprojects.addEventListener('mousemove', (event) => {
     
         const observer2 = new IntersectionObserver(observerCallback, observerOptions);
         observer2.observe(projectsSection);
+
+        document.body.style.cursor = 'wait'; // Set cursor to loading state
+
+// window.addEventListener('load', () => {
+//     const images = document.querySelectorAll('img');
+//     let imagesLoaded = 0;
+
+//     images.forEach((img) => {
+//         if (img.complete) {
+//             imagesLoaded++;
+//         } else {
+//             img.addEventListener('load', () => {
+//                 imagesLoaded++;
+//                 if (imagesLoaded === images.length) {
+//                     document.body.style.cursor = 'default'; // Reset cursor when all images are loaded
+//                 }
+//             });
+//             img.addEventListener('error', () => {
+//                 imagesLoaded++;
+//                 if (imagesLoaded === images.length) {
+//                     document.body.style.cursor = 'default'; // Reset cursor even if there are errors loading images
+//                 }
+//             });
+//         }
+//     });
+
+//     // Check if all images are already loaded
+//     if (imagesLoaded === images.length) {
+//         document.body.style.cursor = 'default'; // Reset cursor if all images were already loaded
+//     }
+// });
+
 
 });
