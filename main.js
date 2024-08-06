@@ -795,12 +795,12 @@ allprojects.addEventListener('mousemove', (event) => {
                     header.style.background = `linear-gradient(180deg, rgba(200,200,200,1) 0%, rgba(200,200,200,.75) 20%, rgba(200,200,200,0) 100%)`;  
                     if (width >= 700) {
                     subboxes.forEach(subbox => {
-                    subbox.style.background = `background-color: rgba(197, 197, 197, 0.75)`;
+                    subbox.style.background = `rgba(197, 197, 197, 0.75)`;
                     subbox.style.border = `1.5px dotted #404040`;
                     }) 
                 } else {
                     subboxes.forEach(subbox => {
-                        subbox.style.background = `background-color: rgba(197, 197, 197, 0.75)`;
+                        subbox.style.background = `rgba(197, 197, 197, 0.75)`;
                         subbox.style.border = `1px dotted #404040`;
                         })
                     }
