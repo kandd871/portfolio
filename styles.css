@@ -248,7 +248,7 @@ a{
   align-items: center;
   position: absolute;
   top:0;
-  z-index: -6
+  z-index: -100;
 }
 
 .home-inner{

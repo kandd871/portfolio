@@ -532,7 +532,7 @@ function createProjPoint(x, y) {
     mousepoints.style.position = 'absolute';
     mousepoints.style.left = `${x}px`;
     mousepoints.style.top = `${y}px`;
-    mousepoints.style.zIndex = `-1`;
+    mousepoints.style.zIndex = `-9999`;
     allprojects.appendChild(mousepoints);
 
     // Set a timeout to remove the point after 1 second
@@ -571,7 +571,7 @@ function createHomeProjPoint(x, y) {
     homemousepoints.style.position = 'absolute';
     homemousepoints.style.left = `${x}px`;
     homemousepoints.style.top = `${y}px`;
-    homemousepoints.style.zIndex = `-1`;
+    homemousepoints.style.zIndex = `-10000`;
     home.appendChild(homemousepoints); // Append to #home section
 
     // Set a timeout to remove the point after 1 second
@@ -591,7 +591,7 @@ function createHomeProjPoint(x, y) {
     const homepoints = home.querySelectorAll('.homeprojpoints');
     if (homepoints.length > maxPoints) {
         const homeoldestPoint = homepoints[0];
-        homeoldestPoint.style.backgroundColor = 'var(--black)';
+        homeoldestPoint.style.backgroundColor = 'var(--background)';
         homeoldestPoint.style.transition = '.3s';
         homeoldestPoint.style.filter = 'blur(6px)';
 
@@ -609,7 +609,7 @@ home.addEventListener('mousemove', (event) => {
 
     if (mouseMoveCounter % 18 === 0) {
         const rect = home.getBoundingClientRect(); // Get the bounding rectangle of #home
-        const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
+        const mouseX = event.clientX + home.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #home
 
         createHomeProjPoint(mouseX, mouseY);
@@ -621,7 +621,7 @@ allprojects.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
     // Draw projpoint every 11th mousemove
-    if (mouseMoveCounter % 11 === 0) {
+    if (mouseMoveCounter % 15 === 0) {
         const rect = allprojects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + allprojects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY - rect.top; // Calculate mouseY relative to #allprojects

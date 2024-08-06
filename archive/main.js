@@ -148,7 +148,7 @@ function createProjPoint(x, y) {
 projects.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
-    if (mouseMoveCounter % 11 === 0) {
+    if (mouseMoveCounter % 15 === 0) {
         const rect = projects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
         const mouseX = event.clientX + projects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
         const mouseY = event.clientY + projects.scrollTop - rect.top; // Adjust mouseY for vertical scroll
