@@ -261,8 +261,8 @@ a{
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  width: 91.5vw;
-  top:22.5vw;
+  width: 91.25vw;
+  top:22.38vw;
   transition: .25s;
 }
 
@@ -283,7 +283,7 @@ a{
   justify-content: center;
   text-align: center;
   height: 50vw;
-  width: 91.5vw;
+  width: 91.25vw;
   display: flex;
   padding:0;
 }
@@ -296,7 +296,7 @@ a{
 
 #personal{
   position:absolute;
-  bottom: 1.9vw;
+  bottom: 2vw;
   /* width: 100vw; */
 }
 
@@ -1586,10 +1586,6 @@ to {
     width: 91.5vw;
   }
 
-  .xaxis{
-    top:22.44vw;
-  }
-
   .yaxis{
     height:50vw;
   }
@@ -1602,6 +1598,10 @@ to {
 
   .key{
     font-size: 1.05vw;
+  }
+
+  .xaxis{
+    top:22.5vw;
   }
   
 }
