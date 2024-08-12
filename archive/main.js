@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector('.header');
     const projects = document.querySelector('#projects');
 
-    const skills = ['creative coder', 'product designer', 'multidisciplinary artist', 'problem solver', 'graphic designer'];
+    const skills = ['creative coder', 'product designer', 'multidisciplinary artist', 'graphic designer', 'problem solver'];
     const skillSpans = document.querySelectorAll('.skills');
     const skillTexts = document.querySelectorAll('.skill-text');
     let index = 0;
