@@ -436,38 +436,40 @@ window.addEventListener('resize', handleResize);
       showImage(currentIndex);
       resetAutoSlide(); // Reset auto slide timer on user interaction
     });
-    
     projpoints.forEach(projpoint => {
         projpoint.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent the default anchor behavior
             const targetId = projpoint.dataset.target;
             updateProjpoints(targetId);
             const targetSection = document.getElementById(targetId);
+            const homeHeight = window.getComputedStyle(home).height;
+    
             if (targetSection) {
                 // Scroll both vertically and horizontally to the target position
                 setTimeout(() => {
-                    if (home.style.height === "0") {
+                    if (homeHeight === "0px") {
+                        // Case 1: home height is 0, scroll window to top and allprojects horizontally
                         window.scrollTo({
                             top: 0,
                             behavior: 'smooth'
                         });
                         allprojects.scrollTo({
-                            top: 0,
                             left: targetSection.offsetLeft,
                             behavior: 'smooth'
                         });
                     } else {
+                        // Case 2: home height is not 0, scroll allprojects both vertically and horizontally
                         allprojects.scrollTo({
                             top: 0,
                             left: targetSection.offsetLeft,
                             behavior: 'smooth'
                         });
-                }
-            }, 250);
-                
+                    }
+                }, 250);
             }
         });
     });
+    
     
     window.addEventListener('scroll', function() {
         const headerOffset = document.querySelector('#projects').offsetTop;
