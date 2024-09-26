@@ -1,10 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const click2 = document.querySelector('#click2');
-    const about = document.querySelector('#about');
-    const header = document.querySelector('.header');
-    const projects = document.querySelector('#projects');
+    const gridItems = document.querySelectorAll('.grid-item');
 
-    const skills = ['creative coder', 'product designer', 'multidisciplinary artist', 'graphic designer', 'problem solver'];
+    gridItems.forEach(item => {
+        const randomDegree = Math.random() * 2 - 1; // Random degree between -2 and 2
+        item.style.transform = `rotate(${randomDegree}deg)`;
+
+        // Add hover event listener to reset rotation
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'rotate(0deg)'; // Reset rotation on hover
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = `rotate(${randomDegree}deg)`; // Restore random rotation
+        });
+    });
+
+    const skills = ['creative coder', 'web designer', 'multidisciplinary artist', 'graphic designer'];
     const skillSpans = document.querySelectorAll('.skills');
     const skillTexts = document.querySelectorAll('.skill-text');
     let index = 0;
@@ -15,94 +26,57 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 skillText.classList.remove('blur');
             }, 10);
-
+    
             // Set new skill text and add blur
             skillText.textContent = skills[index];
             setTimeout(() => {
                 skillText.classList.add('blur');
             }, 1000);
         });
-
+    
         // Update index for next skill
         index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
     }
-
+    
     // Initial call to set the first skill
     changeSkill();
-
+    
     // Set interval to change skill every 1.5 seconds (adjust as needed)
     setInterval(changeSkill, 1500);
-
     
-    const headerOffset = header.offsetTop;
-
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('#headertwo');
-        const brackets = document.querySelectorAll('.bracket');
-        const screenWidth = window.innerWidth;
-
-        if (screenWidth >= 500) {
-            if (window.scrollY > headerOffset) {
-                header.classList.add('fixed');
-                projects.style.paddingTop = "5vw";
-                projnav.style.marginTop = "-0.5vw";
-                brackets.forEach(bracket => {
-                    bracket.style.top = "-.1rem";
-                });   
-            } else {
-                header.classList.remove('fixed');
-                projects.style.paddingTop = "1vw";
-                projnav.style.marginTop = "0vw";
-                brackets.forEach(bracket => {
-                    bracket.style.top = "-.17rem";
-                }); 
-            }
-        }   else if (screenWidth < 500) {
-            if (window.scrollY > headerOffset) {
-                header.classList.add('fixed3');
-                projects.style.paddingTop = "25vw";
-              
-            } else {
-                header.classList.remove('fixed3');
-                projects.style.paddingTop = "0vw";
-                
-            }
-        
+    // Select the details element
+    const details = document.querySelector('.details');
+    
+    // Function to hide details on scroll with blur effect
+    function handleScroll() {
+        // Check if the page is scrolled vertically
+        if (window.scrollY > 35) {
+            details.classList.add('blur-and-hide'); // Apply blur and hide details on scroll
+        } else {
+            details.classList.remove('blur-and-hide'); // Remove blur and show details when at the top
         }
-
+    }
+    
+    // Add event listener for scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    
+    document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+        const circle = thumbnail.querySelector('.circle');
+        const text = circle.querySelector('.text');
+    
+        thumbnail.addEventListener('mouseenter', () => {
+            // Calculate the width of the text
+            const textWidth = text.scrollWidth + 0; // Adding padding/border if needed
+            circle.style.width = `${textWidth}px`; // Set the circle width based on text
+        });
+    
+        thumbnail.addEventListener('mouseleave', () => {
+            circle.style.width = '1.8vw'; // Reset the width
+        });
     });
     
-    click2.addEventListener('click', function(event) {
-        // Prevent event propagation to the home click event listener
-        event.stopPropagation();
-
-        about.style.display = "block";
-        about.style.position = "fixed";
-        setTimeout(function() {
-            about.style.opacity = "1";
-        }, 0); // Adjust this timeout as needed
-        projects.style.filter = "blur(10px)";
-        header.style.filter = "blur(10px)";
-        projects.style.pointerEvents = 'none';
-    });
-
-    document.body.addEventListener('click', function(event) {
-        // Check if click target is not inside the about box
-        if (!about.contains(event.target) && about.style.display === "block") {
-            about.style.opacity = "0";
-            about.style.filter = "blur(7px)";
-            setTimeout(function() {
-                about.style.display = "none";
-                about.style.filter = "blur(0px)";
-            }, 500); // Adjust this timeout to match transition duration
-            projects.style.filter = "blur(0px)"; 
-            header.style.filter = "blur(0px)";  
-            projects.style.pointerEvents = 'auto';
-        }
-    });
-
-
-let mouseMoveCounter = 0;
+    let mouseMoveCounter = 0;
 const maxPoints = 5; // Maximum number of projpoints to keep
 
 // Function to create projpoint divs
@@ -112,49 +86,56 @@ function createProjPoint(x, y) {
     mousepoints.style.position = 'absolute';
     mousepoints.style.left = `${x}px`;
     mousepoints.style.top = `${y}px`;
-    mousepoints.style.zIndex = `-2000`;
-    projects.appendChild(mousepoints);
+    mousepoints.style.zIndex = `-100`;
+    document.body.appendChild(mousepoints);
 
-    // Set a timeout to remove the point after 1 second
+    // Set a timeout to apply styles for fade-out
     setTimeout(() => {
-        mousepoints.style.transition = '.3s'; // Add transition for opacity fade-out
-        mousepoints.style.backgroundColor = 'var(--black)';
+        mousepoints.style.transition = 'opacity 0.5s, filter 0.5s'; // Transition for fade-out
+        mousepoints.style.opacity = '0'; // Fade-out opacity
         mousepoints.style.filter = 'blur(6px)';
 
+        // Remove the projpoint after the fade-out
         setTimeout(() => {
             if (mousepoints.parentNode) {
-                projects.removeChild(mousepoints); // Remove the projpoint after fade-out
+                document.body.removeChild(mousepoints);
             }
-        }, 500); // Adjust timing to match transition duration
-    }, 2000); // Remove point after 1 second
+        }, 300); // Match this timeout to transition duration
+    }, 1300); // Adjust to keep the point visible for a brief time before fade-out
 
     // Remove old projpoints if exceeding maxPoints
-    const points = projects.querySelectorAll('.projpoints');
+    const points = document.body.querySelectorAll('.projpoints');
     if (points.length > maxPoints) {
         const oldestPoint = points[0];
-        oldestPoint.style.backgroundColor = 'var(--black)';
-        oldestPoint.style.transition = '.3s';
+        oldestPoint.style.transition = 'opacity 0.5s, filter 0.5s';
+        oldestPoint.style.opacity = '0'; // Fade-out oldest point
         oldestPoint.style.filter = 'blur(6px)';
 
         setTimeout(() => {
             if (oldestPoint.parentNode) {
-                projects.removeChild(oldestPoint); // Remove the oldest projpoint after fade-out
+                document.body.removeChild(oldestPoint);
             }
-        }, 500); // Adjust timing to match transition duration
+        }, 300); // Ensure it matches the fade-out timing
     }
 }
 
 // Event listener for mousemove to draw projpoints
-projects.addEventListener('mousemove', (event) => {
+document.body.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
+    // Draw projpoint every 15th mousemove
     if (mouseMoveCounter % 15 === 0) {
-        const rect = projects.getBoundingClientRect(); // Get the bounding rectangle of #allprojects
-        const mouseX = event.clientX + projects.scrollLeft - rect.left; // Adjust mouseX for horizontal scroll
-        const mouseY = event.clientY + projects.scrollTop - rect.top; // Adjust mouseY for vertical scroll
+        const mouseX = event.clientX + window.scrollX; // Adjust for horizontal scroll
+        const mouseY = event.clientY + window.scrollY; // Adjust for vertical scroll
 
         createProjPoint(mouseX, mouseY);
     }
 });
 
+
+
+
+
 });
+
+
