@@ -488,6 +488,7 @@ to {
         padding-top: 5vw;
         width: 90vw;
         z-index: -1000;
+        line-height: 1.05;
     }
 
     .bio, .info, .archive {
@@ -501,17 +502,18 @@ to {
         display: none;
     }
     .grid-container{
-        margin: 70vw auto 8vw;
+        margin: 80vw auto 8vw;
         width: 90vw;
         background-color: var(--background);
+        margin-bottom: 45vw;
     }
 
     .grid-item {
         display: block;
         justify-content: center; 
         width: 90vw; /* Ensure grid items are full width */
-        margin-bottom: 9vw;
-        margin-top: 9vw;
+        margin-bottom: 5vw;
+        margin-top: 5vw;
     }
 
     .thumbnail {
@@ -519,7 +521,7 @@ to {
         margin: 0 auto;
         width: 90vw; /* Thumbnails take full width */
         padding: 0;
-        border: 1px dotted var(--color); /* Keep the border */
+        border: none;
     }
     
     .thumbnail img {

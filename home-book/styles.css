@@ -562,6 +562,7 @@ to {
         padding-top: 5vw;
         width: 90vw;
         z-index: -1000;
+        line-height: 1.05;
     }
 
     .bio, .info, .archive {

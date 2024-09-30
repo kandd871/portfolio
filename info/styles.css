@@ -422,7 +422,7 @@ to {
       p, .exp{
         line-height: 1.25;
         font-size: 3vw;
-        text-align: center;
+        /* text-align: center; */
       }
 
       .exp{
@@ -488,6 +488,7 @@ to {
         padding-top: 5vw;
         width: 90vw;
         z-index: -1000;
+        /* line-height: 1.05; */
     }
 
     .bio, .info, .archive {
@@ -501,7 +502,7 @@ to {
         display: none;
     }
     .grid-container{
-        margin: 45vw auto 8vw;
+        margin: 50vw auto 8vw;
         width: 90vw;
         background-color: var(--background);
     }

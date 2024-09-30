@@ -564,6 +564,7 @@ to {
       }
 
     .header {
+        line-height: 1.05;
         font-size: 6.5vw;
         display: block; /* Switch to block layout */
         text-align: center; /* Center the text if desired */
