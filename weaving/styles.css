@@ -153,6 +153,12 @@ body{
     border-radius: 50%;
     /* padding: 2vw 2vw 2vw 2vw; */
 }
+
+ 
+.link{
+    color: var(--black);
+    font-style: italic;
+}
   
 a{
     color: var(--color);
@@ -489,3 +495,258 @@ to {
 }
 }
 
+
+@media only screen and (max-width: 1400px){
+    .header{
+        font-size: 1.8vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header{
+        width: 95vw;
+        padding-top: 2vw;
+        font-size: 2vw;
+    }
+
+    .bio{
+        width: 75%;
+    }
+
+    .grid-container {
+        display: block; /* Stack columns vertically */
+        width: 95vw;
+        margin: 16vw auto 8vw; /* Center the grid vertically */
+    }
+    
+    .grid-column {
+        display: block; /* Stack items one below the other */
+        width: 100%;
+    }
+    
+    .grid-item {
+        display: block;
+        justify-content: center; 
+        width: 95vw; /* Ensure grid items are full width */
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+    }
+
+      .hover{
+        width: 100%;
+      }
+
+      .circle{
+        padding: 2.25vw;
+        padding-top: 2.6vw;
+      }
+
+      .text{
+        font-size:2vw;
+      }
+
+      .skill, .copyright{
+        font-size: 1.5vw;
+      }
+      .footer{
+        height: 10vh;
+      } 
+      .information{
+        position: relative;
+        width: 90vw;
+      }
+      
+      .title{
+        font-size:3vw;
+        padding: 1.8vw 2vw;
+        padding-top: 2vw;
+        margin-left: -1.3vw;
+      }
+      
+      .subtitle, .time, .anchor, p{
+        font-size: 2vw;
+      }
+
+      p{
+        line-height: 1.25;
+      }
+
+      .anchor{  
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+        padding: .75vw 1vw;
+    }
+
+    .full{
+        width: 93vw;
+    }
+
+    .scroll{
+        margin-top: 0vw;
+    }
+
+    
+    .two img{
+        width: auto!important;
+        height: 30.5vw;
+    }
+
+    .twoo img{
+        width: auto!important;
+        height:44.25vw;
+    }
+
+    .twoo2 img{
+        width: auto!important;
+        height:42vw;
+    }
+
+    .twoo3 img{
+        width: auto!important;
+        height:48vw;
+    }
+
+
+    .full{
+        margin-bottom: 2vw;
+    }
+}
+  
+
+@media only screen and (max-width: 490px){
+    /* .container{
+        display:none;
+    }
+
+    .phone{
+        display: flex;
+        height: 100vh;
+        align-content: center;
+        align-self: center;
+        align-items: center;
+    } */
+
+    ::-webkit-scrollbar {
+        display: none;
+      }
+
+    .header {
+        font-size: 6.5vw;
+        display: block; /* Switch to block layout */
+        text-align: center; /* Center the text if desired */
+        padding-top: 5vw;
+        width: 90vw;
+        z-index: -1000;
+    }
+
+    .bio, .info, .archive {
+        display: block; /* Ensure these elements are stacked vertically */
+        width: 100%; /* Full width */
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+    }
+
+    .sub{
+        display: none;
+    }
+    .grid-container{
+        margin: 45vw auto 8vw;
+        width: 90vw;
+        background-color: var(--background);
+    }
+
+    .grid-item {
+        display: block;
+        justify-content: center; 
+        width: 90vw; /* Ensure grid items are full width */
+        margin-bottom: 9vw;
+        margin-top: 9vw;
+    }
+    
+    .link{
+        color: var(--black);
+        font-style: italic;
+    }
+
+      .circle{
+        padding: 5vw;
+        padding-top: 6vw;
+      }
+
+      .text{
+        font-size:4vw;
+      }
+
+      .skill, .copyright{
+        font-size: 3vw;
+      }
+      
+      .copyright{
+        padding-bottom: 7vw;
+      }
+
+      .footer{
+        height: 15vh;
+      }
+
+      .information{
+        position: relative;
+        width: 90vw;
+      }
+      
+      .title{
+        font-size: 6.5vw;
+        padding: 2.5vw 3vw;
+        padding-top: 3vw;
+        margin-left: -2vw;
+        width: 81vw;
+      }
+      
+      .subtitle, .time, .anchor, p{
+        font-size: 4vw;
+      }
+
+      p{
+        line-height: 1.25;
+      }
+
+      .anchor{  
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+        padding: .75vw 1vw;
+    }
+
+    .full{
+        width: 90vw;
+    }
+
+    .scroll{
+        margin-top: 0vw;
+    }
+
+    
+    .two img{
+        width: auto!important;
+        height: 29.5vw;
+    }
+
+    .twoo img{
+        width: auto!important;
+        height:42.25vw;
+    }
+
+    .twoo2 img{
+        width: auto!important;
+        height:40.25vw;
+    }
+
+    .twoo3 img{
+        width: auto!important;
+        height:46vw;
+    }
+
+    .full{
+        margin-bottom: 2vw;
+    }
+
+}

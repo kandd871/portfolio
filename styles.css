@@ -382,10 +382,90 @@ to {
   opacity: 1;
 }
 }
-        
+
+
+@media only screen and (max-width: 1400px){
+    .header{
+        font-size: 1.8vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header{
+        width: 95vw;
+        padding-top: 2vw;
+        font-size: 2vw;
+    }
+
+    .bio{
+        width: 75%;
+    }
+
+    .grid-container {
+        display: block; /* Stack columns vertically */
+        width: 95vw;
+        margin: 20vw auto 8vw; /* Center the grid vertically */
+    }
+    
+    .grid-column {
+        display: block; /* Stack items one below the other */
+        width: 100%;
+    }
+    
+    .grid-item {
+        display: block;
+        justify-content: center; 
+        width: 95vw; /* Ensure grid items are full width */
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+    }
+
+    .thumbnail {
+        display: block;
+        margin: 0 auto;
+        width: 95vw; /* Thumbnails take full width */
+        padding: 0;
+        border: 1px dotted var(--color); /* Keep the border */
+    }
+    
+    .thumbnail img {
+        width: 95vw; /* Scale images to fit the grid item */
+        height: auto; 
+        padding: 0;
+        margin: 0;
+        border-radius: .3vw;
+    }
+
+    #editorial img{
+        object-fit: cover;
+        height: 95vw;
+        width: 95vw;
+      }
+
+      .hover{
+        width: 100%;
+      }
+
+      .circle{
+        padding: 2.25vw;
+        padding-top: 2.6vw;
+      }
+
+      .text{
+        font-size:2vw;
+      }
+
+      .skill, .copyright{
+        font-size: 1.5vw;
+      }
+      .footer{
+        height: 10vh;
+      } 
+}
+  
 
 @media only screen and (max-width: 490px){
-    .container{
+    /* .container{
         display:none;
     }
 
@@ -395,5 +475,87 @@ to {
         align-content: center;
         align-self: center;
         align-items: center;
+    } */
+
+    ::-webkit-scrollbar {
+        display: none;
+      }
+
+    .header {
+        font-size: 6.5vw;
+        display: block; /* Switch to block layout */
+        text-align: center; /* Center the text if desired */
+        padding-top: 5vw;
+        width: 90vw;
+        z-index: -1000;
     }
+
+    .bio, .info, .archive {
+        display: block; /* Ensure these elements are stacked vertically */
+        width: 100%; /* Full width */
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+    }
+
+    .sub{
+        display: none;
+    }
+    .grid-container{
+        margin: 70vw auto 8vw;
+        width: 90vw;
+        background-color: var(--background);
+    }
+
+    .grid-item {
+        display: block;
+        justify-content: center; 
+        width: 90vw; /* Ensure grid items are full width */
+        margin-bottom: 9vw;
+        margin-top: 9vw;
+    }
+
+    .thumbnail {
+        display: block;
+        margin: 0 auto;
+        width: 90vw; /* Thumbnails take full width */
+        padding: 0;
+        border: 1px dotted var(--color); /* Keep the border */
+    }
+    
+    .thumbnail img {
+        width: 90vw; /* Scale images to fit the grid item */
+        height: auto; 
+        padding: 0;
+        margin: 0;
+        border-radius: .3vw;
+    }
+
+    #editorial img{
+        object-fit: cover;
+        height: 90vw;
+        width: 90vw;
+      }
+
+      .circle{
+        padding: 5vw;
+        padding-top: 6vw;
+      }
+
+      .text{
+        font-size:4vw;
+      }
+
+      .skill, .copyright{
+        font-size: 3vw;
+      }
+      
+      .copyright{
+        padding-bottom: 7vw;
+      }
+
+      .footer{
+        height: 15vh;
+      }
+      
+    
 }

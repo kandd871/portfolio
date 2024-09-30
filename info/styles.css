@@ -380,4 +380,232 @@ to {
   opacity: 1;
 }
 }
+
+@media only screen and (max-width: 1400px){
+    .header{
+        font-size: 1.8vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header{
+        width: 95vw;
+        padding-top: 2vw;
+        font-size: 2vw;
+    }
+
+    .bio{
+        width: 75%;
+    }
+
+    .grid-container {
+        display: block; /* Stack columns vertically */
+        width: 95vw;
+        margin: 16vw auto 0vw; /* Center the grid vertically */
+    }
+    
+    .grid-column {
+        display: block; /* Stack items one below the other */
+        width: 100%;
+    }
+    
+    .grid-item {
+        display: block;
+        justify-content: center; 
+        width: 95vw; /* Ensure grid items are full width */
+        margin: 0;
+        margin-bottom: 3vw;
+        margin-top: 3vw;
+    }
+
+     
+      p, .exp{
+        line-height: 1.25;
+        font-size: 3vw;
+        text-align: center;
+      }
+
+      .exp{
+        display: none;
+      }
+
+      .anchor{  
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+        padding: .75vw 1vw;
+    }
+
+    .full{
+        width: 90vw;
+    }
+
+
+    .full{
+        margin: 0 auto;
+        margin-bottom: 2vw;
+    }
+
+    .thumbnail {
+        display: block;
+        margin: 0 auto;
+        width: 93vw; /* Thumbnails take full width */
+        padding: 0;
+        border: 1px dotted var(--color); /* Keep the border */
+    }
+    
+    .thumbnail img {
+        width: 93vw; /* Scale images to fit the grid item */
+        height: auto; 
+        padding: 0;
+        margin: 0;
+        border-radius: .3vw;
+    }
+
+}
+  
+
+@media only screen and (max-width: 490px){
+    /* .container{
+        display:none;
+    }
+
+    .phone{
+        display: flex;
+        height: 100vh;
+        align-content: center;
+        align-self: center;
+        align-items: center;
+    } */
+
+    ::-webkit-scrollbar {
+        display: none;
+      }
+
+    .header {
+        font-size: 6.5vw;
+        display: block; /* Switch to block layout */
+        text-align: center; /* Center the text if desired */
+        padding-top: 5vw;
+        width: 90vw;
+        z-index: -1000;
+    }
+
+    .bio, .info, .archive {
+        display: block; /* Ensure these elements are stacked vertically */
+        width: 100%; /* Full width */
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+    }
+
+    .sub{
+        display: none;
+    }
+    .grid-container{
+        margin: 45vw auto 8vw;
+        width: 90vw;
+        background-color: var(--background);
+    }
+
+    .grid-item {
+        display: block;
+        justify-content: center; 
+        width: 90vw; /* Ensure grid items are full width */
+        margin-bottom: 9vw;
+        margin-top: 9vw;
+    }
+    
+    .link{
+        color: var(--black);
+        font-style: italic;
+    }
+
+      .circle{
+        padding: 5vw;
+        padding-top: 6vw;
+      }
+
+      .text{
+        font-size:4vw;
+      }
+
+      .skill, .copyright{
+        font-size: 3vw;
+      }
+      
+      .copyright{
+        padding-bottom: 7vw;
+      }
+
+      .footer{
+        height: 15vh;
+      }
+
+      .information{
+        position: relative;
+        width: 90vw;
+      }
+      
+      .title{
+        font-size: 6.5vw;
+        padding: 1.8vw 2vw;
+        padding-top: 2vw;
+        margin-left: -1.8vw;
+      }
+      
+      .subtitle, .time, .anchor, p, .exp{
+        font-size: 4vw;
+      }
+
+      p{
+        line-height: 1.25;
+      }
+
+      .anchor{  
+        margin-top: 4vw;
+        margin-bottom: 3vw;
+        padding: .75vw 1vw;
+    }
+
+    .full{
+        width: 90vw;
+    }
+
+    .scroll{
+        margin-top: 0vw;
+    }
+
+    .full{
+        margin-bottom: 2vw;
+    }
+
+    .contact{
+        font-size: 6.5vw;
+    }
+
+    .exp{
+        display: none;
+    }
+
+
+    .thumbnail {
+        display: block;
+        margin: 0 auto;
+        width: 90vw; /* Thumbnails take full width */
+        padding: 0;
+        border: 1px dotted var(--color); /* Keep the border */
+        margin-bottom: 16vw;
+    }
+    
+    .thumbnail img {
+        width: 90vw; /* Scale images to fit the grid item */
+        height: auto; 
+        padding: 0;
+    }
+
+    .info > a{
+        padding: 2.75vw 2vw 2vw 2.5vw;
+        margin-left: -1.5vw;
+    }
+
+}
         

@@ -20,30 +20,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const skillTexts = document.querySelectorAll('.skill-text');
     let index = 0;
 
-    function changeSkill() {
-        skillTexts.forEach(skillText => {
-            // Remove blur
-            setTimeout(() => {
-                skillText.classList.remove('blur');
-            }, 10);
     
-            // Set new skill text and add blur
-            skillText.textContent = skills[index];
-            setTimeout(() => {
-                skillText.classList.add('blur');
-            }, 1000);
-        });
-    
-        // Update index for next skill
-        index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
-    }
-    
-    // Initial call to set the first skill
+    if (window.innerWidth >= 490) {
+        function changeSkill() {
+            skillTexts.forEach(skillText => {
+                // Remove blur
+                setTimeout(() => {
+                    skillText.classList.remove('blur');
+                }, 10);
+        
+                // Set new skill text and add blur
+                skillText.textContent = skills[index];
+                setTimeout(() => {
+                    skillText.classList.add('blur');
+                }, 1000);
+            });
+        
+            // Update index for next skill
+            index = (index + 1) % skills.length; // Loop back to the beginning when reaching the end
+        }
+
+            // Initial call to set the first skill
     changeSkill();
     
     // Set interval to change skill every 1.5 seconds (adjust as needed)
     setInterval(changeSkill, 1500);
     
+    
+    }
+    
+
     // Select the details element
     const details = document.querySelector('.details');
     
@@ -58,8 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // Add event listener for scroll
+    if (window.innerWidth >= 490) {
     window.addEventListener('scroll', handleScroll);
-    
+    }
     
     document.querySelectorAll('.thumbnail').forEach(thumbnail => {
         const circle = thumbnail.querySelector('.circle');
@@ -131,9 +138,6 @@ document.body.addEventListener('mousemove', (event) => {
         createProjPoint(mouseX, mouseY);
     }
 });
-
-
-
 
 
 });
