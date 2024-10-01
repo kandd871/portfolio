@@ -326,7 +326,7 @@ a{
         opacity: .8;
         font-family: 'Times Dot Roman', serif;
         font-style: italic;
-        text-transform: capitalize;
+        text-transform: lowercase;
     }
 
     .projpoints {
