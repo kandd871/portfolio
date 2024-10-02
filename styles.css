@@ -158,10 +158,15 @@ a{
 .thumbnail {
     margin: 0;
     padding: 0;
-    border: 1px dotted var(--color);
+    /* border: 1px dotted var(--color); */
     border-radius: .3vw;
     display: flex; /* Add flex display */
     align-items: flex-start; /* Align items at the start */
+    transition: 1s;
+}
+
+.thumbnail:hover{
+    border: .5px dotted var(--color);
 }
 
 .thumbnail img {
@@ -175,7 +180,7 @@ a{
 
 .border{
     border-radius: .3vw;;
-    border: 1px dotted var(--color); 
+    /* border: 1px dotted var(--color);  */
     box-sizing: border-box;
 }
 
