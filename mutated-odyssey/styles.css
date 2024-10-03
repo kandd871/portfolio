@@ -325,6 +325,10 @@ p>a{
         /* animation: stack2 .1s forwards ease-in; */
     }
 
+    .flip:hover{
+        transform: rotate(180deg);
+    }
+
     .subinfo{
         position: relative;
         /* height:0vh;
