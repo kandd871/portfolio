@@ -53,6 +53,7 @@ body{
     text-shadow: 0px 0px 8px rgba(237, 38, 255, 0.1);
     background-color: var(--background);
     animation: opacity .5s forwards ease-in;
+    scroll-behavior: smooth;
 
 }
 
@@ -245,6 +246,11 @@ a{
     transition: .25s;
     pointer-events: none;
     }
+
+    .phone-header{
+        display: none;
+    }
+
 
     .hover {
         color: var(--color);
@@ -494,6 +500,10 @@ to {
     ::-webkit-scrollbar {
         display: none;
       }
+      
+    body{
+        overflow: hidden;
+    }
 
     .header {
         font-size: 6.5vw;
@@ -501,7 +511,7 @@ to {
         text-align: center; /* Center the text if desired */
         padding-top: 5vw;
         width: 90vw;
-        z-index: -1000;
+        z-index: -5;
         line-height: 1.05;
     }
 
@@ -533,11 +543,15 @@ to {
 
     .grid-container-phone{
         display:flex;
-        margin: 80vw auto 8vw;
+        margin: 28vh auto 8vw;
         width: 90vw;
-        background-color: var(--background);
+        height: 72vh;
+        /* background-color: var(--background); */
         margin-bottom: 45vw;
         animation: stack2 1.25s forwards ease-in-out;
+        z-index: 0;
+        overflow: scroll;
+        scroll-behavior: smooth;
     }
 
     .grid-container{
@@ -584,8 +598,22 @@ to {
       }
 
       .footer{
-        height: 15vh;
+        height: 10vh;
       }
+
+      .phone-header{
+        z-index: 1;
+        width: 100vw;
+        height: 10vh;
+        display: block;
+        position: fixed;
+        background: rgb(78, 78, 78);
+        background: linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .8) 95%, rgba(237,237,237,1) 100%);
+        top:25vh;
+        left: 0;
+        transition: .25s;
+        pointer-events: none;
+    }
       
     
 }
