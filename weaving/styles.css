@@ -614,17 +614,9 @@ to {
   
 
 @media only screen and (max-width: 490px){
-    /* .container{
-        display:none;
+    .full{
+        animation: stack2 1.25s forwards ease-in;
     }
-
-    .phone{
-        display: flex;
-        height: 100vh;
-        align-content: center;
-        align-self: center;
-        align-items: center;
-    } */
 
     ::-webkit-scrollbar {
         display: none;

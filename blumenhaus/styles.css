@@ -436,6 +436,12 @@ to {
 }
 }
 
+@media only screen and (max-width: 490px){
+    .full{
+        animation: stack2 1.25s forwards ease-in;
+    }
+}
+
 @media only screen and (max-width: 1400px){
     .header{
         font-size: 1.8vw;

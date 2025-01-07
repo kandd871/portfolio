@@ -83,7 +83,7 @@ body{
 }
 
 .details {
-    transition: .8s; /* Smooth transition for opacity and blur */
+    transition: .8s;
 }
 
 .blur-and-hide {
@@ -122,6 +122,10 @@ a{
     color: var(--color);
 }
 
+.grid-container-phone{
+    display:none;
+}
+
 .grid-container {
     display: flex;
     gap: 0vw; /* Space between columns */
@@ -133,6 +137,7 @@ a{
     animation: stack 1.25s forwards ease-in-out;
     animation-delay: 1s;
 }
+
 
 .grid-column {
     display: flex;
@@ -163,10 +168,6 @@ a{
     display: flex; /* Add flex display */
     align-items: flex-start; /* Align items at the start */
     transition: 1s;
-}
-
-.thumbnail:hover{
-    border: .5px dotted var(--color);
 }
 
 .thumbnail img {
@@ -295,36 +296,6 @@ a{
         line-height: 1;
     }
 
-    .thumbnail:hover{}
-    
-    .thumbnail:hover .hover {
-        opacity: 1; /* Fade in the hover element */
-    }
-
-    .thumbnail:hover .image {
-        filter: blur(2px); 
-        /* grayscale(1) brightness(30%) contrast(110%) */
-    }
-
-    .thumbnail:hover .text {
-        opacity: 1; /* Reveal text inside the circle */
-    }
-
-   /* Reset styles when not hovering */
-    .thumbnail:not(:hover) .circle {
-        width: 1.8vw; /* Collapse the circle */
-        transition: width 0.25s ease-in-out; /* Ensure smooth collapsing */
-    }
-
-    .thumbnail:not(:hover) .text {
-        opacity: 0; /* Hide text */
-        transition: opacity 0.25s ease-in-out; /* Smooth transition for collapsing */
-        transition-delay: 0s; /* Reset delay */
-    }
-
-    .thumbnail:not(:hover) .hover{
-        transition-delay: .25s;
-    }
 
     .skill{
         font-size: .9vw;
@@ -386,6 +357,44 @@ from {
 to {
   opacity: 1;
 }
+}
+
+
+@media only screen and (min-width: 500px){
+
+    .thumbnail:hover{
+        border: .5px dotted var(--color);
+    }
+    
+    .thumbnail:hover .image {
+        filter: blur(2px); 
+        /* grayscale(1) brightness(30%) contrast(110%) */
+    }
+
+    .thumbnail:hover .hover {
+        opacity: 1; /* Fade in the hover element */
+    }
+
+    .thumbnail:hover .text {
+        opacity: 1; /* Reveal text inside the circle */
+    }
+
+   /* Reset styles when not hovering */
+    .thumbnail:not(:hover) .circle {
+        width: 1.8vw; /* Collapse the circle */
+        transition: width 0.25s ease-in-out; /* Ensure smooth collapsing */
+    }
+
+    .thumbnail:not(:hover) .text {
+        opacity: 0; /* Hide text */
+        transition: opacity 0.25s ease-in-out; /* Smooth transition for collapsing */
+        transition-delay: 0s; /* Reset delay */
+    }
+
+    .thumbnail:not(:hover) .hover{
+        transition-delay: .25s;
+    }
+
 }
 
 
@@ -506,12 +515,13 @@ to {
     .sub{
         display: none;
     }
-    .grid-container{
+    /* .grid-container{
         margin: 80vw auto 8vw;
         width: 90vw;
         background-color: var(--background);
         margin-bottom: 45vw;
-    }
+        animation: stack2 1.25s forwards ease-in-out;
+    } */
 
     .grid-item {
         display: block;
@@ -519,6 +529,19 @@ to {
         width: 90vw; /* Ensure grid items are full width */
         margin-bottom: 5vw;
         margin-top: 5vw;
+    }
+
+    .grid-container-phone{
+        display:flex;
+        margin: 80vw auto 8vw;
+        width: 90vw;
+        background-color: var(--background);
+        margin-bottom: 45vw;
+        animation: stack2 1.25s forwards ease-in-out;
+    }
+
+    .grid-container{
+        display:none;
     }
 
     .thumbnail {

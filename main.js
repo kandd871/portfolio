@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gridItems = document.querySelectorAll('.grid-item');
 
+    if (window.innerWidth >= 600) {
     gridItems.forEach(item => {
         const randomDegree = Math.random() * 2 - 1; // Random degree between -2 and 2
         item.style.transform = `rotate(${randomDegree}deg)`;
@@ -14,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.transform = `rotate(${randomDegree}deg)`; // Restore random rotation
         });
     });
-
+    }
+    
     const skills = ['creative coder', 'web designer', 'multidisciplinary artist', 'graphic designer'];
     const skillSpans = document.querySelectorAll('.skills');
     const skillTexts = document.querySelectorAll('.skill-text');
