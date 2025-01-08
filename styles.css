@@ -610,7 +610,7 @@ to {
         position: fixed;
         background: none;
         background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .1) 15%, rgba(237, 237, 237, .25) 30%, rgba(237, 237, 237, .45) 50%, rgba(237, 237, 237, .7) 65%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
-        top:22.5vh;
+        top:22.25vh;
         left: 0;
         transition: .25s;
         pointer-events: none;
@@ -618,7 +618,7 @@ to {
 
     .copy2{
         display: block;
-        margin-top: 10vh!important;
+        margin-top: 7vh!important;
         padding-bottom: 10vh!important;
     }
       

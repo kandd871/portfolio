@@ -633,14 +633,14 @@ to {
         position: fixed;
         background: black;
         background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .5) 25%, rgba(237, 237, 237, .65) 50%, rgba(237, 237, 237, .75) 60%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
-        top:25vh;
+        top:24.75vh;
         left: 0;
         transition: .25s;
         pointer-events: none;
     }
 
     .copyright{
-        margin-top: 12vh!important;
+        margin-top: 9vh!important;
         padding-bottom: 5vh!important;
     }
 
