@@ -637,3 +637,20 @@ a{
                     padding-bottom: 5vh!important;
                 }
             }
+
+            @media only screen and (max-height: 800px){
+                .grid-container{
+                    display:flex;
+                    margin: 25vh auto 8vw;
+                }
+            
+                .phone-header{
+                    top:24.75vh;
+                }
+            
+                .copy2{
+                    margin-top: 8vh!important;
+                    padding-bottom: 15vh!important;
+                }
+            }
+                
