@@ -125,6 +125,10 @@ a:hover{
     /* text-decoration: underline; */
 }
 
+#top-header{
+    opacity: 0;
+    transition: .25s;
+}
 
 .loc{
     opacity: .75;
@@ -481,6 +485,10 @@ to {
         display: none;
       }
 
+      body{
+        overflow: hidden;
+      }
+
     .header {
         font-size: 6.5vw;
         display: block; /* Switch to block layout */
@@ -502,9 +510,11 @@ to {
         display: none;
     }
     .grid-container{
-        margin: 50vw auto 8vw;
+        margin: 25vh auto 8vw;
         width: 90vw;
+        height: 75vh;
         background-color: var(--background);
+        overflow: scroll;
     }
 
     .grid-item {
@@ -606,6 +616,31 @@ to {
     .info > a{
         padding: 2.75vw 2vw 2vw 2.5vw;
         margin-left: -1.5vw;
+    }
+    
+    .footer{
+        height: 10vh;
+        background: linear-gradient(180deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .8) 80%, rgba(237,237,237,1) 100%);
+      }
+
+    
+    .phone-header{
+        z-index: 1;
+        width: 100vw;
+        height: 5vh;
+        display: block;
+        position: fixed;
+        background: black;
+        background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .5) 25%, rgba(237, 237, 237, .65) 50%, rgba(237, 237, 237, .75) 60%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
+        top:25vh;
+        left: 0;
+        transition: .25s;
+        pointer-events: none;
+    }
+
+    .copyright{
+        margin-top: 12vh!important;
+        padding-bottom: 5vh!important;
     }
 
 }

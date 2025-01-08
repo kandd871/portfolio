@@ -169,6 +169,10 @@ a{
     opacity: .75;
 }
 
+#top-header{
+    opacity: 0;
+    transition: .25s;
+}
 
 .grid-container {
     display: flex;
@@ -623,7 +627,22 @@ to {
 
       .footer{
         height: 15vh;
+        background: linear-gradient(180deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .8) 80%, rgba(237,237,237,1) 100%);
       }
+
+    #top-header{
+        width: 100vw;
+        height: 10vh;
+        display: block;
+        position: fixed;
+        background: rgb(78, 78, 78);
+        background: linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .8) 80%, rgba(237,237,237,1) 100%);
+        top:0;
+        left: 0;
+        transition: .25s;
+        pointer-events: none;
+        z-index: 1000;
+    }
 
       .information{
         position: relative;

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
         const anchor = document.querySelector('.anchor');
         const circle1 = document.querySelector('.circle');
 
@@ -122,49 +123,28 @@ imgs.forEach(image => {
     observer.observe(image);
 });
 
-const carousel = document.querySelector('.carousel');
-    const images = carousel.querySelectorAll('img');
-    let currentIndex = 0;
-    const totalImages = images.length;
-    let autoSlideInterval;
-  
-    function showImage(index) {
-      images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-          img.classList.add('active');
+
+document.addEventListener('scroll', function () {
+    const gridContainer = document.querySelector('.grid-container');
+    const topHeader = document.getElementById('top-header');
+    
+    // Check if the viewport width is 490px or less
+    if (window.innerWidth <= 490) {
+        // Get the distance of the gridContainer from the top of the page
+        const gridTop = gridContainer.getBoundingClientRect().top;
+
+        if (gridTop <= 0) {
+            // If grid-container reaches the top of the viewport
+            topHeader.style.opacity = '1';
+        } else {
+            // Otherwise, reset opacity
+            topHeader.style.opacity = '0';
         }
-      });
+    } else {
+        // Reset opacity if width is greater than 490px
+        topHeader.style.opacity = '0';
     }
-  
-    function showNextImage() {
-      currentIndex = (currentIndex + 1) % totalImages;
-      showImage(currentIndex);
-    }
-  
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      autoSlideInterval = setInterval(showNextImage, 1500);
-    }
-  
-    // Initial auto slide setup
-    autoSlideInterval = setInterval(showNextImage, 1500);
-  
-    carousel.addEventListener('click', function(event) {
-      const carouselWidth = this.offsetWidth;
-      const clickX = event.clientX;
-  
-      if (clickX < carouselWidth / 2) {
-        // Left side clicked
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
-      } else {
-        // Right side clicked
-        currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
-      }
-  
-      showImage(currentIndex);
-      resetAutoSlide(); // Reset auto slide timer on user interaction
-    });
+});
 
 });
 

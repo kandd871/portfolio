@@ -123,6 +123,28 @@ images.forEach(image => {
 });
 
 
+document.addEventListener('scroll', function () {
+    const gridContainer = document.querySelector('.grid-container');
+    const topHeader = document.getElementById('top-header');
+    
+    // Check if the viewport width is 490px or less
+    if (window.innerWidth <= 490) {
+        // Get the distance of the gridContainer from the top of the page
+        const gridTop = gridContainer.getBoundingClientRect().top;
+
+        if (gridTop <= 0) {
+            // If grid-container reaches the top of the viewport
+            topHeader.style.opacity = '1';
+        } else {
+            // Otherwise, reset opacity
+            topHeader.style.opacity = '0';
+        }
+    } else {
+        // Reset opacity if width is greater than 490px
+        topHeader.style.opacity = '0';
+    }
+});
+
 
 });
 
