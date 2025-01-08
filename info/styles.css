@@ -72,6 +72,10 @@ body{
 
 }
 
+.copy2{
+    display: none;
+}
+
 .details {
     transition: .8s; /* Smooth transition for opacity and blur */
 }
@@ -149,6 +153,12 @@ a:hover{
     gap: 2vw; /* Space between items in each column */
     flex: 1; /* Ensure all columns have equal width */
 }
+
+
+.laptop-bio{
+    display: none;
+}
+
 
 .grid-item {
     width: auto; /* Use full width within the column */
@@ -421,7 +431,6 @@ to {
         margin-bottom: 3vw;
         margin-top: 3vw;
     }
-
      
       p, .exp{
         line-height: 1.25;
@@ -510,9 +519,9 @@ to {
         display: none;
     }
     .grid-container{
-        margin: 22vh auto 8vw;
+        margin: 21vh auto 8vw;
         width: 90vw;
-        height: 78vh;
+        height: 79vh;
         background-color: var(--background);
         overflow: scroll;
     }
@@ -521,8 +530,8 @@ to {
         display: block;
         justify-content: center; 
         width: 90vw; /* Ensure grid items are full width */
-        margin-bottom: 9vw;
-        margin-top: 9vw;
+        margin-bottom: 4vw;
+        margin-top: 4vw;
     }
     
     .link{
@@ -605,7 +614,7 @@ to {
         padding: 0;
         border: 0px dotted var(--color); /* Keep the border */
         box-sizing: border-box;
-        margin-bottom: 16vw;
+        margin-bottom: 10vw;
     }
     
     .thumbnail img {
@@ -628,18 +637,19 @@ to {
     .phone-header{
         z-index: 1;
         width: 100vw;
-        height: 5vh;
+        height: 7.5vh;
         display: block;
         position: fixed;
         background: black;
-        background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .5) 25%, rgba(237, 237, 237, .65) 50%, rgba(237, 237, 237, .75) 60%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
-        top:21.75vh;
+        background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .45) 35%, rgba(237, 237, 237, .65) 50%, rgba(237, 237, 237, .75) 65%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
+        top:20.65vh;
         left: 0;
         transition: .25s;
         pointer-events: none;
     }
 
-    .copyright{
+    .copy2{
+        display: block;
         margin-top: 9vh!important;
         padding-bottom: 4vh!important;
     }
@@ -647,6 +657,20 @@ to {
     .archive{
         display:none;
     }
+
+    .laptop-bio{
+        display: flex;
+    }
+
+    .bio-laptop{
+        display: none;
+    }
+    
+    .grid-item{
+        text-align: center;
+    }
+    
+    
 
 }
     
