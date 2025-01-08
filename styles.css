@@ -624,3 +624,21 @@ to {
       
     
 }
+
+
+@media only screen and (max-height: 600px){
+    .grid-container-phone{
+        display:flex;
+        margin: 27vh auto 8vw;
+    }
+
+    .phone-header{
+        top:26.75vh;
+    }
+
+    .copy2{
+        margin-top: 8vh!important;
+        padding-bottom: 15vh!important;
+    }
+}
+    
