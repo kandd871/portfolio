@@ -626,7 +626,7 @@ to {
 }
 
 
-@media only screen and (max-height: 600px){
+@media only screen and (max-height: 800px){
     .grid-container-phone{
         display:flex;
         margin: 27vh auto 8vw;
