@@ -512,7 +512,7 @@ to {
     .grid-container{
         margin: 22vh auto 8vw;
         width: 90vw;
-        height: 74vh;
+        height: 78vh;
         background-color: var(--background);
         overflow: scroll;
     }
