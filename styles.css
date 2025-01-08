@@ -543,11 +543,11 @@ to {
 
     .grid-container-phone{
         display:flex;
-        margin: 20.5vh auto 8vw;
+        margin: 22.5vh auto 8vw;
         width: 90vw;
-        height: 73vh;
+        height: 70vh;
         /* background-color: var(--background); */
-        padding-top:5vh;
+        padding-top:10vh;
         animation: stack2 1.25s forwards ease-in-out;
         z-index: 0;
         overflow: scroll;
@@ -610,15 +610,16 @@ to {
         position: fixed;
         background: none;
         background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .1) 15%, rgba(237, 237, 237, .25) 30%, rgba(237, 237, 237, .45) 50%, rgba(237, 237, 237, .7) 65%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
-        top:20.45vh;
+        top:22.5vh;
         left: 0;
         transition: .25s;
         pointer-events: none;
     }
 
     .copy2{
-        margin-top: 12vh!important;
-        padding-bottom: 5vh!important;
+        display: block;
+        margin-top: 10vh!important;
+        padding-bottom: 10vh!important;
     }
       
     
