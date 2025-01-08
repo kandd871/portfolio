@@ -974,4 +974,8 @@ input{
     pointer-events: none;
     z-index: 1000;
 }
+
+.archive{
+  display:none;
+}
 }

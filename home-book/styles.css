@@ -675,4 +675,8 @@ to {
         z-index: 1000;
     }
 
+    .archive{
+        display:none;
+    }
+
 }

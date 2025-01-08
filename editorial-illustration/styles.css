@@ -676,5 +676,9 @@ to {
         margin-bottom: 2vw;
     }
 
+    .archive{
+        display:none;
+    }
+
 }
 

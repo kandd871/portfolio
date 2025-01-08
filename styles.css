@@ -543,9 +543,9 @@ to {
 
     .grid-container-phone{
         display:flex;
-        margin: 22.5vh auto 8vw;
+        margin: 20.5vh auto 8vw;
         width: 90vw;
-        height: 70vh;
+        height: 73vh;
         /* background-color: var(--background); */
         padding-top:10vh;
         animation: stack2 1.25s forwards ease-in-out;
@@ -610,7 +610,7 @@ to {
         position: fixed;
         background: none;
         background:  linear-gradient(0deg, rgba(200,200,200,0) 0%, rgba(237, 237, 237, .1) 15%, rgba(237, 237, 237, .25) 30%, rgba(237, 237, 237, .45) 50%, rgba(237, 237, 237, .7) 65%, rgba(237, 237, 237, .95) 90%, rgba(237,237,237,1) 100%);
-        top:22.25vh;
+        top:20.25vh;
         left: 0;
         transition: .25s;
         pointer-events: none;
@@ -621,6 +621,10 @@ to {
         margin-top: 7vh!important;
         padding-bottom: 10vh!important;
     }
+
+    .archive{
+        display:none;
+    }
       
     
 }
@@ -629,11 +633,11 @@ to {
 @media only screen and (max-height: 800px){
     .grid-container-phone{
         display:flex;
-        margin: 27vh auto 8vw;
+        margin: 25vh auto 8vw;
     }
 
     .phone-header{
-        top:26.75vh;
+        top:24.75vh;
     }
 
     .copy2{
