@@ -669,8 +669,13 @@ to {
     .grid-item{
         text-align: center;
     }
-    
-    
 
+}
+
+@media only screen and (max-height: 800px){
+    .copy2{
+        margin-top: 13vh!important;
+        padding-bottom: 13vh!important;
+    }
 }
     
