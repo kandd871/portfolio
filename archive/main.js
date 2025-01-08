@@ -66,7 +66,7 @@ document.body.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
     // Draw projpoint every 15th mousemove
-    if (mouseMoveCounter % 10 === 0) {
+    if (mouseMoveCounter % 12 === 0) {
         const mouseX = event.clientX + window.scrollX; // Adjust for horizontal scroll
         const mouseY = event.clientY + window.scrollY; // Adjust for vertical scroll
 
