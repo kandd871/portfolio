@@ -623,12 +623,16 @@ to {
 
     .copy2{
         display: block;
-        margin-top: 7vh!important;
+        margin-top: 10vh!important;
         padding-bottom: 10vh!important;
     }
 
     .archive{
         display:none;
+    }
+
+    .skill-text{
+        width: 90vw;
     }
       
     
@@ -646,8 +650,8 @@ to {
     }
 
     .copy2{
-        margin-top: 8vh!important;
-        padding-bottom: 15vh!important;
+        margin-top: 11vh!important;
+        padding-bottom: 16vh!important;
     }
 }
     
