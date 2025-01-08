@@ -603,7 +603,8 @@ to {
         margin: 0 auto;
         width: 90vw; /* Thumbnails take full width */
         padding: 0;
-        border: 1px dotted var(--color); /* Keep the border */
+        border: 0px dotted var(--color); /* Keep the border */
+        box-sizing: border-box;
         margin-bottom: 16vw;
     }
     
