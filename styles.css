@@ -552,7 +552,7 @@ to {
         width: 90vw;
         height: 76vh;
         /* background-color: var(--background); */
-        padding-top:10vh;
+        padding-top:5vh;
         animation: stack2 1.25s forwards ease-in-out;
         z-index: 0;
         overflow: scroll;
