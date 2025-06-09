@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.innerWidth >= 600) {
     gridItems.forEach(item => {
-        const randomDegree = Math.random() * 2 - 1; // Random degree between -2 and 2
+        const randomDegree = Math.random() * 1 - 0.5; 
         item.style.transform = `rotate(${randomDegree}deg)`;
 
         // Add hover event listener to reset rotation

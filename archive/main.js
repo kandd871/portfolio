@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (window.innerWidth >= 600) {
     gridItems.forEach(item => {
-        const randomDegree = Math.random() * 2 - 1; // Random degree between -2 and 2
+        const randomDegree = Math.random() * .5 - .25; 
         item.style.transform = `rotate(${randomDegree}deg)`;
 
         // Add hover event listener to reset rotation
@@ -65,8 +65,7 @@ function createProjPoint(x, y) {
 document.body.addEventListener('mousemove', (event) => {
     mouseMoveCounter++;
 
-    // Draw projpoint every 15th mousemove
-    if (mouseMoveCounter % 12 === 0) {
+    if (mouseMoveCounter % 10 === 0) {
         const mouseX = event.clientX + window.scrollX; // Adjust for horizontal scroll
         const mouseY = event.clientY + window.scrollY; // Adjust for vertical scroll
 

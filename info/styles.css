@@ -172,6 +172,10 @@ a:hover{
     font-size: 1.3vw;
 }
 
+.thumbnail{
+    transition: .7s;
+}
+
 p {
     text-indent: 0; /* No indentation by default */
     margin: 0; 

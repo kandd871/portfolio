@@ -1,19 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const gridItems = document.querySelectorAll('.grid-item');
+    // const gridItems = document.querySelectorAll('.grid-item');
+
+    // if (window.innerWidth >= 600) {
+    // gridItems.forEach(item => {
+    //     const randomDegree = Math.random() * 2 - 1; // Random degree between -2 and 2
+    //     item.style.transform = `rotate(${randomDegree}deg)`;
+
+    //     // Add hover event listener to reset rotation
+    //     item.addEventListener('mouseenter', () => {
+    //         item.style.transform = 'rotate(0deg)'; // Reset rotation on hover
+    //     });
+
+    //     item.addEventListener('mouseleave', () => {
+    //         item.style.transform = `rotate(${randomDegree}deg)`; // Restore random rotation
+    //     });
+    // });
+    // }
+
+    const portrait = document.querySelector('.thumbnail');
 
     if (window.innerWidth >= 600) {
-    gridItems.forEach(item => {
         const randomDegree = Math.random() * 2 - 1; // Random degree between -2 and 2
-        item.style.transform = `rotate(${randomDegree}deg)`;
+        portrait.style.transform = `rotate(${randomDegree}deg)`;
 
         // Add hover event listener to reset rotation
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'rotate(0deg)'; // Reset rotation on hover
+        portrait.addEventListener('mouseenter', () => {
+            portrait.style.transform = 'rotate(0deg)'; // Reset rotation on hover
         });
 
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = `rotate(${randomDegree}deg)`; // Restore random rotation
-        });
+        portrait.addEventListener('mouseleave', () => {
+            portrait.style.transform = `rotate(${randomDegree}deg)`; // Restore random rotation
     });
     }
     
