@@ -621,10 +621,14 @@ to {
         pointer-events: none;
     }
 
+    #copy{
+        display: none;
+    }
+
     .copy2{
         display: block;
         margin-top: 10vh!important;
-        padding-bottom: 17vh!important;
+        padding-bottom: 20vh!important;
     }
 
     .archive{
