@@ -549,7 +549,7 @@ to {
       }
 
       .text{
-        font-size:4vw;
+        font-size:4.5vw;
       }
 
       .skill, .copyright{
@@ -577,7 +577,7 @@ to {
       }
       
       .subtitle, .time, .anchor, p, .exp{
-        font-size: 4vw;
+        font-size: 4.5vw;
       }
 
       p{
