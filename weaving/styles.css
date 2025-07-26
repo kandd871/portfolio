@@ -1,7 +1,6 @@
 @font-face {
     font-family: "Times Dot Roman";
     src: 
-      local("Times Dot Roman"), 
       url("../TimesDot/TimesDotRom.otf") format("opentype");
     font-style: normal;
     font-weight: normal;
@@ -10,8 +9,7 @@
   /* Italic Style */
   @font-face {
     font-family: "Times Dot Roman";
-    src: 
-      local("Times Dot Italic"), 
+    src:  
       url("../TimesDot/TimesDot-Italic.otf") format("opentype");
     font-style: italic;
     font-weight: normal;
