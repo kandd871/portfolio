@@ -109,16 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 
-    // Select the details element
     const details = document.querySelector('.details');
-    
-    // Function to hide details on scroll with blur effect
+    const sub = document.querySelector('.sub');
+
     function handleScroll() {
-        // Check if the page is scrolled vertically
         if (window.scrollY > 35) {
-            details.classList.add('blur-and-hide'); // Apply blur and hide details on scroll
+            details.classList.add('blur-and-hide');
+            sub.classList.add('blur-and-hide');
         } else {
-            details.classList.remove('blur-and-hide'); // Remove blur and show details when at the top
+            details.classList.remove('blur-and-hide');
+            sub.classList.remove('blur-and-hide');
         }
     }
     

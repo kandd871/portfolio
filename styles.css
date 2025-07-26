@@ -81,7 +81,7 @@ body{
     padding-bottom: 1.35vw;
 }
 
-.details {
+.details, .sub {
     transition: .8s;
 }
 
