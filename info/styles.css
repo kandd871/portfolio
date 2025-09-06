@@ -75,17 +75,17 @@ body{
 }
 
 .details {
-    transition: .8s; /* Smooth transition for opacity and blur */
+    transition: .8s; 
 }
 
 .blur-and-hide {
-    filter: blur(6px); /* Apply blur effect */
-    opacity: 0; /* Hide the element */
+    filter: blur(6px);
+    opacity: 0; 
 }
 
 
 .bio, .info, .archive {
-    text-align: left; /* Specifically ensure each item is left-aligned */
+    text-align: left;
     padding: 1.5vw;
     padding-bottom: 0vw;;
 }
@@ -96,7 +96,7 @@ body{
 } */
 
 .bio{
-    width: 65%;
+    width: 75%;
     /* border: 1px dotted var(--color); */
     border-radius: 50%;
     /* padding: 2vw 2vw 2vw 2vw; */
