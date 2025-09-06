@@ -185,8 +185,12 @@ p > a{
     text-decoration: none;
 }
 
+a{
+    cursor: alias;
+}
+
 p:not(:first-of-type) {
-    text-indent: 2.6vw; /* Indent all paragraphs except the first */
+    text-indent: 2.6vw;
 }
 
 .grid-column:nth-child(2){
@@ -194,6 +198,20 @@ p:not(:first-of-type) {
     align-items: center; /* Centers content vertically within the column */
 }
 
+.achievements{
+    text-indent: 0!important;
+}
+
+.anchor{  
+    margin-bottom: 1vw;
+    border: 1px dotted var(--color);
+    display: inline-block; 
+    width: auto;
+    border-radius: 20vw;
+    padding: .25vw .5vw;
+    transition: .3s;
+    /* text-decoration: underline; */
+}
 
 .thumbnail {
     margin: 0;

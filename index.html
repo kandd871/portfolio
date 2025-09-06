@@ -284,19 +284,16 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to determine device type
     function isMobile() {
         return window.innerWidth <= 490;
     }
 
-    // Function to load images only in visible container
     function loadImages() {
         const activeContainer = isMobile() ? '.grid-container-phone' : '.grid-container';
         const images = document.querySelectorAll(`${activeContainer} img[data-src]`);
         
         images.forEach(img => {
             if (img.dataset.src && !img.src) {
-                // Create a new image to preload
                 const newImg = new Image();
                 newImg.onload = () => {
                     img.src = img.dataset.src;
@@ -312,15 +309,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Load images for the current view
     loadImages();
 
-    // Handle window resize (debounced)
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            // Reload images for the new viewport size
             loadImages();
         }, 250);
     });
