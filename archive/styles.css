@@ -62,7 +62,7 @@ body{
     display: flex; 
     justify-content: space-between; /* Space between items */
     color: var(--color);
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     padding-bottom: 1vw;;
     text-align: left; /* Ensure text within the header remains left-aligned */
     z-index: 100; /* Ensure header is above other content */
